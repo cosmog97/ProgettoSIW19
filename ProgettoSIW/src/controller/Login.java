@@ -45,16 +45,18 @@ public class Login extends HttpServlet {
 		if (username == null) {
 			UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
 			Utente temp = t.findByPrimaryKey(request.getParameter("Username"));
-			if (temp != null && temp.getPassword().equals(password)) {
+			//if (temp != null && temp.getPassword().equals(password)) {
+				//System.out.println("OK");
 				HttpSession session = request.getSession();
-				
+				System.out.println(request.getParameter("Password"));
 				session.setAttribute("Username", request.getParameter("Username"));
-			}
+			//}
 		}
 		else {
-			System.out.println("PORCODIO");
+			System.out.println("GIA LOGGATO");
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("index.html");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 		rd.forward(request, response);
 	}
 
