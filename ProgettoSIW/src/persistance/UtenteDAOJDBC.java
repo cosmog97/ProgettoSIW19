@@ -17,18 +17,55 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	public UtenteDAOJDBC(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
-
-	
 	
 	@Override
 	public void save(Utente utente) {
-		// TODO Auto-generated method stub
+		Connection connection = this.dataSource.getConnection();
+		try {
+				String temp = "INSERT INTO gestioneeventidb.\"Utente\"(\r\n" + 
+						"	\"Username\", \"Password\", \"Cognome\", \"Nome\", \"Datanascita\", \"Email\", \"NumeroTelefono\", \"UltimaModPSW\")\r\n" + 
+						"	VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+				PreparedStatement  statement = connection.prepareStatement(temp);
+				
+				statement.setString(1,utente.getUsername());
+				statement.setString(2,utente.getPassword());
+				statement.setString(3,utente.getCognome());
+				statement.setString(4,utente.getNome());
+				statement.setDate(5,utente.getDatanascita());
+				statement.setString(6,utente.getEmail());
+				statement.setString(7, utente.getNumerotelefono());
+				statement.setDate(8, utente.getUltimamodpsw());
+				//mettere la boolean emailvalida
 
+				statement.executeUpdate();
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			
+			try {
+				connection.close();
+			} 
+			
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
 	}
+
 
 	@Override
 	public Utente findByPrimaryKey(String nomeutente) {
-		// TODO Auto-generated method stub
+		List<Utente> temp = findAll();
+		for (Utente i : temp) {
+			if (i.getUsername() == nomeutente) {
+				return i;
+			}
+		}
 		return null;
 	}
 
@@ -48,7 +85,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			ResultSet rs = statement.executeQuery();
 			
             while ( rs.next() ) {
-                Utente utente = new Utente();
+                 Utente utente = new Utente();
                 
                  utente.setUsername( rs.getString(1));
 	       	     utente.setPassword( rs.getString(2));
