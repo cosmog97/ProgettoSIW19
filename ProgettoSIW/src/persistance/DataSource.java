@@ -13,8 +13,7 @@ class DataSource {
 	public Connection getConnection() {
 		Connection connection = null;
 		try {
-		    connection = DriverManager.getConnection(dbURI,userName, password);
-			
+			connection = DriverManager.getConnection(dbURI,userName, password);
 		
 		} catch(SQLException e) {
 			
