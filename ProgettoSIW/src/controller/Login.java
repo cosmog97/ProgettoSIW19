@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.Utente;
 import persistance.*;
@@ -45,7 +46,9 @@ public class Login extends HttpServlet {
 			UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
 			Utente temp = t.findByPrimaryKey(request.getParameter("Username"));
 			if (temp != null && temp.getPassword().equals(password)) {
-				request.getSession().setAttribute("Username", request.getParameter("Username"));
+				HttpSession session = request.getSession();
+				
+				session.setAttribute("Username", request.getParameter("Username"));
 			}
 		}
 		else {
