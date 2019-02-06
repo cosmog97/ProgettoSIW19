@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import model.Utente;
 import persistance.*;
-import utility.PasswordManager;
+
 
 /**
  * Servlet implementation class Login
@@ -42,27 +41,20 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = (String) request.getSession().getAttribute("Username");
-		String password = "";
-	
-		password = request.getParameter("Password");
+		String username = request.getParameter("Username");
+		String password = request.getParameter("Password");
+		System.out.println(username);
 
-		if (username == null) {
-			UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
-			Utente temp = t.findByPrimaryKey(request.getParameter("Username"));
-			//if (temp != null && temp.getPassword().equals(password)) {
-				//System.out.println("OK");
-				HttpSession session = request.getSession();
-				System.out.println(request.getParameter("Password"));
-				session.setAttribute("Username", request.getParameter("Username"));
-			//}
-		}
-		else {
-			System.out.println("GIA LOGGATO");
+		UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
+		Utente temp = t.findByPrimaryKey(username);
+		if (temp != null && password.equals(temp.getPassword())) {
+			HttpSession session = request.getSession();
+			System.out.println(request.getParameter("Password"));
+			session.setAttribute("Username", temp.getUsername());
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 		rd.forward(request, response);
-	}
 
+	}
 }

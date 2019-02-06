@@ -42,10 +42,10 @@
                   </div>
                   <form class="user" name="Login" action="Login" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Nome utente">
+                      <input type="text" class="form-control form-control-user" name="Username" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Nome utente">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" name="Password" id="exampleInputPassword" placeholder="Password">
                     </div>
  
                     <a >
