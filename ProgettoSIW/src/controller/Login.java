@@ -53,7 +53,7 @@ public class Login extends HttpServlet {
 			session.setAttribute("Username", temp.getUsername());
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
 		rd.forward(request, response);
 
 	}

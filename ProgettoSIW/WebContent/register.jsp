@@ -70,6 +70,7 @@
                     <input type="date" class="form-control form-control-user" id="Datanascita" name="Datanascita" placeholder="Data di nascita">
                   </div>
                 </div>
+                
                 <a>
                     <button class="btn btn-primary btn-user btn-block" type="submit" name="Register" type=submit>Registrati</button>
                 </a>

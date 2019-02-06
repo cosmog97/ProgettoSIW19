@@ -58,7 +58,10 @@ public class Register extends HttpServlet {
 	   	     utente.setNumerotelefono(request.getParameter("Numerotelefono"));
 	   	     utente.setUltimamodpsw(new Date(System.currentTimeMillis()));
 	   	     UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
-			 t.save(utente);      
+			 t.save(utente);
+			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			rd.forward(request, response);
+
 	   	       
 	}
 
