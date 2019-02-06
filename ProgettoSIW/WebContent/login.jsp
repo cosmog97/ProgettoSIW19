@@ -48,12 +48,12 @@
                       <input type="password" class="form-control form-control-user" name="Password" id="exampleInputPassword" placeholder="Password">
                     </div>
  
-                    <a >
+                    <a>
                       <button class="btn btn-primary btn-user btn-block" type="submit" name="Login" type=submit>Accedi</button>
                     </a>
                     <hr>
                   </form>
-                  <hr>
+                 
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Password dimenticata da vedere</a>
                   </div>
