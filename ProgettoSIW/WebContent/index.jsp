@@ -64,7 +64,6 @@
     		<div class="row">
 	      		<div <div class="col-md-4 col-md-offset-4">
 	        		<select id="country" name="country">
-	        			<option value="null">Categoria</option>
 	          			<option value="australia">Sport</option>
 	          			<option value="canada">Cultura</option>
 	          			<option value="usa">Sesso</option>
