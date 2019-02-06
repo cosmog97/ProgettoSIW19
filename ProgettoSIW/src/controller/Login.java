@@ -44,12 +44,9 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = (String) request.getSession().getAttribute("Username");
 		String password = "";
-		try {
-			password = PasswordManager.getPasswordCrypto(request.getParameter("Password"));
-		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
+		password = request.getParameter("Password");
+
 		if (username == null) {
 			UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
 			Utente temp = t.findByPrimaryKey(request.getParameter("Username"));

@@ -48,7 +48,7 @@ public class Register extends HttpServlet {
 		try {	    
 	   	     Utente utente = new Utente();
 	   	     utente.setUsername(request.getParameter("Username"));
-	   	     utente.setPassword(PasswordManager.getPasswordCrypto(request.getParameter("Password")));
+	   	     //utente.setPassword(PasswordManager.getPasswordCrypto(request.getParameter("Password")));
 	   	     utente.setCognome(request.getParameter("Cognome"));
 	   	     utente.setNome(request.getParameter("Nome"));
 	   	     Date dataNascitaStr = java.sql.Date.valueOf(request.getParameter("Datanascita"));
