@@ -21,7 +21,7 @@ import persistance.UtenteDAOJDBC;
 /**
  * Servlet implementation class Registra
  */
-@WebServlet("/Registra")
+@WebServlet("/Register")
 public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -45,10 +45,11 @@ public class Register extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {	    
+	    
 	   	     Utente utente = new Utente();
 	   	     utente.setUsername(request.getParameter("Username"));
 	   	     //utente.setPassword(PasswordManager.getPasswordCrypto(request.getParameter("Password")));
+	   	     utente.setPassword(request.getParameter("Password"));
 	   	     utente.setCognome(request.getParameter("Cognome"));
 	   	     utente.setNome(request.getParameter("Nome"));
 	   	     Date dataNascitaStr = java.sql.Date.valueOf(request.getParameter("Datanascita"));
@@ -58,10 +59,6 @@ public class Register extends HttpServlet {
 	   	     utente.setUltimamodpsw(new Date(System.currentTimeMillis()));
 	   	     UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
 			 t.save(utente);      
-		} 
-	   	catch (Throwable theException) {
-		   	     theException.printStackTrace();; 
-		}
 	   	       
 	}
 

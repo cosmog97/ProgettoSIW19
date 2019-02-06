@@ -34,50 +34,50 @@
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Crea un account!</h1>
+                <h1 class="h4 text-gray-900 mb-4">Crea un account</h1>
               </div>
-              <form class="user">
+              <form class="user" name="Register" action="Register" method="post">
                   <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Nome utente">
+                  <input type="text" class="form-control form-control-user" id="Username" name="Username" placeholder="Nome utente">
                 </div>
                   <div class="form-group">
-                  	<input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
+                  	<input type="email" class="form-control form-control-user" id="Email" name="Email" placeholder="Email">
                   </div>
                           
                 <div class="form-group row">
                 
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Cognome">
+                    <input type="text" class="form-control form-control-user" id="Cognome" name="Cognome" placeholder="Cognome">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Nome">
+                    <input type="text" class="form-control form-control-user" id="Nome" name="Nome" placeholder="Nome">
                   </div>
                 </div>
   
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    <input type="password" class="form-control form-control-user" id="Password" name="Password" placeholder="Password">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Ripeti Password">
+                    <input type="password" class="form-control form-control-user" id="Ripetipassword" name="Ripetipassword" placeholder="Ripeti Password">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="tel" class="form-control form-control-user" id="exampleInputPassword" placeholder="Numero di telefono">
+                    <input type="tel" class="form-control form-control-user" id="Numerotelefono" name="Numerotelefono" placeholder="Numero di telefono">
                   </div>
                   <div class="col-sm-6">
-                    <input type="date" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Data di nascita">
+                    <input type="date" class="form-control form-control-user" id="Datanascita" name="Datanascita" placeholder="Data di nascita">
                   </div>
                 </div>
-                <a href="login.html" class="btn btn-primary btn-user btn-block">
-                  Registrati
+                <a>
+                    <button class="btn btn-primary btn-user btn-block" type="submit" name="Register" type=submit>Registrati</button>
                 </a>
                 <hr>
               </form>
 
               <div class="text-center">
-                <a class="small" href="forgot-password.html">Password dimentica poi vediamo</a>
+                <a class="small" href="index.jsp">Password dimentica poi vediamo</a>
               </div>
               <div class="text-center">
                 <a class="small" href="login.jsp">Hai già un account? Accedi!</a>
