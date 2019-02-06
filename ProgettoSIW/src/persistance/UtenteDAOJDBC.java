@@ -35,6 +35,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				statement.setString(6,utente.getEmail());
 				statement.setString(7, utente.getNumerotelefono());
 				statement.setDate(8, utente.getUltimamodpsw());
+				//statement.setBoolean(8, utente.isValid());
 				//mettere la boolean emailvalida
 
 				statement.executeUpdate();

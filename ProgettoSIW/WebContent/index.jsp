@@ -11,7 +11,10 @@
 </head>
 <body>
 	
+  
 	Benvenuto su GestioneEventi
+	<a href="login.jsp">Login</a>
+	<a href="logout.jsp">Logout</a>
 
 
 </body>
