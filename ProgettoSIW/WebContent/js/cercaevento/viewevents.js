@@ -3,12 +3,12 @@
  */
 data = [
 	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
+		"nomeevento": "Pasta 4Formaggi",
+		"categoria": "Cibo",
 		"datainizio": "84/37/4841",
 		"datafine": "84/37/4841",
 		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
+		"creatoreevento": "oppi96",
 		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
 	},
 	{

@@ -42,8 +42,7 @@ public class EventoDAOJDBC implements EventoDAO {
 		List<Evento> temp = new ArrayList<Evento>();
 		try {
 			Class.forName("org.postgresql.Driver");
-			System.out.println("Entro findAll()");
-			//String select = QueryManager.readFileAsString("sql/select.txt");
+
 			String select = "SELECT * FROM gestioneeventidb.\"Evento\"\r\n" + 
 					"ORDER BY \"IDEvento\" ASC ";
 			
