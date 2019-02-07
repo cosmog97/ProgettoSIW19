@@ -31,13 +31,8 @@
 	<div class="header">
 		<a href="#default" class="logo">eBooker</a>
 		<div class="header-right">
-			<a href="contatti.jsp">Chi siamo</a>
-			     <a>
-                      <button class="btn btn-primary btn-user btn-block" onclick="window.location.href='login.jsp';">Accedi</button>
-                 </a>
-            	 <a>
-                      <button class="btn btn-primary btn-user btn-block" onclick="window.location.href='register.jsp';">Registrati</button>
-                 </a>
+			<a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='login.jsp';">Accedi</button></a>
+            <a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='register.jsp';">Registrati</button></a>
 		</div>
 	</div>
 
