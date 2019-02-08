@@ -26,7 +26,7 @@
 <body id="page-top">
 
   <!-- Page Wrapper -->
-  <div id="wrapper">
+
 
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -134,63 +134,10 @@
     </ul>
     <!-- End of Sidebar -->
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
 
-      <!-- Main Content -->
-      <div id="content">
-
-        <!-- Topbar -->
-        
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-		<br>
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="logout.jsp" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-power-off fa-sm text-white-50"></i>  Logout</a>
-          </div>
-
-          <!-- Content Row -->
-          <div class="row">
-
-
-
-
-    
-
-          <!-- Content Row -->
-          <div class="row">
-
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
-
-              
-            </div>
-
-            <div class="col-lg-6 mb-4">
-
-              
-
-              
-
-            </div>
-          </div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-
-
-    </div>
     <!-- End of Content Wrapper -->
 
-  </div>
+
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
