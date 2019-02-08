@@ -31,6 +31,8 @@
 	<div class="header">
 		<a href="#default" class="logo">eBooker</a>
 		<div class="header-right">
+			<a><button class="btn" onclick="window.location.href='contatti.jsp';">Contatti</button></a>
+            <a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='dashboard.jsp';">Dashboard</button></a>
 			<a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='login.jsp';">Accedi</button></a>
             <a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='register.jsp';">Registrati</button></a>
 		</div>
@@ -44,12 +46,10 @@
 				<div class="row">
 					<div class="col-md-7 col-md-push-5">
 						<div class="booking-cta">
-							<h1>Enjoy yourserlf!</h1>
+							<h1>Organize yourself!</h1>
 							<p>	
-								Vuoi organizzare un evento?
-								Vuoi cercare un evento?
-								Hai intenzione di condivere passioni con altre persone?
-								Sei nel posto giusto per farlo.
+								Vuoi organizzare un evento? 
+								Sei nel posto giusto.
 							</p>
 						</div>
 					</div>
@@ -74,6 +74,7 @@
 								        			<option value="Escursioni">Escursioni</option>
 								        			<option value="Feste">Feste</option>
 								        			<option value="Musica">Musica</option>
+								        			<option value="Teatro">Istruzione</option>
 								        			<option value="Sport">Sport</option>
 								          			<option value="Teatro">Teatro</option>
 												</select>
