@@ -50,22 +50,33 @@ public class Login extends HttpServlet {
 	
 		if (temp != null && temp.getUsername().equals(username)) {
 			if(password.equals(temp.getPassword())) {
-				HttpSession session = request.getSession();
+			
+				//cookie
 				Cookie utente = new Cookie ("Username", "username");
 				utente.setMaxAge(60*60*60);
+				utente.setPath("/");
+				utente.setMaxAge(60*60);
+				utente.setSecure(false);
 				response.addCookie(utente);
-				//response.sendRedirect("ProgettoSIW/dashboard.jsp");
-				//session.setAttribute("Username", username);
-				//session.setAttribute("Nome",temp.getNome());
-				//session.setAttribute("Cognome",temp.getCognome());
-				RequestDispatcher rd = request.getRequestDispatcher("/dashboard.jsp");
+				
+				//session
+				HttpSession session = request.getSession();
+				session.setAttribute("Username", username);
+				session.setAttribute("Nome",temp.getNome());
+				session.setAttribute("Cognome",temp.getCognome());
+				RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
 				rd.forward(request, response);
 
 			}
+			else {
+				System.out.println("Password o email errata");
+				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+				rd.forward(request, response);
+			}
 		}
 		else {
-			System.out.println("Password o email errata");
-			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+			System.out.println("Nome utente non trovato");
+			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			rd.forward(request, response);
 
 		}
