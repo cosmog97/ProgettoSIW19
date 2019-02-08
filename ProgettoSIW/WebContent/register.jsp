@@ -67,7 +67,7 @@
                     <input type="tel" class="form-control form-control-user" id="Numerotelefono" name="Numerotelefono" placeholder="Numero di telefono">
                   </div>
                   <div class="col-sm-6">
-                    <input type="date" class="form-control form-control-user" id="Datanascita" name="Datanascita" placeholder="Data di nascita">
+                    <input placeholder="Data di nascita" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" name="Datanascita" placeholder="Data di nascita">
                   </div>
                 </div>
                 
