@@ -11,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Register</title>
+  <title>Modifica profilo</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -64,10 +64,8 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
-
       <li class="nav-item">
         <a class="nav-link collapsed">
-          <span><c:out value='${sessionScope.Username}' /><br></span>
           <span><c:out value='${sessionScope.Nome}' /><br><c:out value='${sessionScope.Cognome}' /></span>
         </a>
       </li>
