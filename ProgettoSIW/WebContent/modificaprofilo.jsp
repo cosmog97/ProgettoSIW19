@@ -66,7 +66,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed">
-          <span><c:out value='${sessionScope.Nome}' /><br><c:out value='${sessionScope.Cognome}' /></span>
+          <span><c:out value="Ciao"/><br></span>
         </a>
       </li>
       
