@@ -29,7 +29,15 @@ public class Utente {
 	}
 	
 	public Utente() {
-		// TODO Auto-generated constructor stub
+		this.username = "";
+		this.password = "";
+		this.cognome = "";
+		this.nome = "";
+		this.datanascita = null;
+		this.email = "";
+		this.numerotelefono = "";
+		this.ultimamodpsw = null;
+		this.valid = false;
 	}
 
 	public String getUsername() {

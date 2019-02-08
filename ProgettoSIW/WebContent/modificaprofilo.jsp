@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Dashboard</title>
+  <title>Register</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -21,10 +20,28 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+
+
+  <script>
+    function show(shown, hidden) {
+        document.getElementById(shown).style.display='block';
+        document.getElementById(hidden).style.display='none';
+        return false;
+    }
+  </script>
+
+  <script>
+    $("#myspan").click(function(){
+      alert('I got a click');
+    });
+  </script>
+
+
+
 </head>
 
 <body id="page-top">
-
+  
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -49,7 +66,8 @@
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed">
-          <span><c:out value='${sessionScope["Username"]}' /></span>
+          <span onclick="location='dashboard.html'">Cognome Nome</span>
+          
         </a>
       </li>
       
@@ -67,8 +85,11 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span onclick="location='modificaprofilo.jsp'">Modifica profilo </span>
+          <span class="current">Modifica profilo </span>
+
+          
         </a>
+
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
@@ -146,7 +167,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-		<br>
+    <br>
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
@@ -155,7 +176,40 @@
 
           <!-- Content Row -->
           <div class="row">
-
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Modifica il tuo account</h1>
+              </div>
+              <form class="user">
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Cognome">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Ripeti password">
+                  </div>
+                </div>
+                <a href="INSERIRECLASSE" class="btn btn-primary btn-user btn-block">
+                  Modifica Dati
+                </a>
+                
+                
+                
+              </form>
+              
+              
+            </div>
 
 
 
@@ -217,6 +271,7 @@
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
 
+  
 </body>
 
 </html>

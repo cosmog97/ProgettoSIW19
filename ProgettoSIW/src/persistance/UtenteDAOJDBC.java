@@ -61,13 +61,15 @@ public class UtenteDAOJDBC implements UtenteDAO {
 
 	@Override
 	public Utente findByPrimaryKey(String nomeutente) {
+		System.out.println("nomeutentedatrovare "+nomeutente);
 		List<Utente> temp = findAll();
 		for (Utente i : temp) {
-			if (i.getUsername() == nomeutente) {
+			if (i.getUsername().equals( nomeutente)) {
+				System.out.println("Trovato: " + i.getUsername());
 				return i;
 			}
 		}
-		return null;
+		return new Utente();
 	}
 
 	@Override
@@ -76,8 +78,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		List<Utente> temp = new ArrayList<Utente>();
 		try {
 			Class.forName("org.postgresql.Driver");
-			System.out.println("Entro findAll()");
-			//String select = QueryManager.readFileAsString("sql/select.txt");
+
 			String select = "SELECT \"Username\", \"Password\", \"Cognome\", \"Nome\", \"Datanascita\", \"Email\", \"NumeroTelefono\", \"UltimaModPSW\"\r\n" + 
 					"	FROM gestioneeventidb.\"Utente\";";
 			
@@ -87,7 +88,6 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			
             while ( rs.next() ) {
                  Utente utente = new Utente();
-                
                  utente.setUsername( rs.getString(1));
 	       	     utente.setPassword( rs.getString(2));
 	       	     utente.setCognome( rs.getString(3));
@@ -100,7 +100,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
                 temp.add(utente);
             }
             
-            System.out.println("Esco findAll()");
+
             return temp;
 			
 		}
@@ -120,7 +120,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				e.printStackTrace();
 			}
 		}
-		return temp;
+		return null;
 	}
 	
 

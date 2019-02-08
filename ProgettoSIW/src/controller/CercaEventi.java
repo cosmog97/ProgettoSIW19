@@ -43,15 +43,15 @@ public class CercaEventi extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
-		List<Evento> temp = t.findAll();
-		Gson gson = new Gson();
+		//EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
+		//List<Evento> temp = t.findAll();
+		/*Gson gson = new Gson();
 		String jsonString = gson.Json(temp);
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         out.print(jsonString);
-        out.flush();
+        out.flush();*/
 	}
 
 }

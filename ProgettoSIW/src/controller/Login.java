@@ -41,20 +41,26 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("Username");
-		String password = request.getParameter("Password");
-		System.out.println(username);
+		String username = (String) request.getParameter("Username");
+		String password = (String) request.getParameter("Password");
 
 		UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
 		Utente temp = t.findByPrimaryKey(username);
-		if (temp != null && password.equals(temp.getPassword())) {
-			HttpSession session = request.getSession();
-			System.out.println(request.getParameter("Password"));
-			session.setAttribute("Username", temp.getUsername());
+	
+		if (temp != null && temp.getUsername().equals(username)) {
+			if(password.equals(temp.getPassword())) {
+				HttpSession session = request.getSession();
+				session.setAttribute("Username", username);
+				RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
+				rd.forward(request, response);
+			}
 		}
-		
-		RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
-		rd.forward(request, response);
+		else {
+			System.out.println("Madonna");
+			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			rd.forward(request, response);
+
+		}
 
 	}
 }
