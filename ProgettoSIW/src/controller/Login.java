@@ -51,13 +51,15 @@ public class Login extends HttpServlet {
 			if(password.equals(temp.getPassword())) {
 				HttpSession session = request.getSession();
 				session.setAttribute("Username", username);
-				RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
+				session.setAttribute("Nome",temp.getNome());
+				session.setAttribute("Cognome",temp.getCognome());
+				RequestDispatcher rd = request.getRequestDispatcher("http://localhost:8080/ProgettoSIW/dashboard.jsp");
 				rd.forward(request, response);
 			}
 		}
 		else {
 			System.out.println("Password o email errata");
-			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("http://localhost:8080/ProgettoSIW/login.jsp");
 			rd.forward(request, response);
 
 		}

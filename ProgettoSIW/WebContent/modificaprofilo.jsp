@@ -64,10 +64,11 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link collapsed">
-          <span onclick="location='dashboard.html'">Cognome Nome</span>
-          
+          <span><c:out value='${sessionScope.Username}' /><br></span>
+          <span><c:out value='${sessionScope.Nome}' /><br><c:out value='${sessionScope.Cognome}' /></span>
         </a>
       </li>
       
@@ -170,7 +171,7 @@
     <br>
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Modifica il tuo account</h1>
             <a href="logout.jsp" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-power-off fa-sm text-white-50"></i>  Logout</a>
           </div>
 
@@ -178,7 +179,7 @@
           <div class="row">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Modifica il tuo account</h1>
+                <h2 class="h4 text-gray-900 mb-4">Puoi modificare i tuoi dati</h2>
               </div>
               <form class="user">
                 <div class="form-group row">

@@ -49,7 +49,8 @@
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed">
-          <span><c:out value='${sessionScope["Username"]}' /></span>
+          <span><c:out value='${sessionScope.Username}' /><br></span>
+          <span><c:out value='${sessionScope.Nome}' /><br><c:out value='${sessionScope.Cognome}' /></span>
         </a>
       </li>
       
