@@ -59,7 +59,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-    <br>
+    		<br>
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Modifica il tuo account</h1>
@@ -116,11 +116,6 @@
 
   </div>
   <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
 
 
 

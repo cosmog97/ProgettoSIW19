@@ -23,7 +23,7 @@
 
 </head>
 
-<body id="page-top">
+<body>
 
   <!-- Page Wrapper -->
 
@@ -33,8 +33,8 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
-        <div class="">
-          <i class=""></i>
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
         </div>
         <div class="sidebar-brand-text mx-3">eBooker</div>
       </a>
@@ -126,11 +126,6 @@
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-
     </ul>
     <!-- End of Sidebar -->
 
@@ -141,10 +136,6 @@
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
 
 
   <!-- Bootstrap core JavaScript-->
