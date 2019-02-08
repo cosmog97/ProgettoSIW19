@@ -80,6 +80,7 @@
                 <h2 class="h3 text-gray-900 mb-4">Dati personali</h2>
               </div>-->   
               <form class="user">
+
                 <div class="form-group row">
                   <div class="col-sm-6">
                     <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
@@ -93,7 +94,7 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="exampleInputPassword" placeholder="Data di nascita">
+                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" placeholder="Data di nascita">
                   </div>
                   <div class="col-sm-6">
                     <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Password">
@@ -102,9 +103,6 @@
                 <a href="INSERIRECLASSE" class="btn btn-primary btn-user btn-block">
                   Modifica dati personali
                 </a>
-                
-                
-                
               </form>
               <br>
                    <form class="user">
