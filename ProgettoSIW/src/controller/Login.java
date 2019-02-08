@@ -56,7 +56,7 @@ public class Login extends HttpServlet {
 			}
 		}
 		else {
-			System.out.println("Madonna");
+			System.out.println("Password o email errata");
 			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			rd.forward(request, response);
 
