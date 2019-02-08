@@ -58,7 +58,7 @@ public class Login extends HttpServlet {
 				utente.setMaxAge(60*60);
 				utente.setSecure(false);
 				response.addCookie(utente);
-				
+				//commit di prova
 				//session
 				HttpSession session = request.getSession();
 				session.setAttribute("Username", username);
