@@ -16,6 +16,8 @@ import persistance.DatabaseManager;
 import persistance.EventoDAO;
 import persistance.UtenteDAO;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 /**
  * Servlet implementation class CercaEventi
  */
@@ -43,8 +45,9 @@ public class CercaEventi extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
-		//List<Evento> temp = t.findAll();
+		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
+		List<Evento> temp = t.findAll();
+		
 		/*Gson gson = new Gson();
 		String jsonString = gson.Json(temp);
         PrintWriter out = response.getWriter();
