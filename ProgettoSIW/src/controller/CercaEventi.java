@@ -18,6 +18,8 @@ import persistance.UtenteDAO;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.google.gson.Gson;
 /**
  * Servlet implementation class CercaEventi
  */
@@ -47,7 +49,19 @@ public class CercaEventi extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		List<Evento> temp = t.findAll();
-		
+		response.setContentType("application/json");
+		response.setCharacterEncoding("utf-8");
+		PrintWriter out = response.getWriter();
+
+		  //create Json Object
+		  JSONObject json = new JSONObject();
+		  Gson gson = new Gson();
+	      System.out.println(gson.toJson(temp));
+		    // put some value pairs into the JSON object .
+
+
+		    // finally output the json string       
+		    out.print(json.toString());
 		/*Gson gson = new Gson();
 		String jsonString = gson.Json(temp);
         PrintWriter out = response.getWriter();
