@@ -1,6 +1,35 @@
 /**
  * 
  */
+
+data1 = "";
+
+$.ajax({
+
+    url : "CercaEventi",
+    method : "POST",
+    dataType : 'json',
+    error : function() {
+
+        alert("Error Occured");
+    },
+    success : function(data) {
+       allert("Letto");
+
+    }
+});
+/*data = [
+	{
+		"nome": "Pasta 4Formaggi",
+		"categoria": "Cibo",
+		"datainizio": "84/37/4841",
+		"fine": "84/37/4841",
+		"scadenza": "84/37/4841",
+		"creatore": "oppi96",
+		"numattualeprenotati": 30,
+		"nummaxprenotati": 40,
+		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
+	}];
 data = [
 	{
 		"nomeevento": "Pasta 4Formaggi",
@@ -111,7 +140,7 @@ data = [
 		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
 	}
 ];
-
+*/
 var nomeevento = "";
 var categoria = "";
 var datainizio = "";
@@ -123,14 +152,14 @@ var image="";
 var products="";
 
 for (var i = 0; i < data.length; i++) {if (window.CP.shouldStopExecution(1)){break;}
-	var nomeevento = data[i].nome,
-		categoria = data[i].categoria,
-		datainizio = data[i].inizio,
-		datafine = data[i].fine
-		datascadenza = data[i].scadenza,
-		creatoreevento = data[i].creatore,
-		postidisponibili = data[i].nummaxprenotati - data[i].numattualeprenotati,
-		image = "http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
+	var nomeevento = data1[i].nome,
+		categoria = data1[i].categoria,
+		datainizio = data1[i].inizio,
+		datafine = data1[i].fine
+		datascadenza = data1[i].scadenza,
+		creatoreevento = data1[i].creatore,
+		postidisponibili = data1[i].nummaxprenotati - data[i].numattualeprenotati,
+		image = "http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763";
 
 		
 		//create product cards

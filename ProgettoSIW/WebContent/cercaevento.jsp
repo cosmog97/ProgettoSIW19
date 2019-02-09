@@ -29,9 +29,9 @@
 </head>
 <body>
 	<div class="bg-gradient-primary">
-	<form action="CercaEventi">
-		<a>
-                      <button class="btn btn-primary btn-user btn-block" type="submit" name="CercaEventi" type=submit>Cerca</button>
+	<form>
+		  <a>
+             <button class="btn btn-primary btn-user btn-block" type="submit" action="CercaEventi" name="CercaEventi" type=submit>Cerca</button>
           </a>
     </form>
 	<div class="container">

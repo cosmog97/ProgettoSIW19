@@ -50,7 +50,9 @@ public class Login extends HttpServlet {
 	
 		if (temp != null && temp.getUsername().equals(username)) {
 			if(password.equals(temp.getPassword())) {
-			
+				String query =" UPDATE gestioneeventidb.\"Utente\"" +
+						"SET \"Cognome\"=?, \"Nome\"=?,"+
+								"WHERE \"Username\"=?;";
 				//cookie
 				Cookie utente = new Cookie ("Username", "username");
 				utente.setMaxAge(60*60*60);
