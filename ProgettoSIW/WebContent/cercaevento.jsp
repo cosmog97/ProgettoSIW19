@@ -13,7 +13,7 @@
  	<link href="css/sb-admin-2.css" rel="stylesheet">
 	<link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
 	<style class="cp-pen-styles"> body {
-		padding-top: 30px;
+		padding-top: 0px;
 	}
 	.product {
 		margin-bottom: 30px;
@@ -27,14 +27,14 @@
 		margin-bottom: 10px;
 	}</style>
 </head>
-<body style="background-color:lightblue">
+<body>
+	<div class="bg-gradient-primary">
 	<div class="container">
-		
 		<br>
 		<div class="row" id="products"></div>
 	</div>
 	<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script><script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
 	<script src='js/cercaevento/viewevents.js'></script>
-	
+	</div>
 </body>
 </html>

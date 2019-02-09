@@ -114,7 +114,20 @@
       </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Divider -->
+      <hr class="sidebar-divider">
+
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      
+
+      <li class="nav-item">
+        <a class="nav-link" href="logout.jsp">
+          <i class="fas fa-fw fa-power-off"></i>
+          <span>Logout</span>
+        </a>
+      </li>
 
     </ul>
     <!-- End of Sidebar -->
