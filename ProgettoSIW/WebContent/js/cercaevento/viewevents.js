@@ -123,14 +123,14 @@ var image="";
 var products="";
 
 for (var i = 0; i < data.length; i++) {if (window.CP.shouldStopExecution(1)){break;}
-	var nomeevento = data[i].nomeevento,
+	var nomeevento = data[i].nome,
 		categoria = data[i].categoria,
-		datainizio = data[i].datainizio,
-		datafine = data[i].datafine
-		datascadenza = data[i].datascadenza,
-		creatoreevento = data[i].creatoreevento,
-		postidisponibili = "",
-		image = data[i].image;
+		datainizio = data[i].inizio,
+		datafine = data[i].fine
+		datascadenza = data[i].scadenza,
+		creatoreevento = data[i].creatore,
+		postidisponibili = data[i].nummaxprenotati - data[i].numattualeprenotati,
+		image = "http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
 
 		
 		//create product cards

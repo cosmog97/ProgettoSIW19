@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -51,24 +52,14 @@ public class CercaEventi extends HttpServlet {
 		List<Evento> temp = t.findAll();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("utf-8");
-		PrintWriter out = response.getWriter();
-
-		  //create Json Object
-		  JSONObject json = new JSONObject();
-		  Gson gson = new Gson();
-	      System.out.println(gson.toJson(temp));
-		    // put some value pairs into the JSON object .
-
-
-		    // finally output the json string       
-		    out.print(json.toString());
-		/*Gson gson = new Gson();
-		String jsonString = gson.Json(temp);
-        PrintWriter out = response.getWriter();
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        out.print(jsonString);
-        out.flush();*/
+		Gson gson = new Gson();
+	    String json = gson.toJson(temp);
+	    System.out.println(json);
+	    response.setContentType("application/json");
+	    response.setCharacterEncoding("UTF-8");
+	    response.getWriter().write(json);
+	    RequestDispatcher rd = request.getRequestDispatcher("cercaevento.jsp");
+		rd.forward(request, response);
 	}
 
 }

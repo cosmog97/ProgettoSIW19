@@ -9,12 +9,20 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-    <servlet>  
+  <servlet>  
     <servlet-name>Login</servlet-name>  
     <servlet-class>controller.Login</servlet-class>  
   </servlet>  
   <servlet-mapping>  
     <servlet-name>Login</servlet-name>  
     <url-pattern>/login</url-pattern>  
+  </servlet-mapping>
+   <servlet>  
+    <servlet-name>CercaEventi</servlet-name>  
+    <servlet-class>controller.CercaEventi</servlet-class>  
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>CercaEventi</servlet-name>  
+    <url-pattern>/cercaeventi</url-pattern>  
   </servlet-mapping>  
 </web-app>

@@ -29,6 +29,11 @@
 </head>
 <body>
 	<div class="bg-gradient-primary">
+	<form action="CercaEventi">
+		<a>
+                      <button class="btn btn-primary btn-user btn-block" type="submit" name="CercaEventi" type=submit>Cerca</button>
+          </a>
+    </form>
 	<div class="container">
 		<br>
 		<div class="row" id="products"></div>
