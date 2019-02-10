@@ -53,11 +53,10 @@ public class CercaEventi extends HttpServlet {
 		Gson gson = new Gson();
 	    String json = gson.toJson(temp);
 	    System.out.println(json);
-	    System.out.println("json creato");
-	 //  response.setContentType("application/json");
-	  //  response.setCharacterEncoding("UTF-8");
-	   // response.getWriter().write(json);
-	    response.getWriter().println(json);
+	    System.out.println("json creato con write");
+	    response.setContentType("application/json");
+	    response.setCharacterEncoding("UTF-8");
+	    response.getWriter().write(json);
 	    System.out.println("json inviato");
 	}
 

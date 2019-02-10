@@ -29,13 +29,30 @@
 </head>
 <body>
 	<div class="bg-gradient-primary">
-	
-	<form>
-		  <a>
-             <button class="btn btn-primary btn-user btn-block" type="submit" action="CercaEventi" name="CercaEventi" type=submit>Cerca</button>
-          </a>
-    </form>
-	<div class="container">
+	 <div class="container">
+	 <div id="content">
+
+        <!-- Topbar -->
+        
+        <!-- End of Topbar -->
+		
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+    		<br>
+           <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Dati personali</h6>
+                </div>
+			<form>
+				  <a>
+		             <button class="btn btn-primary btn-user btn-block" type="submit" action="CercaEventi" name="CercaEventi" type=submit>Cerca</button>
+		          </a>
+		    </form>
+		   </div>
+		</div>
+		
+    </div>
+	<div class="container-fluid">
 		<br>
 		<div class="row" id="products"></div>
 	</div>
