@@ -79,14 +79,14 @@
     <!--         <div class="text-center">
                 <h2 class="h3 text-gray-900 mb-4">Dati personali</h2>
               </div>-->   
-              <form class="user">
+              <form class="user" name="ModificaProfilo" action="ModificaProfilo" method="post">
 
                 <div class="form-group row">
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
+                    <input type="text" class="form-control form-control-user" name="Nome" id="exampleFirstName" placeholder="Nome">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Cognome">
+                    <input type="text" class="form-control form-control-user" name="Cognome" id="exampleLastName" placeholder="Cognome">
                   </div>
                 </div>
                 <div class="form-group">
@@ -100,9 +100,7 @@
                     <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Password">
                   </div>
                 </div>
-                <a href="INSERIRECLASSE" class="btn btn-primary btn-user btn-block">
-                  Modifica dati personali
-                </a>
+                <button class="btn btn-primary btn-user btn-block" type="submit" name="ModificaProfilo" type=submit>Modifica Dati</button>
               </form>
               <br>
                    <form class="user">

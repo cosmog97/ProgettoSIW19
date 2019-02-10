@@ -142,4 +142,58 @@ public class UtenteDAOJDBC implements UtenteDAO {
 
 	}
 
+	@Override
+	public void modifica(Utente utente) {
+		// TODO Auto-generated method stub
+		Connection connection = this.dataSource.getConnection();		
+		try {
+				Class.forName("org.postgresql.Driver");
+
+				String update = " UPDATE gestioneeventidb.\"Utente\"" +
+						"SET \"Cognome\"=?, \"Nome\"=?,"+
+						"WHERE \"Username\"=?;";
+					
+				PreparedStatement statement = connection.prepareStatement(update);
+				//ResultSet rs = statement.executeQuery(update);
+				
+				ResultSet rs = statement.executeQuery(update);
+				
+				statement.setString(1,utente.getCognome());
+				statement.setString(2,utente.getNome());
+				statement.setString(3,utente.getUsername());
+				
+				System.out.println("utente modificato in: "+utente.getNome()+" "+utente.getCognome());
+				
+				//int tuplemodificate=statement.executeUpdate();
+				
+				
+				
+	            /*if (tuplemodificate > 0) { 
+	                System.out.println("******************User Updated"); 
+	            } else {
+	                System.out.println("******************Error Occured");
+	            }*/
+				//System.out.println("***************"+tuplemodificate);
+				
+
+			}
+		catch (SQLException e) {
+				e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+		}
+		finally {
+				try {
+					connection.close();
+				} 
+				catch (SQLException e) {
+						e.printStackTrace();
+				}
+			}
+		
+	}
+	
+
 }
+		

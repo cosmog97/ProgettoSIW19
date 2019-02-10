@@ -44,7 +44,7 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = (String) request.getParameter("Username");
 		String password = (String) request.getParameter("Password");
-
+		
 		UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
 		Utente temp = t.findByPrimaryKey(username);
 	
@@ -66,6 +66,9 @@ public class Login extends HttpServlet {
 				session.setAttribute("Username", username);
 				session.setAttribute("Nome",temp.getNome());
 				session.setAttribute("Cognome",temp.getCognome());
+				
+				System.out.println("entarto come: "+session.getAttribute("Nome")+session.getAttribute("Cognome"));
+				
 				RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
 				rd.forward(request, response);
 
