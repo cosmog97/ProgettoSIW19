@@ -1,23 +1,54 @@
 /**
  * 
  */
-
-data1 = "";
-
+var ok = [];
+var data1 = [
+	{
+		"nome": "Pasta 4Formaggi",
+		"categoria": "Cibo",
+		"inizio": "84/37/4841",
+		"fine": "84/37/4841",
+		"scadenza": "84/37/4841",
+		"creatore": "oppi96",
+		"numattualeprenotati": 30,
+		"nummaxprenotati": 40,
+		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
+	},
+	{
+		"nome": "Pasta 4Formaggi",
+		"categoria": "Cibo",
+		"inizio": "84/37/4841",
+		"fine": "84/37/4841",
+		"scadenza": "84/37/4841",
+		"creatore": "oppi96",
+		"numattualeprenotati": 30,
+		"nummaxprenotati": 40,
+		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
+	}];
+console.log("Prima");
+console.log(data1);
+console.log("End Prima");
 $.ajax({
-
-    url : "CercaEventi",
-    method : "POST",
-    dataType : 'json',
-    error : function() {
-
-        alert("Error Occured");
-    },
-    success : function(data) {
-       allert("Letto");
-
-    }
-});
+        url: "CercaEventi",
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        mimeType: 'application/json',
+ 
+        success: function (data) {
+          var test = JSON.parse(JSON.stringify(data));
+          ok = data1.concat(test);
+          console.log("Json");
+          console.log(ok);
+          console.log("End Json");
+        },
+        error:function() {
+            alert("error");
+        }
+    });
+console.log("Dopo");
+console.log(test);
+console.log("End Dopo");
 /*data = [
 	{
 		"nome": "Pasta 4Formaggi",
@@ -151,14 +182,14 @@ var postidisponibili = "";
 var image="";
 var products="";
 
-for (var i = 0; i < data.length; i++) {if (window.CP.shouldStopExecution(1)){break;}
+for (var i = 0; i < data1.length; i++) {if (window.CP.shouldStopExecution(1)){break;}
 	var nomeevento = data1[i].nome,
 		categoria = data1[i].categoria,
 		datainizio = data1[i].inizio,
-		datafine = data1[i].fine
+		datafine = data1[i].fine,
 		datascadenza = data1[i].scadenza,
 		creatoreevento = data1[i].creatore,
-		postidisponibili = data1[i].nummaxprenotati - data[i].numattualeprenotati,
+		postidisponibili = data1[i].nummaxprenotati - data1[i].numattualeprenotati,
 		image = "http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763";
 
 		
@@ -170,7 +201,7 @@ for (var i = 0; i < data.length; i++) {if (window.CP.shouldStopExecution(1)){bre
 
 
 	$("#products").html(products);
-	$(".filter-nomeutente").append(nomeutente);
+	$(".filter-nomeutente").append(nomeevento);
 	$(".filter-categoria").append(categoria);
 	$(".filter-datainizio").append(datainizio);
 	$(".filter-datafine").append(datafine);
@@ -182,7 +213,7 @@ for (var i = 0; i < data.length; i++) {if (window.CP.shouldStopExecution(1)){bre
 
 	//on filter change
 	$(".filter").on("change",function() {
-		var filterName = $(this).data("filter"),
+		var filterName = $(this).data1("filter"),
 			filterVal = $(this).val();
 		
 		if (filterVal == "") {
@@ -216,13 +247,13 @@ for (var i = 0; i < data.length; i++) {if (window.CP.shouldStopExecution(1)){bre
 
 		$(".product").hide();
 		$(".product").each(function() {
-			var nomeevento = $(this).data("nomeevento").toLowerCase(),
-				categoria = $(this).data("categoria").toLowerCase(),
-				datainizio = $(this).data("datainizio").toLowerCase(),
-				datafine = $(this).data("datafine").toLowerCase(),
-				datascadenza = $(this).data("datascadenza").toLowerCase(),
-				creatoreevento = $(this).data("creatoreevento").toLowerCase(),
-				postidisponibili = $(this).data("postidisponibili").toLowerCase();
+			var nomeevento = $(this).data1("nomeevento").toLowerCase(),
+				categoria = $(this).data1("categoria").toLowerCase(),
+				datainizio = $(this).data1("datainizio").toLowerCase(),
+				datafine = $(this).data1("datafine").toLowerCase(),
+				datascadenza = $(this).data1("datascadenza").toLowerCase(),
+				creatoreevento = $(this).data1("creatoreevento").toLowerCase(),
+				postidisponibili = $(this).data1("postidisponibili").toLowerCase();
 
 			if (   nomeevento.indexOf(query) > -1 
 				|| categoria.indexOf(query) > -1 
