@@ -41,14 +41,34 @@
     		<br>
            <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Dati personali</h6>
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Cerca il tuo evento</h6>
                 </div>
-			<form>
-				  <a>
-		             <button class="btn btn-primary btn-user btn-block" type="submit" action="CercaEventi" name="CercaEventi" type=submit>Cerca</button>
-		          </a>
-		    </form>
-		   </div>
+                <div>Ciao</div>
+                   <form class="user" name="Login" action="Login" method="post">
+
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Nome evento">
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" placeholder="Data di nascita">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Categoria">
+                  </div>
+                </div>
+				<div class="form-group row">
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Cognome">
+                  </div>
+                </div>
+                  </form>
+		   
+           </div>
+
 		</div>
 		
     </div>
@@ -58,6 +78,7 @@
 	</div>
 	<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script><script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
 	<script src='js/cercaevento/viewevents.js'></script>
+	</div>
 	</div>
 </body>
 </html>
