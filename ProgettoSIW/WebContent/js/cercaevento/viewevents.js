@@ -1,177 +1,28 @@
 /**
  * 
  */
-var ok = [];
-var data1 = [
-	{
-		"nome": "Pasta 4Formaggi",
-		"categoria": "Cibo",
-		"inizio": "84/37/4841",
-		"fine": "84/37/4841",
-		"scadenza": "84/37/4841",
-		"creatore": "oppi96",
-		"numattualeprenotati": 30,
-		"nummaxprenotati": 40,
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nome": "Pasta 4Formaggi",
-		"categoria": "Cibo",
-		"inizio": "84/37/4841",
-		"fine": "84/37/4841",
-		"scadenza": "84/37/4841",
-		"creatore": "oppi96",
-		"numattualeprenotati": 30,
-		"nummaxprenotati": 40,
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	}];
+
+data1 = [];
 console.log("Prima");
 console.log(data1);
 console.log("End Prima");
+
 $.ajax({
         url: "CercaEventi",
         type: 'POST',
         dataType: 'json',
         contentType: 'application/json',
         mimeType: 'application/json',
- 
+        async: false,
         success: function (data) {
-          var test = JSON.parse(JSON.stringify(data));
-          ok = data1.concat(test);
-          console.log("Json");
-          console.log(ok);
-          console.log("End Json");
+          data1 = JSON.parse(JSON.stringify(data));
         },
         error:function() {
-            alert("error");
+            alert("Errore. La ricerca non è andata a buon fine. Ricarica la pagina");
         }
     });
-console.log("Dopo");
-console.log(test);
-console.log("End Dopo");
-/*data = [
-	{
-		"nome": "Pasta 4Formaggi",
-		"categoria": "Cibo",
-		"datainizio": "84/37/4841",
-		"fine": "84/37/4841",
-		"scadenza": "84/37/4841",
-		"creatore": "oppi96",
-		"numattualeprenotati": 30,
-		"nummaxprenotati": 40,
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	}];
-data = [
-	{
-		"nomeevento": "Pasta 4Formaggi",
-		"categoria": "Cibo",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "oppi96",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	},
-	{
-		"nomeevento": "Mamma",
-		"categoria": "Sesso",
-		"datainizio": "84/37/4841",
-		"datafine": "84/37/4841",
-		"datascadenza": "84/37/4841",
-		"creatoreevento": "sesso",
-		"image":"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
-	}
-];
-*/
+
+
 var nomeevento = "";
 var categoria = "";
 var datainizio = "";
