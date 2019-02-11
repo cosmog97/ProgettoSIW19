@@ -31,6 +31,7 @@
 	<div class="header">
 		<a href="#default" class="logo">eBooker</a>
 		<div class="header-right">
+			Benvenuto ${sessionScope.Nome}
 			<a><button class="btn" onclick="window.location.href='contatti.jsp';">Contatti</button></a>
             <a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='dashboard.jsp';">Dashboard</button></a>
 			<a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='login.jsp';">Accedi</button></a>

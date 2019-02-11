@@ -42,9 +42,11 @@
                   </div>
                   <form class="user" name="Login" action="Login" method="post">
                     <div class="form-group">
+                    	<div align="center">Nome utente</div>
                       <input type="text" class="form-control form-control-user" name="Username" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Nome utente">
                     </div>
                     <div class="form-group">
+                    	<div align="center">Password</div>
                       <input type="password" class="form-control form-control-user" name="Password" id="exampleInputPassword" placeholder="Password">
                     </div>
  
@@ -58,7 +60,7 @@
                     <a class="small" href="forgot-password.html">Password dimenticata da vedere</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="register.jsp">Crea un account</a>
+                    <a class="small" href="register.jsp">Non sei registrato? Crea un account!</a>
                   </div>
                 </div>
               </div>

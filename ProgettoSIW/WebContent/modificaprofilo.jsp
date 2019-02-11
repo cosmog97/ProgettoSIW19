@@ -98,7 +98,7 @@
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                   	<div align="center">Data di nascita</div>
-                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" placeholder="${sessionScope.Datanascita}">
+                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" placeholder="${sessionScope.Datanascita} ">
                   </div>
                   <div class="col-sm-6">
                     <div align="center">Password</div>
@@ -108,7 +108,7 @@
                 <button class="btn btn-primary btn-user btn-block" type="submit" name="ModificaProfilo" type=submit>Modifica dati personali</button>
               </form>
               <br>
-              <div align="center"><h4>Modifica password</h4></div>
+              <hr>
                    <form class="user">
                 <div class="form-group row">
                   <div class="col-sm-6">

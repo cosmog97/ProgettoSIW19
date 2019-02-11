@@ -38,35 +38,44 @@
               </div>
               <form class="user" name="Register" action="Register" method="post">
                   <div class="form-group">
+                  <div align="center">Nome utente</div>
                   <input type="text" class="form-control form-control-user" id="Username" name="Username" placeholder="Nome utente">
                 </div>
                   <div class="form-group">
+                  <div align="center">Email</div>
                   	<input type="email" class="form-control form-control-user" id="Email" name="Email" placeholder="Email">
                   </div>
                           
                 <div class="form-group row">
                 
                   <div class="col-sm-6 mb-3 mb-sm-0">
+                  	<div align="center">Cognome</div>
                     <input type="text" class="form-control form-control-user" id="Cognome" name="Cognome" placeholder="Cognome">
                   </div>
                   <div class="col-sm-6">
+                  	<div align="center">Nome</div>
                     <input type="text" class="form-control form-control-user" id="Nome" name="Nome" placeholder="Nome">
                   </div>
                 </div>
   
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
+                  	<div align="center">Password</div>
                     <input type="password" class="form-control form-control-user" id="Password" name="Password" placeholder="Password">
                   </div>
+                  
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="Ripetipassword" name="Ripetipassword" placeholder="Ripeti Password">
+                  	<div align="center">Ripeti password</div>
+                    <input type="password" class="form-control form-control-user" id="Ripetipassword" name="Ripetipassword" placeholder="Ripeti password">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
+                 	<div align="center">Numero di telefono</div>
                     <input type="tel" class="form-control form-control-user" id="Numerotelefono" name="Numerotelefono" placeholder="Numero di telefono">
                   </div>
                   <div class="col-sm-6">
+                  	<div align="center">Data di nascita</div>
                     <input placeholder="Data di nascita" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" name="Datanascita" placeholder="Data di nascita">
                   </div>
                 </div>
