@@ -43,8 +43,9 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-center">Cerca il tuo evento</h6>
                 </div>
-                <div>Ciao</div>
-                   <form class="user" name="Login" action="Login" method="post">
+                 <div class="p-5">
+                
+                  <form class="user" name="Login" action="Login" method="post">
 
                 <div class="form-group">
                   <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Nome evento">
@@ -66,7 +67,7 @@
                   </div>
                 </div>
                   </form>
-		   
+		   </div>
            </div>
 
 		</div>

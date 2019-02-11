@@ -23,9 +23,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	public void save(Utente utente) {
 		Connection connection = this.dataSource.getConnection();
 		try {
-				String temp = "INSERT INTO gestioneeventidb.\"Utente\"(\r\n" + 
-						"	\"Username\", \"Password\", \"Cognome\", \"Nome\", \"Datanascita\", \"Email\", \"NumeroTelefono\", \"UltimaModPSW\")\r\n" + 
-						"	VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+				String temp ="INSERT INTO gestioneeventidb.\"Utente\"(\"Username\", \"Password\", \"Cognome\", \"Nome\", \"Datanascita\", \"Email\", \"NumeroTelefono\", \"UltimaModPSW\", \"Citta\", \"Provincia\") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 				PreparedStatement  statement = connection.prepareStatement(temp);
 				
 				statement.setString(1,utente.getUsername());
@@ -36,6 +34,8 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				statement.setString(6,utente.getEmail());
 				statement.setString(7, utente.getNumerotelefono());
 				statement.setDate(8, utente.getUltimamodpsw());
+				statement.setString(10,utente.getProvincia());
+				statement.setString(9,utente.getCitta());
 				//statement.setBoolean(8, utente.isValid());
 				//mettere la boolean emailvalida
 
@@ -80,8 +80,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		try {
 			Class.forName("org.postgresql.Driver");
 			
-			String select = "SELECT \"Username\", \"Password\", \"Cognome\", \"Nome\", \"Datanascita\", \"Email\", \"NumeroTelefono\", \"UltimaModPSW\"\r\n" + 
-					"	FROM gestioneeventidb.\"Utente\";";
+			String select = "SELECT \"Username\", \"Password\", \"Cognome\", \"Nome\", \"Datanascita\", \"Email\", \"NumeroTelefono\", \"UltimaModPSW\", \"Citta\", \"Provincia\" FROM gestioneeventidb.\"Utente\";";
 			
 			PreparedStatement statement = connection.prepareStatement(select);
 
@@ -97,8 +96,9 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	       	     utente.setEmail( rs.getString(6));
 	       	     utente.setNumerotelefono( rs.getString(7));
 	       	     utente.setUltimamodpsw( rs.getDate(8));
-	                
-                temp.add(utente);
+	             utente.setProvincia (rs.getString(10));
+	             utente.setCitta (rs.getString(9));
+	             temp.add(utente);
             }
             
 

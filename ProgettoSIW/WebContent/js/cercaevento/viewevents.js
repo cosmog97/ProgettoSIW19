@@ -17,7 +17,7 @@ $.ajax({
         success: function (data) {
           data1 = JSON.parse(JSON.stringify(data));
         },
-        error:function() {
+        error: function() {
             alert("Errore. La ricerca non è andata a buon fine. Ricarica la pagina");
         }
     });

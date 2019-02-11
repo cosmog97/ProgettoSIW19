@@ -63,6 +63,9 @@ public class EventoDAOJDBC implements EventoDAO {
 	       	     evento.setCreazione( rs.getTimestamp(8));
 	       	     evento.setScadenza( rs.getTimestamp(9));
 	       	     evento.setCreatore(rs.getString(10));
+	       	     evento.setProvincia(rs.getString(11));
+	       	     evento.setCitta(rs.getString(12));
+	       	     
 	                
                 temp.add(evento);
             }

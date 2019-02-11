@@ -12,11 +12,12 @@ public class Utente {
 	String email="";
 	String numerotelefono="";
 	Date ultimamodpsw=null;
-	public boolean valid=false;
+	String provincia="";
+	String citta="";
 	
 	
 	public Utente(String username, String password, String cognome, String nome, Date datanascita, String email,
-			String numerotelefono, Date ultimamodpsw, boolean valid) {
+			String numerotelefono, Date ultimamodpsw, String provincia, String citta) {
 		this.username = username;
 		this.password = password;
 		this.cognome = cognome;
@@ -25,7 +26,8 @@ public class Utente {
 		this.email = email;
 		this.numerotelefono = numerotelefono;
 		this.ultimamodpsw = ultimamodpsw;
-		this.valid = valid;
+		this.provincia = provincia;
+		this.citta = citta;
 	}
 	
 	public Utente() {
@@ -37,7 +39,7 @@ public class Utente {
 		this.email = "";
 		this.numerotelefono = "";
 		this.ultimamodpsw = null;
-		this.valid = false;
+
 	}
 
 	public String getUsername() {
@@ -89,12 +91,20 @@ public class Utente {
 		this.ultimamodpsw = ultimamodpsw;
 	}
 	
-	public boolean isValid() {
-		return valid;
+	public String getProvincia() {
+		return provincia;
 	}
 	
-	public void setValid(boolean valid) {
-		this.valid = valid;
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
 	}
 	
+	public String getCitta() {
+		return citta;
+	}
+	
+	public void setCitta (String citta) {
+		this.citta = citta;
+	}
+
 }

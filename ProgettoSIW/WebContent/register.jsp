@@ -79,6 +79,16 @@
                     <input placeholder="Data di nascita" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" name="Datanascita" placeholder="Data di nascita">
                   </div>
                 </div>
+                 <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                 	<div align="center">Provincia</div>
+                    <input type="text" class="form-control form-control-user" id="Provincia" name="Provincia" placeholder="Provincia">
+                  </div>
+                  <div class="col-sm-6">
+                  	<div align="center">Città</div>
+                    <input type="text" class="form-control form-control-user" id="Citta" name="Citta" placeholder="Citta">
+                  </div>
+                </div>
                 
                 <a>
                     <button class="btn btn-primary btn-user btn-block" type="submit" name="Register" type=submit>Registrati</button>

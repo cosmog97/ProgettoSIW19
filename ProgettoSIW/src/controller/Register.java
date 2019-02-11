@@ -45,7 +45,8 @@ public class Register extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    
+  	    UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();	
+		if(t.findByPrimaryKey(request.getParameter("Username")) != null) {
 	   	     Utente utente = new Utente();
 	   	     utente.setUsername(request.getParameter("Username"));
 	   	     //utente.setPassword(PasswordManager.getPasswordCrypto(request.getParameter("Password")));
@@ -57,12 +58,18 @@ public class Register extends HttpServlet {
 	   	     utente.setEmail(request.getParameter("Email"));
 	   	     utente.setNumerotelefono(request.getParameter("Numerotelefono"));
 	   	     utente.setUltimamodpsw(new Date(System.currentTimeMillis()));
-	   	     UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
+	   	     utente.setProvincia(request.getParameter("Provincia"));
+	   	     utente.setCitta(request.getParameter("Citta"));
+
 			 t.save(utente);
-			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			 RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			 rd.forward(request, response);
+		}
+		else {
+			RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
 			rd.forward(request, response);
 
-	   	       
+		}
 	}
 
 }

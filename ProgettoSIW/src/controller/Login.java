@@ -69,8 +69,10 @@ public class Login extends HttpServlet {
 				session.setAttribute("Email",temp.getEmail());
 				session.setAttribute("Datanascita",temp.getDatanascita());
 				session.setAttribute("Ultimamodpassword",temp.getUltimamodpsw());
+				session.setAttribute("Provincia",temp.getProvincia());
+				session.setAttribute("Citta",temp.getCitta());
 				
-				System.out.println("entrato come: "+session.getAttribute("Nome")+session.getAttribute("Cognome"));
+				System.out.println("Città "+temp.getCitta()+" Provincia "+temp.getProvincia());
 				
 				RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
 				rd.forward(request, response);

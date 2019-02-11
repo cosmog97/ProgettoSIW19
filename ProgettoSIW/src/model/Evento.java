@@ -13,13 +13,14 @@ public class Evento {
 	Timestamp fine;
 	Timestamp creazione;
 	Timestamp scadenza;
-	
+	String citta;
+	String provincia;
 	public Evento() {
 		
 	}
 	
 	public Evento(int id, String nome, String categoria,int numattualeprenotati,
-			int nummaxprenotati, Timestamp inizio, Timestamp fine, Timestamp creazione, Timestamp scadenza,String creatore) {
+			int nummaxprenotati, Timestamp inizio, Timestamp fine, Timestamp creazione, Timestamp scadenza,String creatore,String provincia,String citta) {
 		this.id = id;
 		this.nome = nome;
 		this.categoria = categoria;
@@ -30,6 +31,8 @@ public class Evento {
 		this.fine = fine;
 		this.creazione = creazione;
 		this.scadenza = scadenza;
+		this.citta = citta;
+		this.provincia = provincia;
 	}
 	
 	public int getId() {
@@ -92,5 +95,21 @@ public class Evento {
 	public void setScadenza(Timestamp scadenza) {
 		this.scadenza = scadenza;
 	}
+	public String getProvincia() {
+		return provincia;
+	}
+	
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
+	}
+	
+	public String getCitta() {
+		return citta;
+	}
+	
+	public void setCitta (String citta) {
+		this.citta = citta;
+	}
+
 	
 }

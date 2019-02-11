@@ -97,6 +97,16 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
+                  	<div align="center">Provincia</div>
+                    <input type="email" class="form-control form-control-user" id="Provincia" placeholder="${sessionScope.Provincia}">
+                  </div>
+                  <div class="col-sm-6">
+                    <div align="center">Città</div>
+                    <input type="text" class="form-control form-control-user" id="Citta" placeholder="${sessionScope.Citta}">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
                   	<div align="center">Data di nascita</div>
                     <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" placeholder="${sessionScope.Datanascita} ">
                   </div>
@@ -105,6 +115,7 @@
                     <input type="password" class="form-control form-control-user" id="Password" placeholder="Password">
                   </div>
                 </div>
+                
                 <button class="btn btn-primary btn-user btn-block" type="submit" name="ModificaProfilo" type=submit>Modifica dati personali</button>
               </form>
               <br>
