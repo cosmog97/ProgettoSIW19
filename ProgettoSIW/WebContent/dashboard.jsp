@@ -72,8 +72,10 @@
                   <h6 class="m-0 font-weight-bold text-primary">Statistiche</h6>
                 </div>
           <div class="card-body">
+          <div align="center">Ecco un breve riepilogo sull'attività del tuo profilo, ${sessionScope.Nome}. Organize yourself!</div>
+          <br>
           <div class="row">
-
+			
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">

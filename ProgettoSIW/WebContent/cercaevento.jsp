@@ -45,30 +45,39 @@
                 </div>
                  <div class="p-5">
                 
-                  <form class="user" name="Login" action="Login" method="post">
+                  <form class="user" name="" action="" method="post">
 
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Nome evento">
+                  <input type="text" class="form-control form-control-user" id="Nomeevento" placeholder="Nome evento">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" placeholder="Data di nascita">
+                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datainizio" placeholder="Data inizio evento">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Categoria">
+                    <input type="text" class="form-control form-control-user" id="Categoria" placeholder="Categoria">
                   </div>
                 </div>
 				<div class="form-group row">
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="Provincia" placeholder="Provincia">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Cognome">
+                    <input type="text" class="form-control form-control-user" id="Citta" placeholder="Città">
                   </div>
                 </div>
-                  </form>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="Creatore" placeholder="Creatore evento">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="Postidisponibili" placeholder="Posti disponibili">
+                  </div>
+                </div>
+                <button class="btn btn-primary btn-user btn-block" type="submit" name="" type=submit>Cerca eventi</button>
+              </form>
 		   </div>
-           </div>
+         </div>
 
 		</div>
 		
