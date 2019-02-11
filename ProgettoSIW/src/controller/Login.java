@@ -50,7 +50,7 @@ public class Login extends HttpServlet {
 	
 		if (temp != null && temp.getUsername().equals(username)) {
 			if(password.equals(temp.getPassword())) {
-				String query =" UPDATE gestioneeventidb.\"Utente\"" +
+				/*String query =" UPDATE gestioneeventidb.\"Utente\"" +
 						"SET \"Cognome\"=?, \"Nome\"=?,"+
 								"WHERE \"Username\"=?;";
 				//cookie
@@ -59,15 +59,17 @@ public class Login extends HttpServlet {
 				utente.setPath("/");
 				utente.setMaxAge(60*60);
 				utente.setSecure(false);
-				response.addCookie(utente);
+				response.addCookie(utente);*/
 				//commit di prova
 				//session
 				HttpSession session = request.getSession();
 				session.setAttribute("Username", username);
 				session.setAttribute("Nome",temp.getNome());
 				session.setAttribute("Cognome",temp.getCognome());
+				session.setAttribute("Datanascita",temp.getDatanascita());
+				session.setAttribute("Ultimamodpassword",temp.getUltimamodpsw());
 				
-				System.out.println("entarto come: "+session.getAttribute("Nome")+session.getAttribute("Cognome"));
+				System.out.println("entrato come: "+session.getAttribute("Nome")+session.getAttribute("Cognome"));
 				
 				RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
 				rd.forward(request, response);

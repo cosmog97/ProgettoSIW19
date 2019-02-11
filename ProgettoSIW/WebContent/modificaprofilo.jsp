@@ -83,21 +83,21 @@
 
                 <div class="form-group row">
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" name="Nome" id="exampleFirstName" placeholder="Nome">
+                    <input type="text" class="form-control form-control-user" name="Nome" id="Nome" placeholder="Nome">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" name="Cognome" id="exampleLastName" placeholder="Cognome">
+                    <input type="text" class="form-control form-control-user" name="Cognome" id="Cognome" placeholder="Cognome">
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
+                  <input type="email" class="form-control form-control-user" id="Email" placeholder="Email">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" placeholder="Data di nascita">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Password">
+                    <input type="password" class="form-control form-control-user" id="Password" placeholder="Password">
                   </div>
                 </div>
                 <button class="btn btn-primary btn-user btn-block" type="submit" name="ModificaProfilo" type=submit>Modifica Dati</button>

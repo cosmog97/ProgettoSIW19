@@ -42,16 +42,17 @@ public class ModificaProfilo extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nome = (String)request.getParameter("Nome");
-		String cognome = (String)request.getParameter("Cognome");
-		
+
 		HttpSession session = request.getSession();
 		
 		String usernameCorrente = (String)session.getAttribute("Username");
 		String nomeCorrente = (String)session.getAttribute("Nome");
-		String cognomenomeCorrente = (String)session.getAttribute("Cognome");
+		String cognomeCorrente = (String)session.getAttribute("Cognome");
+		String nome = (String) request.getParameter("Nome");
+		String cognome = (String) request.getParameter("Cognome");
 		
-		System.out.println("usernamecorrente "+usernameCorrente+" "+"nomecorrente "+nomeCorrente+" "+"cognomecorrente "+cognomenomeCorrente);
+		
+		System.out.println("nomecorrente: "+nomeCorrente+ "" + cognomeCorrente);
 		
 		UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
 		Utente temp = t.findByPrimaryKey(usernameCorrente);
@@ -60,18 +61,15 @@ public class ModificaProfilo extends HttpServlet {
 			
 			temp.setNome(nome);
 			temp.setCognome(cognome);
-			t.modifica(temp);
-			
-			/*attribuire a sessione valori*/
+			t.update(temp);
+			Utente temp2 = t.findByPrimaryKey(usernameCorrente);
+			System.out.println("nomeaggiornato: "+ temp2.getNome() + " " + temp2.getCognome());
+
 			session.setAttribute("Username",usernameCorrente);
-			session.setAttribute("Nome",temp.getNome());
-			session.setAttribute("Cognome",temp.getCognome());
+			session.setAttribute("Nome",temp2.getNome());
+			session.setAttribute("Cognome",temp2.getCognome());
 			
-			
-			
-			
-			
-			RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("modificaprofilo.jsp");
 			rd.forward(request, response);
 		}
 		

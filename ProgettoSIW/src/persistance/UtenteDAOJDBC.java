@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,7 +79,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		List<Utente> temp = new ArrayList<Utente>();
 		try {
 			Class.forName("org.postgresql.Driver");
-
+			
 			String select = "SELECT \"Username\", \"Password\", \"Cognome\", \"Nome\", \"Datanascita\", \"Email\", \"NumeroTelefono\", \"UltimaModPSW\"\r\n" + 
 					"	FROM gestioneeventidb.\"Utente\";";
 			
@@ -126,43 +127,20 @@ public class UtenteDAOJDBC implements UtenteDAO {
 
 	@Override
 	public void update(Utente utente) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void delete(Utente utente) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setPassword(Utente utente, String password) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void modifica(Utente utente) {
-		// TODO Auto-generated method stub
+	
 		Connection connection = this.dataSource.getConnection();		
 		try {
 				Class.forName("org.postgresql.Driver");
 
-				String update = " UPDATE gestioneeventidb.\"Utente\"" +
-						"SET \"Cognome\"=?, \"Nome\"=?,"+
-						"WHERE \"Username\"=?;";
-					
-				PreparedStatement statement = connection.prepareStatement(update);
-				//ResultSet rs = statement.executeQuery(update);
-				
-				ResultSet rs = statement.executeQuery(update);
-				
-				statement.setString(1,utente.getCognome());
-				statement.setString(2,utente.getNome());
-				statement.setString(3,utente.getUsername());
-				
-				System.out.println("utente modificato in: "+utente.getNome()+" "+utente.getCognome());
+				String update = " UPDATE gestioneeventidb.\"Utente\" " +
+						"SET \"Cognome\"='"+ utente.getCognome() + "', \"Nome\"='" + utente.getNome()+ "'"+
+						" WHERE \"Username\"='" + utente.getUsername()+"';";
+				System.out.println(update);
+				Statement statement = connection.createStatement();
+
+				statement.executeUpdate(update);
+				Utente c = this.findByPrimaryKey(utente.getUsername());
+				System.out.println("Query: " + c.getNome() + " " + c.getCognome() );
 				
 				//int tuplemodificate=statement.executeUpdate();
 				
@@ -192,6 +170,24 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				}
 			}
 		
+
+	}
+
+	@Override
+	public void delete(Utente utente) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setPassword(Utente utente, String password) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void modifica(Utente utente) {
+		/
 	}
 	
 
