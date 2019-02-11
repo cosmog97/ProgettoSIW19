@@ -30,6 +30,8 @@ var datafine = "";
 var datascadenza = "";
 var creatoreevento = "";
 var postidisponibili = "";
+var citta="";
+var provincia="";
 var image="";
 var products="";
 
@@ -41,11 +43,13 @@ for (var i = 0; i < data1.length; i++) {if (window.CP.shouldStopExecution(1)){br
 		datascadenza = data1[i].scadenza,
 		creatoreevento = data1[i].creatore,
 		postidisponibili = data1[i].nummaxprenotati - data1[i].numattualeprenotati,
+		citta = data1[i].citta,
+		provincia = data1[i].provincia,
 		image = "http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763";
 
 		
 		//create product cards
-		products += "<div class='col-sm-4 product' data-nomeevento='"+nomeevento+"' data-categoria='"+categoria+"' data-datainizio='"+datainizio+"' data-datafine='"+datafine+"' data-datascadenza='"+datascadenza+"' data-creatoreevento='"+creatoreevento+"' data-postidisponibili='"+postidisponibili+"'><div class='product-inner text-center'><img src='"+image+"'><br />Nome evento: "+nomeevento +"<br />Categoria: "+categoria+"<br />Data inizio: "+datainizio+"<br />Data fine: "+datafine+"<br />Data scadenza: "+datascadenza+"<br />Creatore : "+creatoreevento+"<br />Posti disponibili: "+postidisponibili+"</div></div>";
+		products += "<div class='col-sm-4 product' data-nomeevento='"+nomeevento+"' data-categoria='"+categoria+"' data-datainizio='"+datainizio+"' data-datafine='"+datafine+"' data-datascadenza='"+datascadenza+"' data-creatoreevento='"+creatoreevento+"' data-postidisponibili='"+postidisponibili+"' data-citta='"+citta+"' data-provincia='"+provincia+"'><div class='product-inner text-center'><img src='"+image+"'><br />Nome evento: "+nomeevento +"<br />Categoria: "+categoria+"<br />Data inizio: "+datainizio+"<br />Data fine: "+datafine+"<br />Data scadenza: "+datascadenza+"<br />Creatore : "+creatoreevento+"<br />Posti disponibili: "+postidisponibili+"<br />Città: "+citta+" <br />Posti disponibili: "+provincia+"</div></div>";
 
 	}
 	window.CP.exitedLoop(1);
@@ -59,6 +63,8 @@ for (var i = 0; i < data1.length; i++) {if (window.CP.shouldStopExecution(1)){br
 	$(".filter-datascadenza").append(datascadenza);
 	$(".filter-creatoreevento").append(creatoreevento);
 	$(".filter-postidisponibili").append(postidisponibili);
+	$(".filter-citta").append(citta);
+	$(".filter-provincia").append(provincia);
 
 	var filtersObject = {};
 
@@ -105,6 +111,8 @@ for (var i = 0; i < data1.length; i++) {if (window.CP.shouldStopExecution(1)){br
 				datascadenza = $(this).data1("datascadenza").toLowerCase(),
 				creatoreevento = $(this).data1("creatoreevento").toLowerCase(),
 				postidisponibili = $(this).data1("postidisponibili").toLowerCase();
+				citta = $(this).data1("citta").toLowerCase();
+				provincia = $(this).data1("provincia").toLowerCase();
 
 			if (   nomeevento.indexOf(query) > -1 
 				|| categoria.indexOf(query) > -1 
@@ -112,7 +120,9 @@ for (var i = 0; i < data1.length; i++) {if (window.CP.shouldStopExecution(1)){br
 				|| datafine.indexOf(query) > -1
 				|| datascadenza.indexOf(query) > -1
 				|| creatoreevento.indexOf(query) > -1
-				|| postidisponibili.indexOf(query) > -1) {
+				|| postidisponibili.indexOf(query) > -1
+				|| citta.indexOf(query) > -1
+				|| provincia.indexOf(query) > -1) {
 				$(this).show();
 			}
 		});
