@@ -13,5 +13,5 @@ public interface UtenteDAO {
 	public void update(Utente utente);
 	public void delete(Utente utente);
 	public void setPassword(Utente utente, String password);
-	public void modifica(Utente utente);
+
 }

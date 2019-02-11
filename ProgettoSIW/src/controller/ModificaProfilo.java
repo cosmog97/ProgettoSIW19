@@ -58,9 +58,14 @@ public class ModificaProfilo extends HttpServlet {
 		Utente temp = t.findByPrimaryKey(usernameCorrente);
 		
 		if(temp!=null) {
-			
-			temp.setNome(nome);
-			temp.setCognome(cognome);
+			if(nome != null) {
+				temp.setNome(nome);
+				System.out.println("OK nome");
+			}
+			if(cognome != null) {
+				temp.setCognome(cognome);
+				System.out.println("Ok cognome");
+			}
 			t.update(temp);
 			Utente temp2 = t.findByPrimaryKey(usernameCorrente);
 			System.out.println("nomeaggiornato: "+ temp2.getNome() + " " + temp2.getCognome());

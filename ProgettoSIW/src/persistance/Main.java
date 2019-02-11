@@ -11,11 +11,7 @@ public class Main {
 		DataSource dataSource = new DataSource();
 		UtenteDAO test = new UtenteDAOJDBC(dataSource);
 		Utente c = test.findByPrimaryKey("cosmog97");
-		c.setNome("Achiropita");
-		c.setCognome("Martilotti");
-		test.modifica(c);
-		Utente c2 = test.findByPrimaryKey("cosmog97");
-		System.out.println("test: " + c2.getNome() + " " + c2.getCognome() );
+
 	}
 
 }

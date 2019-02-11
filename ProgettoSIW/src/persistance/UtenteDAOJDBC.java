@@ -185,11 +185,5 @@ public class UtenteDAOJDBC implements UtenteDAO {
 
 	}
 
-	@Override
-	public void modifica(Utente utente) {
-		/
-	}
-	
-
 }
 		

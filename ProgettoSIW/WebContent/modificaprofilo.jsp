@@ -83,41 +83,51 @@
 
                 <div class="form-group row">
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" name="Nome" id="Nome" placeholder="Nome">
+                  	<div align="center">Nome</div>
+                    <input type="text" class="form-control form-control-user" name="Nome" id="Nome" placeholder="${sessionScope.Nome}">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" name="Cognome" id="Cognome" placeholder="Cognome">
+                  	<div align="center">Cognome</div>
+                    <input type="text" class="form-control form-control-user" name="Cognome" id="Cognome" placeholder="${sessionScope.Cognome}">
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="Email" placeholder="Email">
+                  <div align="center">Email</div>
+                  <input type="email" class="form-control form-control-user" id="Email" placeholder="${sessionScope.Email}">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" placeholder="Data di nascita">
+                  	<div align="center">Data di nascita</div>
+                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" placeholder="${sessionScope.Datanascita}">
                   </div>
                   <div class="col-sm-6">
+                    <div align="center">Password</div>
                     <input type="password" class="form-control form-control-user" id="Password" placeholder="Password">
                   </div>
                 </div>
-                <button class="btn btn-primary btn-user btn-block" type="submit" name="ModificaProfilo" type=submit>Modifica Dati</button>
+                <button class="btn btn-primary btn-user btn-block" type="submit" name="ModificaProfilo" type=submit>Modifica dati personali</button>
               </form>
               <br>
+              <div align="center"><h4>Modifica password</h4></div>
                    <form class="user">
                 <div class="form-group row">
                   <div class="col-sm-6">
+                    <div align="center">Vecchia password</div>
                     <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Vecchia password">
                   </div>
                   <div class="col-sm-6">
+                  <div align="center">Nuova password</div>
                     <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Nuova password">
                   </div>
                 </div>
 				
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
+                 	<div align="center">Ripeti nuova password</div>
                     <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Ripeti nuova password">
                   </div>
                   <div class="col-sm-6">
+                  <br>
                                     <a href="INSERIRECLASSE" class="btn btn-primary btn-user btn-block">
                   Aggiorna password
                 </a>

@@ -66,6 +66,7 @@ public class Login extends HttpServlet {
 				session.setAttribute("Username", username);
 				session.setAttribute("Nome",temp.getNome());
 				session.setAttribute("Cognome",temp.getCognome());
+				session.setAttribute("Email",temp.getEmail());
 				session.setAttribute("Datanascita",temp.getDatanascita());
 				session.setAttribute("Ultimamodpassword",temp.getUltimamodpsw());
 				
