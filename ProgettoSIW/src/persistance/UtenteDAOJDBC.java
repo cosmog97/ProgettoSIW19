@@ -132,28 +132,11 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		try {
 				Class.forName("org.postgresql.Driver");
 
-				String update = " UPDATE gestioneeventidb.\"Utente\" " +
-						"SET \"Cognome\"='"+ utente.getCognome() + "', \"Nome\"='" + utente.getNome()+ "'"+
-						" WHERE \"Username\"='" + utente.getUsername()+"';";
+				String update = "UPDATE gestioneeventidb.\"Utente\" SET \"Cognome\"='"+utente.getCognome()+"', \"Nome\"='"+utente.getNome()+"', \"Datanascita\"='"+utente.getDatanascita()+"', \"Email\"='"+utente.getEmail()+"', \"NumeroTelefono\"='"+utente.getNumerotelefono()+"', \"Citta\"='"+utente.getCitta()+"', \"Provincia\"='"+utente.getProvincia()+"' WHERE \"Username\"='"+utente.getUsername()+"';";
 				System.out.println(update);
 				Statement statement = connection.createStatement();
 
 				statement.executeUpdate(update);
-				Utente c = this.findByPrimaryKey(utente.getUsername());
-				System.out.println("Query: " + c.getNome() + " " + c.getCognome() );
-				
-				//int tuplemodificate=statement.executeUpdate();
-				
-				
-				
-	            /*if (tuplemodificate > 0) { 
-	                System.out.println("******************User Updated"); 
-	            } else {
-	                System.out.println("******************Error Occured");
-	            }*/
-				//System.out.println("***************"+tuplemodificate);
-				
-
 			}
 		catch (SQLException e) {
 				e.printStackTrace();

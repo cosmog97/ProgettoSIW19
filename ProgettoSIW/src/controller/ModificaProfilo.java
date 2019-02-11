@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,15 +43,29 @@ public class ModificaProfilo extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
 		HttpSession session = request.getSession();
 		
 		String usernameCorrente = (String)session.getAttribute("Username");
 		String nomeCorrente = (String)session.getAttribute("Nome");
 		String cognomeCorrente = (String)session.getAttribute("Cognome");
+		String emailCorrente = (String) session.getAttribute("Email");
+		String dataNascitaCorrente = (String) session.getAttribute("Datanascita");
+		String provinciaCorrente = (String)session.getAttribute("Provincia");
+		String cittaCorrente = (String)session.getAttribute("Citta");
+		
 		String nome = (String) request.getParameter("Nome");
 		String cognome = (String) request.getParameter("Cognome");
+		String email = (String) request.getParameter("Email");
+		String datanascita = (String) request.getParameter("Datanascita");
+		System.out.println("test" + request.getParameter("Datanascita"));
 		
+		
+		
+		
+		//System.out.println(request.getParameter("Datanascita"));
+		//Date dataNascitaStr = java.sql.Date.valueOf(request.getParameter("Datanascita"));
+		String provincia = (String) request.getParameter("Provincia");
+		String citta = (String) request.getParameter("Citta");
 		
 		System.out.println("nomecorrente: "+nomeCorrente+ "" + cognomeCorrente);
 		
@@ -66,13 +81,32 @@ public class ModificaProfilo extends HttpServlet {
 				temp.setCognome(cognome);
 				System.out.println("Ok cognome");
 			}
+			if(email != null) {
+				temp.setEmail(email);
+				System.out.println("Ok email");
+			}
+		/*	if (dataNascitaStr != null) {
+				temp.setDatanascita(dataNascitaStr);
+				System.out.println("OK datanascita");
+			}*/
+			if(provincia != null) {
+				temp.setProvincia(provincia);
+				System.out.println("Ok provincia");
+			}
+			if(citta != null) {
+				temp.setCitta(citta);
+				System.out.println("Ok citta");
+			}
 			t.update(temp);
 			Utente temp2 = t.findByPrimaryKey(usernameCorrente);
-			System.out.println("nomeaggiornato: "+ temp2.getNome() + " " + temp2.getCognome());
-
+			
 			session.setAttribute("Username",usernameCorrente);
 			session.setAttribute("Nome",temp2.getNome());
 			session.setAttribute("Cognome",temp2.getCognome());
+			session.setAttribute("Email",temp2.getEmail());
+			session.setAttribute("Datanascita",temp2.getDatanascita());
+			session.setAttribute("Provincia",temp2.getProvincia());
+			session.setAttribute("Citta",temp2.getCitta());
 			
 			RequestDispatcher rd = request.getRequestDispatcher("modificaprofilo.jsp");
 			rd.forward(request, response);
