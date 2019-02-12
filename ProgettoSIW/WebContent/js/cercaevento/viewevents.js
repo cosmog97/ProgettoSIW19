@@ -2,21 +2,31 @@
  * 
  */
 function cercaeventi () {
-	data1 = [];
+	array = [];
 	
-	nomeevento = document.getElementById("Nomeevento").value;
-	categoria = document.getElementById("Categoria").value;
-	creatore = document.getElementById("Creatore").value;
-	datainizio = document.getElementById("Datainizio").value;
-	numeroposti = document.getElementById("Numposti").value;
-	provincia = document.getElementById("Provincia").value;
-	citta = document.getElementById("Citta").value;
+	nomeevento = $("#Nomeevento").val();
+	categoria = $("#Categoria").val();
+	creatore = $("#Creatore").val();
+	datainizio = $("#Datainizio").val();
+	numeroposti = $("#Numposti").val();
+	provincia = $("#Provincia").val();
+	citta = $("#Citta").val();
+
+	array.push(nomeevento);
+	array.push(categoria);
+	array.push(creatore);
+	array.push(datainizio);
+	array.push(numeroposti);
+	array.push(provincia);
+	array.push(citta);
 	
-	
+	var json = JSON.stringify(array);
+	console.log(json);
 	$.ajax({
 	        url: "CercaEventi",
 	        type: 'POST',
 	        async: true,
+	        data: json,
 	        success: function (data) {
 	          //console.log(data);
 	          //data1 = JSON.parse(JSON.stringify(data));
@@ -27,9 +37,6 @@ function cercaeventi () {
 	            alert("Errore. La ricerca non è andata a buon fine. Ricarica la pagina");
 	        }
 	    });
-	
-
-	console.log("End Prima");	
 }
 
 function mostraeventi(data1) {
