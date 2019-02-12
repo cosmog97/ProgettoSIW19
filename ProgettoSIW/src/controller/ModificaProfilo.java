@@ -49,7 +49,7 @@ public class ModificaProfilo extends HttpServlet {
 		String nomeCorrente = (String)session.getAttribute("Nome");
 		String cognomeCorrente = (String)session.getAttribute("Cognome");
 		String emailCorrente = (String) session.getAttribute("Email");
-		String dataNascitaCorrente = (String) session.getAttribute("Datanascita");
+		Date dataNascitaCorrente = (Date) session.getAttribute("Datanascita");
 		String provinciaCorrente = (String)session.getAttribute("Provincia");
 		String cittaCorrente = (String)session.getAttribute("Citta");
 		

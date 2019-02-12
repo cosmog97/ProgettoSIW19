@@ -108,7 +108,7 @@
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                   	<div align="center">Data di nascita</div>
-                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" placeholder="${sessionScope.Datanascita} ">
+                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" name="Datanascita" placeholder="${sessionScope.Datanascita} ">
                   </div>
                   <div class="col-sm-6">
                     <div align="center">Password</div>
