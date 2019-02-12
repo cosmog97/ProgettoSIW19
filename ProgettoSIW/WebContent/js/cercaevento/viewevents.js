@@ -27,6 +27,8 @@ function cercaeventi () {
 	        type: 'POST',
 	        async: true,
 	        data: json,
+	        contentType: 'application/json',
+	        mimeType: 'application/json',
 	        success: function (data) {
 	          //console.log(data);
 	          //data1 = JSON.parse(JSON.stringify(data));
@@ -40,6 +42,7 @@ function cercaeventi () {
 }
 
 function mostraeventi(data1) {
+	var id = "";
 	var nomeevento = "";
 	var categoria = "";
 	var datainizio = "";
@@ -54,6 +57,7 @@ function mostraeventi(data1) {
 
 	for (var i = 0; i < data1.length; i++) {
 		var nomeevento = data1[i].nome,
+			id = data1[i].id,
 			categoria = data1[i].categoria,
 			datainizio = data1[i].inizio,
 			datafine = data1[i].fine,
@@ -66,7 +70,7 @@ function mostraeventi(data1) {
 	
 			
 			//create product cards
-			products += "<div class='col-sm-4 product' data-nomeevento='"+nomeevento+"' data-categoria='"+categoria+"' data-datainizio='"+datainizio+"' data-datafine='"+datafine+"' data-datascadenza='"+datascadenza+"' data-creatoreevento='"+creatoreevento+"' data-postidisponibili='"+postidisponibili+"' data-citta='"+citta+"' data-provincia='"+provincia+"'><div class='product-inner text-center'><img src='"+image+"'><br />Nome evento: "+nomeevento +"<br />Categoria: "+categoria+"<br />Data inizio: "+datainizio+"<br />Data fine: "+datafine+"<br />Data scadenza: "+datascadenza+"<br />Creatore : "+creatoreevento+"<br />Posti disponibili: "+postidisponibili+"<br />Città: "+citta+" <br />Posti disponibili: "+provincia+"</div></div>";
+			products += "<div class='col-sm-4 product' data-nomeevento='"+nomeevento+"' data-categoria='"+categoria+"' data-datainizio='"+datainizio+"' data-datafine='"+datafine+"' data-datascadenza='"+datascadenza+"' data-creatoreevento='"+creatoreevento+"' data-postidisponibili='"+postidisponibili+"' data-citta='"+citta+"' data-provincia='"+provincia+"'><div class='product-inner text-center'><img src='"+image+"'><br />Nome evento: "+nomeevento +"<br />Categoria: "+categoria+"<br />Data inizio: "+datainizio+"<br />Data fine: "+datafine+"<br />Data scadenza: "+datascadenza+"<br />Creatore : "+creatoreevento+"<br />Posti disponibili: "+postidisponibili+"<br />Citta': "+citta+" <br />Provincia: "+provincia+"<br />Test</div></div>";
 	
 		}
 
