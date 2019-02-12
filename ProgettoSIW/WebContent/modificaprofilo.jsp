@@ -124,11 +124,11 @@
                 <div class="form-group row">
                   <div class="col-sm-6">
                     <div align="center">Vecchia password</div>
-                    <input type="text" class="form-control form-control-user" id="Vecchiapassword" name="Vecchiapassword" placeholder="Vecchia password">
+                    <input type="password" class="form-control form-control-user" id="Vecchiapassword" name="Vecchiapassword" placeholder="Vecchia password">
                   </div>
                   <div class="col-sm-6">
                   <div align="center">Nuova password</div>
-                    <input type="text" class="form-control form-control-user" id="Nuovapassword" name="Nuovapassword" placeholder="Nuova password">
+                    <input type="password" class="form-control form-control-user" id="Nuovapassword" name="Nuovapassword" placeholder="Nuova password">
                   </div>
                 </div>
 				

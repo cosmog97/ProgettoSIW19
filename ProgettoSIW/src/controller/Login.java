@@ -71,9 +71,6 @@ public class Login extends HttpServlet {
 				session.setAttribute("Ultimamodpassword",temp.getUltimamodpsw());
 				session.setAttribute("Provincia",temp.getProvincia());
 				session.setAttribute("Citta",temp.getCitta());
-				
-				System.out.println("Città "+temp.getCitta()+" Provincia "+temp.getProvincia());
-				
 				RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
 				rd.forward(request, response);
 

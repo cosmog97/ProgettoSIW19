@@ -169,7 +169,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		try {
 				Class.forName("org.postgresql.Driver");
 	
-				String update = "UPDATE gestioneeventidb.\"Utente\" SET \"Password\"='"+nomeutente+"', \"UltimaModPSW\"='"+data+"' WHERE \"Username\"='"+nomeutente+"';";
+				String update = "UPDATE gestioneeventidb.\"Utente\" SET \"Password\"='"+password+"', \"UltimaModPSW\"='"+data+"' WHERE \"Username\"='"+nomeutente+"';";
 				System.out.println(update);
 				Statement statement = connection.createStatement();
 
