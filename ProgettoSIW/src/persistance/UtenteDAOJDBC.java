@@ -2,6 +2,7 @@ package persistance;
 
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -163,8 +164,32 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	}
 
 	@Override
-	public void setPassword(Utente utente, String password) {
-		// TODO Auto-generated method stub
+	public void setPassword(String nomeutente, String password, Date data) {
+		Connection connection = this.dataSource.getConnection();		
+		try {
+				Class.forName("org.postgresql.Driver");
+	
+				String update = "UPDATE gestioneeventidb.\"Utente\" SET \"Password\"='"+nomeutente+"', \"UltimaModPSW\"='"+data+"' WHERE \"Username\"='"+nomeutente+"';";
+				System.out.println(update);
+				Statement statement = connection.createStatement();
+
+				statement.executeUpdate(update);
+			}
+		catch (SQLException e) {
+				e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+		}
+		finally {
+				try {
+					connection.close();
+				} 
+				catch (SQLException e) {
+						e.printStackTrace();
+				}
+			}
+		
 
 	}
 

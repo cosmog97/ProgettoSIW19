@@ -120,28 +120,26 @@
               </form>
               <br>
               <hr>
-                   <form class="user">
+                   <form class="user" name="ModificaPassword" action="ModificaPassword" method="post">
                 <div class="form-group row">
                   <div class="col-sm-6">
                     <div align="center">Vecchia password</div>
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Vecchia password">
+                    <input type="text" class="form-control form-control-user" id="Vecchiapassword" name="Vecchiapassword" placeholder="Vecchia password">
                   </div>
                   <div class="col-sm-6">
                   <div align="center">Nuova password</div>
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Nuova password">
+                    <input type="text" class="form-control form-control-user" id="Nuovapassword" name="Nuovapassword" placeholder="Nuova password">
                   </div>
                 </div>
 				
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                  	<div align="center">Ripeti nuova password</div>
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Ripeti nuova password">
+                    <input type="password" class="form-control form-control-user" id="Ripetinuovapassword" name="Ripetinuovapassword" placeholder="Ripeti nuova password">
                   </div>
                   <div class="col-sm-6">
                   <br>
-                                    <a href="INSERIRECLASSE" class="btn btn-primary btn-user btn-block">
-                  Aggiorna password
-                </a>
+                         <button class="btn btn-primary btn-user btn-block" name="ModificaPassword" type=submit>Modifica password</button>
                   </div>
                 </div>
 
