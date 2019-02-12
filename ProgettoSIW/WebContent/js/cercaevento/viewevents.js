@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+function cercaeventi () {
 data1 = [];
 console.log("Prima");
 console.log(data1);
@@ -127,3 +127,4 @@ for (var i = 0; i < data1.length; i++) {if (window.CP.shouldStopExecution(1)){br
 			}
 		});
 	});
+};

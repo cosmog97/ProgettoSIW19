@@ -89,7 +89,9 @@
                     <input type="text" class="form-control form-control-user" id="Citta" name="Citta" placeholder="Citta">
                   </div>
                 </div>
-                
+                <div class="text-center">
+                	<a class="small">Tutti i campi sono obbligatori</a>
+              	</div>
                 <a>
                     <button class="btn btn-primary btn-user btn-block" type="submit" name="Register" type=submit>Registrati</button>
                 </a>
