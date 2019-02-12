@@ -3,12 +3,20 @@
  */
 function cercaeventi () {
 	data1 = [];
-	console.log("Prima");
+	
+	nomeevento = document.getElementById("Nomeevento").value;
+	categoria = document.getElementById("Categoria").value;
+	creatore = document.getElementById("Creatore").value;
+	datainizio = document.getElementById("Datainizio").value;
+	numeroposti = document.getElementById("Numposti").value;
+	provincia = document.getElementById("Provincia").value;
+	citta = document.getElementById("Citta").value;
+	
 	
 	$.ajax({
 	        url: "CercaEventi",
 	        type: 'POST',
-	        async: false,
+	        async: true,
 	        success: function (data) {
 	          //console.log(data);
 	          //data1 = JSON.parse(JSON.stringify(data));
