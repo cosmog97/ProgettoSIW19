@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -55,9 +57,22 @@ public class ModificaProfilo extends HttpServlet {
 		
 		String nome = (String) request.getParameter("Nome");
 		String cognome = (String) request.getParameter("Cognome");
+		System.out.println("nome temp: " + nome);
 		String email = (String) request.getParameter("Email");
-		String datanascita = (String) request.getParameter("Datanascita");
-		System.out.println("test" + request.getParameter("Datanascita"));
+		String datanascitaStr = (String) request.getParameter("Datanascita");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+		java.util.Date date = null;
+		try {
+			date = sdf.parse(datanascitaStr);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			
+		}
+		java.sql.Date sqlDate = null;
+		if (date != null) {
+			sqlDate = new Date(date.getTime());
+		}
+		System.out.println("test: " + sqlDate);
 		
 		
 		
@@ -73,33 +88,32 @@ public class ModificaProfilo extends HttpServlet {
 		Utente temp = t.findByPrimaryKey(usernameCorrente);
 		
 		if(temp!=null) {
-			if(nome != null) {
+			if((nome != null && nome != "") && !nome.equals(nomeCorrente)) {
 				temp.setNome(nome);
-				System.out.println("OK nome");
+				System.out.println("Modifico nome");
 			}
-			if(cognome != null) {
+			if((cognome !=null && cognome != "") && !cognome.equals(cognomeCorrente)) {
 				temp.setCognome(cognome);
-				System.out.println("Ok cognome");
+				System.out.println("Modifico cognome");
 			}
-			if(email != null) {
+			if((email != null && !email.equals("")) && !email.equals(emailCorrente) ) {  //aggiungere a tutti
 				temp.setEmail(email);
-				System.out.println("Ok email");
+				System.out.println("Modifico email");
 			}
 		/*	if (dataNascitaStr != null) {
 				temp.setDatanascita(dataNascitaStr);
 				System.out.println("OK datanascita");
 			}*/
-			if(provincia != null) {
+			if((provincia != null && provincia != "") && !provincia.equals(provinciaCorrente)) {
 				temp.setProvincia(provincia);
 				System.out.println("Ok provincia");
 			}
-			if(citta != null) {
+			if((citta != null && citta != "") && !citta.equals(cittaCorrente)) {
 				temp.setCitta(citta);
 				System.out.println("Ok citta");
 			}
 			t.update(temp);
 			Utente temp2 = t.findByPrimaryKey(usernameCorrente);
-			
 			session.setAttribute("Username",usernameCorrente);
 			session.setAttribute("Nome",temp2.getNome());
 			session.setAttribute("Cognome",temp2.getCognome());

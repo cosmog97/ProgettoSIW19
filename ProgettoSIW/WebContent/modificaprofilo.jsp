@@ -93,16 +93,16 @@
                 </div>
                 <div class="form-group">
                   <div align="center">Email</div>
-                  <input type="email" class="form-control form-control-user" id="Email" placeholder="${sessionScope.Email}">
+                  <input type="email" class="form-control form-control-user" name="Email" id="Email" placeholder="${sessionScope.Email}">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                   	<div align="center">Provincia</div>
-                    <input type="text" class="form-control form-control-user" id="Provincia" placeholder="${sessionScope.Provincia}">
+                    <input type="text" class="form-control form-control-user" name="Provincia" id="Provincia" placeholder="${sessionScope.Provincia}">
                   </div>
                   <div class="col-sm-6">
                     <div align="center">Città</div>
-                    <input type="text" class="form-control form-control-user" id="Citta" placeholder="${sessionScope.Citta}">
+                    <input type="text" class="form-control form-control-user" name="Citta" id="Citta" placeholder="${sessionScope.Citta}">
                   </div>
                 </div>
                 <div class="form-group row">
@@ -143,7 +143,7 @@
                   </div>
                 </div>
 
-                
+                <div align="center">Ultima modifica password: ${sessionScope.Ultimamodpassword}</div>
                 
                 
               </form>
