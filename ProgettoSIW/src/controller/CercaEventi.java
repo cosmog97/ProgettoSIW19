@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.Evento;
 import model.Utente;
@@ -22,6 +23,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 /**
  * Servlet implementation class CercaEventi
  */
@@ -50,8 +53,8 @@ public class CercaEventi extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println((String) request.getParameter("json"));
-		
+		JsonArray data = new Gson().fromJson(request.getReader(), JsonArray.class);
+		System.out.println(data);
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		List<Evento> temp = t.findAll();
 		Gson gson = new Gson();

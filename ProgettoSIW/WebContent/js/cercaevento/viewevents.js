@@ -26,9 +26,10 @@ function cercaeventi () {
 	        url: "CercaEventi",
 	        type: 'POST',
 	        async: true,
+	        contentType: "application/json",
 	        data: json,
-	        contentType: 'application/json',
-	        mimeType: 'application/json',
+	       /* contentType: 'application/json',
+	        mimeType: 'application/json',*/
 	        success: function (data) {
 	          //console.log(data);
 	          //data1 = JSON.parse(JSON.stringify(data));
