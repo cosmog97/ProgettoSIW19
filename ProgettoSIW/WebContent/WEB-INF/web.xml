@@ -18,14 +18,6 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>CercaEventi</servlet-name>
-    <servlet-class>controller.CercaEventi</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CercaEventi</servlet-name>
-    <url-pattern>/cercaeventi</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <servlet-name>ModificaProfilo</servlet-name>
     <servlet-class>controller.ModificaProfilo</servlet-class>
   </servlet>

@@ -27,6 +27,9 @@
 	.product img {
 		margin-bottom: 10px;
 	}</style>
+	
+	<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script><script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+		<script src='js/cercaevento/viewevents.js'></script>
 </head>
 <body>
 	<div class="bg-gradient-primary">
@@ -46,7 +49,7 @@
                 </div>
                  <div class="p-5">
                 
-                  <form class="user" name="" action="" method="post">
+                  <form class="user" name="" method="post" id="FORM">
 
                 <div class="form-group">
                   <input type="text" class="form-control form-control-user" id="Nomeevento" placeholder="Nome evento">
@@ -75,7 +78,15 @@
                     <input type="text" class="form-control form-control-user" id="Postidisponibili" placeholder="Posti disponibili">
                   </div>
                 </div>
-                <button class="btn btn-primary btn-user btn-block" type="button" onclick="cercaeventi()">Cerca eventi</button>
+                <button class="btn btn-primary btn-user btn-block" id="Cerca">Cerca eventi</button>
+              	<script>
+                $(document).ready(function(){
+                    $('#Cerca').click(function(){
+                       cercaeventi();
+                    });
+                  });
+                
+              	</script>
               </form>
 		   </div>
          </div>
@@ -87,8 +98,6 @@
 		<br>
 		<div class="row" id="products"></div>
 	</div>
-		<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script><script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-		<script src='js/cercaevento/viewevents.js'></script>
 	</div>
 </div>
 </body>
