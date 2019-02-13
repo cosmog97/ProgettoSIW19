@@ -24,6 +24,7 @@ import org.json.JSONObject;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 /**
  * Servlet implementation class CercaEventi
@@ -54,7 +55,16 @@ public class CercaEventi extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JsonArray data = new Gson().fromJson(request.getReader(), JsonArray.class);
-		System.out.println(data);
+		String nomeEvento =  data.get(0).getAsString();
+		String categoriaEvento = data.get(1).getAsString();
+		String creatoreEvento = data.get(2).getAsString();
+		String dataEvento = data.get(3).getAsString();
+		String postiDisponibiliEvento = data.get(4).getAsString();
+		String provinciaEvento = data.get(5).getAsString();
+		String cittaEvento = data.get(6).getAsString();
+
+		
+		
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		List<Evento> temp = t.findAll();
 		Gson gson = new Gson();

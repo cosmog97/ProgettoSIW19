@@ -72,7 +72,7 @@
                   <h6 class="m-0 font-weight-bold text-primary">Statistiche</h6>
                 </div>
           <div class="card-body">
-          <div align="center">Ecco un breve riepilogo sull'attività del tuo profilo, ${sessionScope.Nome}. Organize yourself!</div>
+          <div align="center">Ecco un breve riepilogo sull'attività del tuo profilo, ${sessionScope.Nome}.</div>
           <br>
           <div class="row">
 			
