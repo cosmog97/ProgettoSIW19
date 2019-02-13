@@ -100,10 +100,10 @@ public class ModificaProfilo extends HttpServlet {
 				temp.setEmail(email);
 				System.out.println("Modifico email");
 			}
-		/*	if (dataNascitaStr != null) {
-				temp.setDatanascita(dataNascitaStr);
+			if (sqlDate != null) {
+				temp.setDatanascita(sqlDate);
 				System.out.println("OK datanascita");
-			}*/
+			}
 			if((provincia != null && provincia != "") && !provincia.equals(provinciaCorrente)) {
 				temp.setProvincia(provincia);
 				System.out.println("Ok provincia");
@@ -121,14 +121,8 @@ public class ModificaProfilo extends HttpServlet {
 			session.setAttribute("Datanascita",temp2.getDatanascita());
 			session.setAttribute("Provincia",temp2.getProvincia());
 			session.setAttribute("Citta",temp2.getCitta());
-			
 			RequestDispatcher rd = request.getRequestDispatcher("modificaprofilo.jsp");
 			rd.forward(request, response);
 		}
-		
-		
-		
-		
 	}
-
 }
