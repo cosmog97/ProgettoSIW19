@@ -41,41 +41,51 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-center">Cerca il tuo evento</h6>
                 </div>
-                <div class="p-5">
+                <div class="p-4">
                   <div>
+           
                   	<form class="user">
                   	    <div class="form-group">
                   			<div align="center">Nome evento</div>
-                  			<input type="text" class="form-control form-control-user" id="Nomeevento" placeholder="Nome evento">
+                  			<input type="text" class="form-control" id="Nomeevento" placeholder="Nome evento">
                 		</div>
                   		<div class="form-group row">
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Categoria</div>
-	                    		<input type="text" class="form-control form-control-user" name="Categoria" id="Categoria" placeholder="Categoria">
+	                    		<select class="form-control" required id="Categoria">
+	                    							<option value="Cinema">Cinema</option>
+								        			<option value="Convegni">Convegni</option>
+								        			<option value="Feste">Feste</option>
+								        			<option value="Musica">Musica</option>
+								        			<option value="Teatro">Istruzione</option>
+								        			<option value="Sport">Sport</option>
+								          			<option value="Teatro">Teatro</option>
+								          			<option value="Viaggi">Viaggio</option>
+								</select>
 	                  		</div>
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Creatore</div>
-	                    		<input type="text" class="form-control form-control-user" name="Creatore" id="Creatore" placeholder="Creatore">
+	                    		<input type="text" class="form-control" name="Creatore" id="Creatore" placeholder="Creatore">
 	                  		</div>
 	                  	</div>
                   		<div class="form-group row">
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Data evento</div>
-	                    		<input type="date" class="form-control form-control-user" name="Datainizio" id="Datainizio" placeholder="Data inizio evento">
+	                    		<input type="date" class="form-control" name="Datainizio" id="Datainizio" placeholder="Data inizio evento">
 	                  		</div>
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Posti disponibili</div>
-	                    		<input type="text" class="form-control form-control-user" name="Numposti" id="Numposti" placeholder="Numeri posti disponibili">
+	                    		<input type="text" class="form-control" name="Numposti" id="Numposti" placeholder="Numeri posti disponibili">
 	                  		</div>
 	                  	</div>
 	                  	<div class="form-group row">
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Provincia</div>
-	                    		<input type="text" class="form-control form-control-user" name="Provincia" id="Provincia" placeholder="Provincia">
+	                    		<select class="form-control" required id="Provincia"></select>
 	                  		</div>
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Città</div>
-	                    		<input type="text" class="form-control form-control-user" name="Citta" id="Citta" placeholder="Città">
+	                    		<input type="text" class="form-control" name="Citta" id="Citta" placeholder="Città">
 	                  		</div>
 	                  	</div>
                   	</form>
@@ -87,11 +97,11 @@
 
 		</div>
 		
-    </div>
-	<div class="container-fluid">
-		<br>
-		<div class="row" id="products"></div>
-	</div>
+      </div>
+		<div class="container-fluid">
+			<br>
+			<div class="row" id="products"></div>
+		</div>
 	</div>
 </div>
 </body>

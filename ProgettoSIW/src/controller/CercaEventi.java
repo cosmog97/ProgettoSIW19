@@ -62,7 +62,7 @@ public class CercaEventi extends HttpServlet {
 		String creatoreEvento = data.get(2).getAsString();
 		String dataEvento = data.get(3).getAsString();
 		String postiDisponibiliEvento = data.get(4).getAsString();
-		String provinciaEvento = data.get(5).getAsString();
+		//String provinciaEvento = data.get(5).getAsString();
 		String cittaEvento = data.get(6).getAsString();
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		List<Evento> temp;

@@ -72,12 +72,12 @@
 												<select class="form-control" id="Categoria" name="Categoria" required>
 								        			<option value="Cinema">Cinema</option>
 								        			<option value="Convegni">Convegni</option>
-								        			<option value="Escursioni">Escursioni</option>
 								        			<option value="Feste">Feste</option>
 								        			<option value="Musica">Musica</option>
 								        			<option value="Teatro">Istruzione</option>
 								        			<option value="Sport">Sport</option>
 								          			<option value="Teatro">Teatro</option>
+								          			<option value="Viaggi">Viaggi</option>
 												</select>
 											</form>
 										</div>
