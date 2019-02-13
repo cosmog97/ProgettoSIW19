@@ -81,7 +81,10 @@
 	                  	<div class="form-group row">
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Provincia</div>
-	                    		<select class="form-control" required id="Provincia"></select>
+	                    		<select class="form-control" required id="Provincia">
+	                    			<option value="Cosenza">Cosenza</option>
+	                    			<option value="Cosenza">Cosenza</option>
+	                    		</select>
 	                  		</div>
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Città</div>

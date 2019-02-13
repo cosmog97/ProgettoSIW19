@@ -2,6 +2,10 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.List;
 
@@ -61,16 +65,30 @@ public class CercaEventi extends HttpServlet {
 		String categoriaEvento = data.get(1).getAsString();
 		String creatoreEvento = data.get(2).getAsString();
 		String dataEvento = data.get(3).getAsString();
+		java.util.Date date = null;
+		try {
+			if (dataEvento != null && dataEvento != "" && dataEvento.equals(null)) {
+				date = new SimpleDateFormat("yyyy-MM-dd").parse(dataEvento);
+			}
+		} catch (ParseException e) { e.printStackTrace();}
+		Date sqlDate = null;
+		if (date != null) {
+			sqlDate = new Date(date.getTime());
+		}
+		System.out.println(sqlDate);
 		String postiDisponibiliEvento = data.get(4).getAsString();
-		//String provinciaEvento = data.get(5).getAsString();
+		String provinciaEvento = data.get(5).getAsString();
 		String cittaEvento = data.get(6).getAsString();
+		//Date dataAttuale = new Date(System.currentTimeMillis());
+		Timestamp dataAttuale = new Timestamp(System.currentTimeMillis());
+		System.out.println(dataAttuale);
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		List<Evento> temp;
 		if (utente != null && utente != "") {
-			temp = t.findAllByDifferentCreator(utente);
+			temp = t.findAllByDifferentCreator(utente, dataAttuale);
 		}
 		else  {
-			temp = t.findAll();
+			temp = t.findAllwithDate(dataAttuale);
 		}
 		
 		

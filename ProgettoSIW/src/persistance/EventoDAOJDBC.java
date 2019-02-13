@@ -1,9 +1,11 @@
 package persistance;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,14 +97,74 @@ public class EventoDAOJDBC implements EventoDAO {
 		
 	}
 
+	
+	@Override
+	public List<Evento> findAllwithDate(Timestamp date) {
+		Connection connection = this.dataSource.getConnection();
+		List<Evento> temp = new ArrayList<Evento>();
+		try {
+			Class.forName("org.postgresql.Driver");
+
+			String select = "SELECT * FROM gestioneeventidb.\"Evento\" WHERE  \"NumAttPrenotati\" < \"NumMaxPrenotati\" and \"ScadenzaEvento\" > '"+date+"' ORDER BY \"InizioEvento\" ASC;";;
+			
+			PreparedStatement statement = connection.prepareStatement(select);
+
+			ResultSet rs = statement.executeQuery();
+			
+            while ( rs.next() ) {
+                Evento evento = new Evento();
+                
+                 evento.setId( Integer.parseInt(rs.getString(1)));
+	       	     evento.setNome( rs.getString(2));
+	       	     evento.setCategoria ( rs.getString(3));
+	       	     evento.setNumattualeprenotati( Integer.parseInt(rs.getString(4)));
+	       	     evento.setNummaxprenotati(Integer.parseInt(rs.getString(5)));
+	       	     evento.setInizio( rs.getTimestamp(6));
+	       	     evento.setFine( rs.getTimestamp(7));
+	       	     evento.setCreazione( rs.getTimestamp(8));
+	       	     evento.setScadenza( rs.getTimestamp(9));
+	       	     evento.setCreatore(rs.getString(10));
+	       	     evento.setProvincia(rs.getString(11));
+	       	     evento.setCitta(rs.getString(12));
+	       	     
+	                
+                temp.add(evento);
+            }
+            
+
+            return temp;
+			
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			
+			try {
+				connection.close();
+			} 
+			
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return null;
+		
+	}
+	
+	
 	@Override 
-	public List<Evento> findAllByDifferentCreator (String utente) {
+	public List<Evento> findAllByDifferentCreator (String utente, Timestamp date) {
 			Connection connection = this.dataSource.getConnection();
 			List<Evento> temp = new ArrayList<Evento>();
 			try {
 				Class.forName("org.postgresql.Driver");
 
-				String select = "SELECT * FROM gestioneeventidb.\"Evento\" WHERE \"CreatoreEvento\"!='"+utente+"' ORDER BY \"IDEvento\" ASC;";
+				String select = "SELECT * FROM gestioneeventidb.\"Evento\" WHERE \"CreatoreEvento\"='"+utente+"' and \"NumAttPrenotati\" < \"NumMaxPrenotati\" and \"ScadenzaEvento\" > '"+date+"' ORDER BY \"InizioEvento\" ASC;";
 				
 				PreparedStatement statement = connection.prepareStatement(select);
 

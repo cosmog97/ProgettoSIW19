@@ -68,7 +68,7 @@
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Categoria Evento</span>
-											<form>
+											
 												<select class="form-control" id="Categoria" name="Categoria" required>
 								        			<option value="Cinema">Cinema</option>
 								        			<option value="Convegni">Convegni</option>
@@ -79,16 +79,31 @@
 								          			<option value="Teatro">Teatro</option>
 								          			<option value="Viaggi">Viaggi</option>
 												</select>
-											</form>
+											
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
-											<span class="form-label">Data inizio evento</span>
-											<input class="form-control" type="date" required>
+											<span class="form-label">Provincia</span>
+											
+												<select class="form-control" id="Categoria" name="Categoria" required>
+								        			<option value="Cinema">Cinema</option>
+								        			<option value="Convegni">Convegni</option>
+								        			<option value="Feste">Feste</option>
+								        			<option value="Musica">Musica</option>
+								        			<option value="Teatro">Istruzione</option>
+								        			<option value="Sport">Sport</option>
+								          			<option value="Teatro">Teatro</option>
+								          			<option value="Viaggi">Viaggi</option>
+												</select>
+											
 										</div>
 									</div>
 								</div>
+									<div class="form-group">
+										<span class="form-label">Data Evento</span>
+										<input class="form-control" id="Nome" name="Nome" type="date" placeholder="Inserire nome evento...">
+									</div>
 								<div class="form-btn">
 									<a>
                       					<button class="btn btn-primary btn-user btn-block" type="submit" name="CercaEvento" type=submit>Cerca Evento</button>

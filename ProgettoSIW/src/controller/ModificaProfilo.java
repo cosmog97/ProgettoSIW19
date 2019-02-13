@@ -60,7 +60,7 @@ public class ModificaProfilo extends HttpServlet {
 		System.out.println("nome temp: " + nome);
 		String email = (String) request.getParameter("Email");
 		String datanascitaStr = (String) request.getParameter("Datanascita");
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		java.util.Date date = null;
 		try {
 			date = sdf.parse(datanascitaStr);
