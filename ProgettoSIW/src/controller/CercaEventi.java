@@ -55,6 +55,8 @@ public class CercaEventi extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JsonArray data = new Gson().fromJson(request.getReader(), JsonArray.class);
+		HttpSession session = request.getSession();
+		String utente = (String) session.getAttribute("Username");
 		String nomeEvento =  data.get(0).getAsString();
 		String categoriaEvento = data.get(1).getAsString();
 		String creatoreEvento = data.get(2).getAsString();
@@ -62,11 +64,20 @@ public class CercaEventi extends HttpServlet {
 		String postiDisponibiliEvento = data.get(4).getAsString();
 		String provinciaEvento = data.get(5).getAsString();
 		String cittaEvento = data.get(6).getAsString();
-
-		
-		
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
-		List<Evento> temp = t.findAll();
+		List<Evento> temp;
+		if (utente != null && utente != "") {
+			temp = t.findAllByDifferentCreator(utente);
+		}
+		else  {
+			temp = t.findAll();
+		}
+		
+		
+		
+		
+		
+		
 		Gson gson = new Gson();
 	    String json = gson.toJson(temp);
 	    System.out.println(json);

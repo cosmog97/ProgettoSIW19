@@ -11,5 +11,6 @@ public interface EventoDAO {
 	public List<Evento> findAll();
 	public void update(Evento evento);
 	public void delete(Evento evento);
+	List<Evento> findAllByDifferentCreator(String utente);
 	
 }
