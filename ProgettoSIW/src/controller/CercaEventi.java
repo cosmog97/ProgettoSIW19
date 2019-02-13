@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -59,11 +60,18 @@ public class CercaEventi extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JsonArray data = new Gson().fromJson(request.getReader(), JsonArray.class);
+		
 		HttpSession session = request.getSession();
 		String utente = (String) session.getAttribute("Username");
+		
 		String nomeEvento =  data.get(0).getAsString();
 		String categoriaEvento = data.get(1).getAsString();
 		String creatoreEvento = data.get(2).getAsString();
+		int postiDisponibiliEvento = 0;
+		postiDisponibiliEvento = data.get(4).getAsInt();
+		String provinciaEvento = data.get(5).getAsString();
+		String cittaEvento = data.get(6).getAsString();
+		
 		String dataEvento = data.get(3).getAsString();
 		java.util.Date date = null;
 		try {
@@ -71,17 +79,16 @@ public class CercaEventi extends HttpServlet {
 				date = new SimpleDateFormat("yyyy-MM-dd").parse(dataEvento);
 			}
 		} catch (ParseException e) { e.printStackTrace();}
-		Date sqlDate = null;
+		Timestamp sqlDate = null;
 		if (date != null) {
-			sqlDate = new Date(date.getTime());
+			sqlDate = new Timestamp(date.getTime());
 		}
-		System.out.println(sqlDate);
-		String postiDisponibiliEvento = data.get(4).getAsString();
-		String provinciaEvento = data.get(5).getAsString();
-		String cittaEvento = data.get(6).getAsString();
-		//Date dataAttuale = new Date(System.currentTimeMillis());
+		System.out.println("Data form" + sqlDate);
+		
+
 		Timestamp dataAttuale = new Timestamp(System.currentTimeMillis());
-		System.out.println(dataAttuale);
+		
+		
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		List<Evento> temp;
 		if (utente != null && utente != "") {
@@ -90,12 +97,62 @@ public class CercaEventi extends HttpServlet {
 		else  {
 			temp = t.findAllwithDate(dataAttuale);
 		}
+		List<Evento> daEliminare = new ArrayList<Evento>();
+		//_____SORTING_______//
+		if (!nomeEvento.equals(null)) {
+			for (Evento i : temp) {
+				if(!i.getNome().contains(nomeEvento)) {
+					daEliminare.add(i);
+				}
+			}
+		}
+		if (!categoriaEvento.equals(null)) {
+			for (Evento i : temp) {
+				if(!i.getCategoria().contains(categoriaEvento)) {
+					daEliminare.add(i);
+				}
+			}
+		}
+		if (!creatoreEvento.equals(null)) {
+			for (Evento i : temp) {
+				if(!i.getCreatore().contains(creatoreEvento)) {
+					daEliminare.add(i);
+				}
+			}
+		}
+		if (postiDisponibiliEvento > 0) {
+			for (Evento i : temp) {
+				if(i.getNumattualeprenotati() >= i.getNummaxprenotati() || 
+				  i.getNumattualeprenotati() + i.getNummaxprenotati() > postiDisponibiliEvento) {
+					daEliminare.add(i);
+				}
+			}
+		}
+		if (!provinciaEvento.equals(null)) {
+			for (Evento i : temp) {
+				if(!i.getProvincia().contains(provinciaEvento)) {
+					daEliminare.add(i);
+				}
+			}
+		}
+		if (!cittaEvento.equals(null)) {
+			for (Evento i : temp) {
+				if(!i.getCitta().contains(cittaEvento)) {
+					daEliminare.add(i);
+				}
+			}
+		}
+		if(sqlDate.equals(null)) {
+			for (Evento i : temp) {
+				if(i.getInizio().after(sqlDate)) {
+					daEliminare.add(i);
+				}
+			}
+		}
 		
+		temp.removeAll(daEliminare);
 		
-		
-		
-		
-		
+		//___  ______________//
 		Gson gson = new Gson();
 	    String json = gson.toJson(temp);
 	    System.out.println(json);
