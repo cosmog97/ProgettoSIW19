@@ -53,6 +53,7 @@
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Categoria</div>
 	                    		<select class="form-control" required id="Categoria">
+	                    							<option value="Qualsiasi">Qualsiasi</option>
 	                    							<option value="Cinema">Cinema</option>
 								        			<option value="Convegni">Convegni</option>
 								        			<option value="Feste">Feste</option>
@@ -75,7 +76,7 @@
 	                  		</div>
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Posti disponibili</div>
-	                    		<input type="text" class="form-control" name="Numposti" id="Numposti" placeholder="Numeri posti disponibili">
+	                    		<input type="number" class="form-control" name="Numposti" id="Numposti" placeholder="Numeri posti disponibili">
 	                  		</div>
 	                  	</div>
 	                  	<div class="form-group row">

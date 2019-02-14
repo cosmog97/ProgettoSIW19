@@ -31,6 +31,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+
 /**
  * Servlet implementation class CercaEventi
  */
@@ -60,19 +61,19 @@ public class CercaEventi extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JsonArray data = new Gson().fromJson(request.getReader(), JsonArray.class);
-		
+		System.out.println("campi: "+ data);
 		HttpSession session = request.getSession();
 		String utente = (String) session.getAttribute("Username");
 		
 		String nomeEvento =  data.get(0).getAsString();
 		String categoriaEvento = data.get(1).getAsString();
 		String creatoreEvento = data.get(2).getAsString();
-		int postiDisponibiliEvento = 0;
-		postiDisponibiliEvento = data.get(4).getAsInt();
+		/*int postiDisponibiliEvento = 0;
+		postiDisponibiliEvento = data.get(4).getAsInt();*/
 		String provinciaEvento = data.get(5).getAsString();
 		String cittaEvento = data.get(6).getAsString();
 		
-		String dataEvento = data.get(3).getAsString();
+		/*String dataEvento = data.get(3).getAsString();
 		java.util.Date date = null;
 		try {
 			if (dataEvento != null && dataEvento != "" && dataEvento.equals(null)) {
@@ -84,7 +85,7 @@ public class CercaEventi extends HttpServlet {
 			sqlDate = new Timestamp(date.getTime());
 		}
 		System.out.println("Data form" + sqlDate);
-		
+		*/
 
 		Timestamp dataAttuale = new Timestamp(System.currentTimeMillis());
 		
@@ -98,15 +99,17 @@ public class CercaEventi extends HttpServlet {
 			temp = t.findAllwithDate(dataAttuale);
 		}
 		List<Evento> daEliminare = new ArrayList<Evento>();
+
 		//_____SORTING_______//
 		if (!nomeEvento.equals(null)) {
 			for (Evento i : temp) {
 				if(!i.getNome().contains(nomeEvento)) {
+					System.out.println("Entrato nomeEvento");
 					daEliminare.add(i);
 				}
 			}
 		}
-		if (!categoriaEvento.equals(null)) {
+		if (!categoriaEvento.equals(null) && !categoriaEvento.equals("Qualsiasi")) {
 			for (Evento i : temp) {
 				if(!i.getCategoria().contains(categoriaEvento)) {
 					daEliminare.add(i);
@@ -120,14 +123,14 @@ public class CercaEventi extends HttpServlet {
 				}
 			}
 		}
-		if (postiDisponibiliEvento > 0) {
+		/*if (postiDisponibiliEvento > 0) {
 			for (Evento i : temp) {
 				if(i.getNumattualeprenotati() >= i.getNummaxprenotati() || 
 				  i.getNumattualeprenotati() + i.getNummaxprenotati() > postiDisponibiliEvento) {
 					daEliminare.add(i);
 				}
 			}
-		}
+		}*/
 		if (!provinciaEvento.equals(null)) {
 			for (Evento i : temp) {
 				if(!i.getProvincia().contains(provinciaEvento)) {
@@ -142,21 +145,20 @@ public class CercaEventi extends HttpServlet {
 				}
 			}
 		}
-		if(sqlDate.equals(null)) {
+		/*if(sqlDate.equals(null)) {
 			for (Evento i : temp) {
 				if(i.getInizio().after(sqlDate)) {
 					daEliminare.add(i);
 				}
 			}
-		}
+		}*/
 		
 		temp.removeAll(daEliminare);
 		
 		//___  ______________//
 		Gson gson = new Gson();
 	    String json = gson.toJson(temp);
-	    System.out.println(json);
-	    System.out.println("json creato con write");
+	    System.out.println("json creato");
 	    response.setContentType("application/json");
 	    response.setCharacterEncoding("UTF-8");
 	    response.getWriter().write(json);
