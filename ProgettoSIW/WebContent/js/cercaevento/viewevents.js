@@ -42,6 +42,29 @@ function cercaeventi () {
 	    });
 }
 
+function loadImage (categoria) {
+	switch (categoria) {
+		case "Cinema":
+			return "img/categorie/cinema.png";
+		case "Convegni":
+			return "img/categorie/convegni.png";
+		case "Feste":
+			return "img/categorie/feste.png";
+		case "Musica":
+			return "img/categorie/musica.png";
+		case "Istruzione":
+			return "img/categorie/istruzione.png";
+		case "Sport":
+			return "img/categorie/sport.png";
+		case "Teatro":
+			return "img/categorie/teatro.png";
+		case "Viaggi":
+			return "img/categorie/viaggi.png";
+		default:
+			return "img/categorie/default.png";
+	}
+}
+
 function mostraeventi(data1) {
 	var id = "";
 	var nomeevento = "";
@@ -67,7 +90,7 @@ function mostraeventi(data1) {
 			postidisponibili = data1[i].nummaxprenotati - data1[i].numattualeprenotati,
 			citta = data1[i].citta,
 			provincia = data1[i].provincia,
-			image = "http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763";
+			image = loadImage(categoria);
 	
 			
 			//create product cards
