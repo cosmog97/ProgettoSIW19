@@ -13,6 +13,7 @@
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 	<!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="css/index/bootstrap.min.css" />
@@ -85,24 +86,15 @@
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Provincia</span>
-											
-												<select class="form-control" id="Categoria" name="Categoria" required>
-								        			<option value="Cinema">Cinema</option>
-								        			<option value="Convegni">Convegni</option>
-								        			<option value="Feste">Feste</option>
-								        			<option value="Musica">Musica</option>
-								        			<option value="Teatro">Istruzione</option>
-								        			<option value="Sport">Sport</option>
-								          			<option value="Teatro">Teatro</option>
-								          			<option value="Viaggi">Viaggi</option>
-												</select>
-											
+				                    		<select class="form-control" id="Provincia" required>
+				                    		</select>
+				                    		<script src='js/loadProvince.js'></script>
 										</div>
 									</div>
 								</div>
 									<div class="form-group">
 										<span class="form-label">Data Evento</span>
-										<input class="form-control" id="Nome" name="Nome" type="date" placeholder="Inserire nome evento...">
+										<input class="form-control" id="DataEvento" name="DataEvento" type="date">
 									</div>
 								<div class="form-btn">
 									<a>

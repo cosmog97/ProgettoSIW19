@@ -5,6 +5,7 @@
 <head>
 	<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src='js/cercaevento/viewevents.js'></script>
+
 	<script src="js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
  	<link href="css/sb-admin-2.css" rel="stylesheet">
@@ -76,16 +77,16 @@
 	                  		</div>
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Posti disponibili</div>
-	                    		<input type="number" class="form-control" name="Numposti" id="Numposti" placeholder="Numeri posti disponibili">
+	                    		<input type="number" class="form-control" name="Numposti" min="1" id="Numposti" placeholder="Numeri posti disponibili">
 	                  		</div>
 	                  	</div>
 	                  	<div class="form-group row">
 	                  		<div class="col-sm-6">
+	                  		
 	                  			<div align="center">Provincia</div>
-	                    		<select class="form-control" required id="Provincia">
-	                    			<option value="Cosenza">Cosenza</option>
-	                    			<option value="Cosenza">Cosenza</option>
+	                    		<select class="form-control" id="Provincia" required>
 	                    		</select>
+	                    		<script src='js/loadProvince.js'></script>
 	                  		</div>
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Città</div>
