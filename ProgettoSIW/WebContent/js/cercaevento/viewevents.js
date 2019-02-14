@@ -77,7 +77,7 @@ function mostraeventi(data1) {
 	var citta="";
 	var provincia="";
 	var image="";
-	var products="";
+	var products=""; 
 
 	for (var i = 0; i < data1.length; i++) {
 		var nomeevento = data1[i].nome,
