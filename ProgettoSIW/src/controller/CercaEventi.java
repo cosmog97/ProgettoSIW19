@@ -68,28 +68,19 @@ public class CercaEventi extends HttpServlet {
 		String nomeEvento =  data.get(0).getAsString();
 		String categoriaEvento = data.get(1).getAsString();
 		String creatoreEvento = data.get(2).getAsString();
-		/*int postiDisponibiliEvento = 0;
-		postiDisponibiliEvento = data.get(4).getAsInt();*/
+		int postiDisponibiliEvento = 0;
+	/*	if (!data.get(4).getAsString().equals(null) && !data.get(4).getAsString().equals("null")) {
+			postiDisponibiliEvento = Integer.parseInt(data.get(4).getAsString());
+			System.out.println("postiDisponibiliEvento: " + postiDisponibiliEvento);
+		}*/
+
 		String provinciaEvento = data.get(5).getAsString();
 		String cittaEvento = data.get(6).getAsString();
+		String dataEvento = data.get(3).getAsString();
+		System.out.println("Data evento: "+dataEvento);
 		
-		/*String dataEvento = data.get(3).getAsString();
-		java.util.Date date = null;
-		try {
-			if (dataEvento != null && dataEvento != "" && dataEvento.equals(null)) {
-				date = new SimpleDateFormat("yyyy-MM-dd").parse(dataEvento);
-			}
-		} catch (ParseException e) { e.printStackTrace();}
-		Timestamp sqlDate = null;
-		if (date != null) {
-			sqlDate = new Timestamp(date.getTime());
-		}
-		System.out.println("Data form" + sqlDate);
-		*/
 
 		Timestamp dataAttuale = new Timestamp(System.currentTimeMillis());
-		
-		
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		List<Evento> temp;
 		if (utente != null && utente != "") {
@@ -104,7 +95,6 @@ public class CercaEventi extends HttpServlet {
 		if (!nomeEvento.equals(null)) {
 			for (Evento i : temp) {
 				if(!i.getNome().contains(nomeEvento)) {
-					System.out.println("Entrato nomeEvento");
 					daEliminare.add(i);
 				}
 			}
@@ -123,14 +113,14 @@ public class CercaEventi extends HttpServlet {
 				}
 			}
 		}
-		/*if (postiDisponibiliEvento > 0) {
+		if (postiDisponibiliEvento > 0) {
 			for (Evento i : temp) {
 				if(i.getNumattualeprenotati() >= i.getNummaxprenotati() || 
-				  i.getNumattualeprenotati() + i.getNummaxprenotati() > postiDisponibiliEvento) {
+				  i.getNummaxprenotati() - i.getNumattualeprenotati() > postiDisponibiliEvento) {
 					daEliminare.add(i);
 				}
 			}
-		}*/
+		}
 		if (!provinciaEvento.equals(null)) {
 			for (Evento i : temp) {
 				if(!i.getProvincia().contains(provinciaEvento)) {
@@ -145,13 +135,15 @@ public class CercaEventi extends HttpServlet {
 				}
 			}
 		}
-		/*if(sqlDate.equals(null)) {
+		if (!dataEvento.equals("")) {
+			System.out.println("Entro in dataEvento");
 			for (Evento i : temp) {
-				if(i.getInizio().after(sqlDate)) {
+				if(i.getInizio().before(Date.valueOf(dataEvento))) {
 					daEliminare.add(i);
 				}
 			}
-		}*/
+		}
+
 		
 		temp.removeAll(daEliminare);
 		
