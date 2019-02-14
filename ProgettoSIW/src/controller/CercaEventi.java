@@ -69,6 +69,10 @@ public class CercaEventi extends HttpServlet {
 		String categoriaEvento = data.get(1).getAsString();
 		String creatoreEvento = data.get(2).getAsString();
 		int postiDisponibiliEvento = 0;
+		if (!data.get(4).getAsString().equals("")) {
+			postiDisponibiliEvento = data.get(4).getAsInt();
+		}
+		System.out.println("posti: "+postiDisponibiliEvento);
 	/*	if (!data.get(4).getAsString().equals(null) && !data.get(4).getAsString().equals("null")) {
 			postiDisponibiliEvento = Integer.parseInt(data.get(4).getAsString());
 			System.out.println("postiDisponibiliEvento: " + postiDisponibiliEvento);
@@ -94,7 +98,7 @@ public class CercaEventi extends HttpServlet {
 		//_____SORTING_______//
 		if (!nomeEvento.equals(null)) {
 			for (Evento i : temp) {
-				if(!i.getNome().contains(nomeEvento)) {
+				if(!i.getNome().toLowerCase().contains(nomeEvento.toLowerCase())) {
 					daEliminare.add(i);
 				}
 			}
@@ -108,15 +112,16 @@ public class CercaEventi extends HttpServlet {
 		}
 		if (!creatoreEvento.equals(null)) {
 			for (Evento i : temp) {
-				if(!i.getCreatore().contains(creatoreEvento)) {
+				if(!i.getCreatore().toLowerCase().contains(creatoreEvento.toLowerCase())) {
 					daEliminare.add(i);
 				}
 			}
 		}
 		if (postiDisponibiliEvento > 0) {
+			System.out.println("postiDisponibili entrato: " + postiDisponibiliEvento);
 			for (Evento i : temp) {
-				if(i.getNumattualeprenotati() >= i.getNummaxprenotati() || 
-				  i.getNummaxprenotati() - i.getNumattualeprenotati() > postiDisponibiliEvento) {
+				if(i.getNummaxprenotati() - i.getNumattualeprenotati() < 0 ||
+				  i.getNummaxprenotati() - i.getNumattualeprenotati() < postiDisponibiliEvento) {
 					daEliminare.add(i);
 				}
 			}
@@ -130,7 +135,7 @@ public class CercaEventi extends HttpServlet {
 		}
 		if (!cittaEvento.equals(null)) {
 			for (Evento i : temp) {
-				if(!i.getCitta().contains(cittaEvento)) {
+				if(!i.getCitta().toLowerCase().contains(cittaEvento.toLowerCase())) {
 					daEliminare.add(i);
 				}
 			}
@@ -147,7 +152,7 @@ public class CercaEventi extends HttpServlet {
 		
 		temp.removeAll(daEliminare);
 		
-		//___  ______________//
+		//__________________//
 		Gson gson = new Gson();
 	    String json = gson.toJson(temp);
 	    System.out.println("json creato");
