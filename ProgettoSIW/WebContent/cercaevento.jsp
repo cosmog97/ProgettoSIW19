@@ -42,6 +42,7 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-center">Cerca il tuo evento</h6>
                 </div>
+               	Benvenuto ${sessionScope.Nome}
                 <div class="p-4">
                   <div>
            
