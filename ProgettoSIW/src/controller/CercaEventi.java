@@ -141,7 +141,6 @@ public class CercaEventi extends HttpServlet {
 			}
 		}
 		if (!dataEvento.equals("")) {
-			System.out.println("Entro in dataEvento");
 			for (Evento i : temp) {
 				if(i.getInizio().before(Date.valueOf(dataEvento))) {
 					daEliminare.add(i);
