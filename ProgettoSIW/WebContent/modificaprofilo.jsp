@@ -22,22 +22,6 @@
 
 
 
-  <script>
-    function show(shown, hidden) {
-        document.getElementById(shown).style.display='block';
-        document.getElementById(hidden).style.display='none';
-        return false;
-    }
-  </script>
-
-  <script>
-    $("#myspan").click(function(){
-      alert('I got a click');
-    });
-  </script>
-
-
-
 </head>
 
 <body id="page-top">
@@ -180,12 +164,6 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
 
   
 </body>

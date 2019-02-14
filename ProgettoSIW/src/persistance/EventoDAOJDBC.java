@@ -164,7 +164,7 @@ public class EventoDAOJDBC implements EventoDAO {
 			try {
 				Class.forName("org.postgresql.Driver");
 
-				String select = "SELECT * FROM gestioneeventidb.\"Evento\" WHERE \"CreatoreEvento\"='"+utente+"' and \"NumAttPrenotati\" < \"NumMaxPrenotati\" and \"ScadenzaEvento\" > '"+date+"' ORDER BY \"InizioEvento\" ASC;";
+				String select = "SELECT * FROM gestioneeventidb.\"Evento\" WHERE \"CreatoreEvento\"!='"+utente+"' and \"NumAttPrenotati\" < \"NumMaxPrenotati\" and \"ScadenzaEvento\" > '"+date+"' ORDER BY \"InizioEvento\" ASC;";
 				
 				PreparedStatement statement = connection.prepareStatement(select);
 

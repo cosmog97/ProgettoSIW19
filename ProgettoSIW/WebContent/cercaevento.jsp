@@ -62,7 +62,7 @@
 								        			<option value="Teatro">Istruzione</option>
 								        			<option value="Sport">Sport</option>
 								          			<option value="Teatro">Teatro</option>
-								          			<option value="Viaggi">Viaggio</option>
+								          			<option value="Viaggi">Viaggi</option>
 								</select>
 	                  		</div>
 	                  		<div class="col-sm-6">
@@ -77,7 +77,7 @@
 	                  		</div>
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Posti disponibili</div>
-	                    		<input type="number" class="form-control" name="Numposti" min="1" id="Numposti" placeholder="Numeri posti disponibili">
+	                    		<input type="number" class="form-control" name="Numposti" id="Numposti" placeholder="Numeri posti disponibili">
 	                  		</div>
 	                  	</div>
 	                  	<div class="form-group row">
