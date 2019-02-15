@@ -23,6 +23,39 @@ public class EventoDAOJDBC implements EventoDAO {
 	@Override
 	public void save(Evento evento) {
 		Connection connection = this.dataSource.getConnection();
+		try {
+				String temp ="INSERT INTO gestioneeventidb.\"Evento\"(\"NomeEvento\", \"CategoriaEvento\", \"NumAttPrenotati\", \"NumMaxPrenotati\", \"InizioEvento\", \"FineEvento\", \"CreazioneEvento\", \"ScadenzaEvento\", \"CreatoreEvento\", \"Provincia\", \"Citta\") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?);";
+				PreparedStatement  statement = connection.prepareStatement(temp);
+				
+				statement.setString(1,evento.getNome());
+				statement.setString(2,evento.getCategoria());
+				statement.setInt(3,0);
+				statement.setInt(4,evento.getNummaxprenotati());
+				statement.setTimestamp(5,evento.getInizio());
+				statement.setTimestamp(6,evento.getFine());
+				statement.setTimestamp(7,evento.getCreazione());
+				statement.setTimestamp(8,evento.getScadenza());
+				statement.setString(9,evento.getCreatore());
+				statement.setString(10, evento.getProvincia());
+				statement.setString(11,evento.getCitta());
+				System.out.println("ciaoooooooooooo");
+				statement.executeUpdate();
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			
+			try {
+				connection.close();
+			} 
+			
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
 
 	}
 

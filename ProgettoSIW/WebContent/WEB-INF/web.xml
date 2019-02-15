@@ -25,4 +25,12 @@
     <servlet-name>ModificaProfilo</servlet-name>
     <url-pattern>/modificaprofilo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>CreaEvento</servlet-name>
+    <servlet-class>controller.CreaEvento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreaEvento</servlet-name>
+    <url-pattern>/creaevento</url-pattern>
+  </servlet-mapping>
 </web-app>

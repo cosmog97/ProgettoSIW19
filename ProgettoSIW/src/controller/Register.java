@@ -62,6 +62,7 @@ public class Register extends HttpServlet {
 	   	     utente.setCitta(request.getParameter("Citta"));
 
 			 t.save(utente);
+			 
 			 RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			 rd.forward(request, response);
 		}

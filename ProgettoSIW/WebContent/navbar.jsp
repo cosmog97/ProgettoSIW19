@@ -96,8 +96,14 @@
           <span>I miei eventi</span>
         </a>
       </li>
-
-
+	
+	
+	<li class="nav-item">
+        <a class="nav-link collapsed" href="creaevento.jsp">
+          <i class="fas fa-fw fa-folder"></i>
+          <span onclick="location='creaevento.jsp'">Crea Evento</span>
+        </a>
+      </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
