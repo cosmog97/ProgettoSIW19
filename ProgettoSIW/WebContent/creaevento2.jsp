@@ -63,7 +63,7 @@
     <!--         <div class="text-center">
                 <h2 class="h3 text-gray-900 mb-4">Dati personali</h2>
               </div>-->   
-              <form class="user" name="" action="" method="post">
+              <form class="user" name="CreaEvento" action="CreaEvento" method="post">
 
 	            <div class="form-group">
                   <div align="center">Nome evento</div>
@@ -72,17 +72,17 @@
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                   	<div align="center">Data inizio</div>
-                    <input type="datetime" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:00" class="form-control" name="Datainizio" id="Datainizio" placeholder="Data inizio evento">
+                    <input type="datetime" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:00" class="form-control" name="Datainizio" id="Datainizio" placeholder="yyyy-mm-dd hh:mm:00">
                   </div>
                   <div class="col-sm-6">
                     <div align="center">Data fine</div>
-                    <input type="datetime" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:00" class="form-control" name="DataFine" id="DataFine" placeholder="Data fine evento">
+                    <input type="datetime" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:00" class="form-control" name="DataFine" id="DataFine" placeholder="yyyy-mm-dd hh:mm:00">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                   	<div align="center">Data scadenza prenotazioni</div>
-                    <input type="datetime" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:00" class="form-control" name="Datainizio" id="Datainizio" placeholder="Data inizio evento">
+                    <input type="datetime" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:00" class="form-control" name="DataScadenza" id="DataScadenza" placeholder="yyyy-mm-dd hh:mm:00">
                   </div>
 				<div class="col-sm-6">
 
@@ -120,7 +120,7 @@
                   </div>
                   <div class="col-sm-6">
                   		<br>
-                         <button class="btn btn-primary btn-user btn-block" name="" type=submit>Crea evento</button>
+                         <button class="btn btn-primary btn-user btn-block" name="CreaEvento" type="submit">Crea evento</button>
                   </div>
                 </div>
                 

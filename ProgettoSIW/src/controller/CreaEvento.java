@@ -55,8 +55,8 @@ public class CreaEvento extends HttpServlet {
 		
 		
 		java.sql.Timestamp inizio = java.sql.Timestamp.valueOf(request.getParameter("Datainizio"));
-		java.sql.Timestamp fine = java.sql.Timestamp.valueOf(request.getParameter("DataFine")); //prova
-		java.sql.Timestamp scadenza = java.sql.Timestamp.valueOf(request.getParameter("DataScadenza")); //prova
+		java.sql.Timestamp fine = java.sql.Timestamp.valueOf(request.getParameter("DataFine")); 
+		java.sql.Timestamp scadenza = java.sql.Timestamp.valueOf(request.getParameter("DataScadenza")); 
 		
 		
 	   
@@ -65,7 +65,7 @@ public class CreaEvento extends HttpServlet {
 		Evento evento = new Evento();
 		
 		evento.setNome(request.getParameter("NomeEvento"));
-		evento.setCategoria(request.getParameter("CategoriaEvento"));
+		evento.setCategoria(request.getParameter("Categoria"));
 		evento.setNumattualeprenotati(1);
 		evento.setNummaxprenotati(4);
 		evento.setInizio(inizio);
