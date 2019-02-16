@@ -65,6 +65,14 @@ function loadImage (categoria) {
 	}
 }
 
+function prenota(id) {
+
+	alert("id evento: "+id);
+
+		$(location).attr('href','confermaevento.jsp');
+
+}
+
 function mostraeventi(data1) {
 	var id = "";
 	var nomeevento = "";
@@ -94,7 +102,7 @@ function mostraeventi(data1) {
 	
 			
 			//create product cards
-			products += "<div class='col-sm-4 product' data-nomeevento='"+nomeevento+"' data-categoria='"+categoria+"' data-datainizio='"+datainizio+"' data-datafine='"+datafine+"' data-datascadenza='"+datascadenza+"' data-creatoreevento='"+creatoreevento+"' data-postidisponibili='"+postidisponibili+"' data-citta='"+citta+"' data-provincia='"+provincia+"'><div class='product-inner text-center'><img src='"+image+"'><br />Nome evento: "+nomeevento +"<br />Categoria: "+categoria+"<br />Data inizio: "+datainizio+"<br />Data fine: "+datafine+"<br />Data scadenza: "+datascadenza+"<br />Creatore : "+creatoreevento+"<br />Posti disponibili: "+postidisponibili+"<br />Citta': "+citta+" <br />Provincia: "+provincia+"<br /><br /><button class=\"btn btn-primary btn-user btn-block\" onclick=\"\">Prenota</button></div></div>";
+			products += "<div class='col-sm-4 product' data-nomeevento='"+nomeevento+"' data-categoria='"+categoria+"' data-datainizio='"+datainizio+"' data-datafine='"+datafine+"' data-datascadenza='"+datascadenza+"' data-creatoreevento='"+creatoreevento+"' data-postidisponibili='"+postidisponibili+"' data-citta='"+citta+"' data-provincia='"+provincia+"'><div class='product-inner text-center'><img src='"+image+"'><br />Nome evento: "+nomeevento +"<br />Categoria: "+categoria+"<br />Data inizio: "+datainizio+"<br />Data fine: "+datafine+"<br />Data scadenza: "+datascadenza+"<br />Creatore : "+creatoreevento+"<br />Posti disponibili: "+postidisponibili+"<br />Citta': "+citta+" <br />Provincia: "+provincia+"<br /><br /><button class=\"btn btn-primary btn-user btn-block\" onclick=\"prenota("+id+")\">Prenota</button></div></div>";
 	
 		}
 
