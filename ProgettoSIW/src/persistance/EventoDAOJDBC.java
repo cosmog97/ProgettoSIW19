@@ -29,7 +29,7 @@ public class EventoDAOJDBC implements EventoDAO {
 				
 				statement.setString(1,evento.getNome());
 				statement.setString(2,evento.getCategoria());
-				statement.setInt(3,0);
+				statement.setInt(3,1);
 				statement.setInt(4,4);
 				statement.setTimestamp(5,evento.getInizio());
 				statement.setTimestamp(6,evento.getFine());

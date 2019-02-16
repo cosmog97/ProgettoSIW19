@@ -75,7 +75,7 @@
 	                  		</div>
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Data Fine</div>
-	                    		<input type="datetime" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:00" class="form-control" name="DataFine" id="DataFine" placeholder="Data inizio evento">
+	                    		<input type="datetime" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:00" class="form-control" name="DataFine" id="DataFine" placeholder="Data fine evento">
 	                  		</div>
 	                  		<div class="col-sm-6">
 	                  			<div align="center">Scadenza Iscrizioni</div>

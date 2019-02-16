@@ -91,17 +91,16 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
+        <a class="nav-link collapsed" href="creaevento2.jsp">
+          <i class="fas fa-fw fa-folder"></i>
+          <span onclick="location='creaevento2.jsp'">Crea evento</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="fas fa-fw fa-folder"></i>
           <span>I miei eventi</span>
-        </a>
-      </li>
-	
-	
-	<li class="nav-item">
-        <a class="nav-link collapsed" href="creaevento.jsp">
-          <i class="fas fa-fw fa-folder"></i>
-          <span onclick="location='creaevento.jsp'">Crea Evento</span>
         </a>
       </li>
 

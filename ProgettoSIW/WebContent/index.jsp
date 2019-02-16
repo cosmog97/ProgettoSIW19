@@ -68,7 +68,7 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
-											<span class="form-label">Categoria Evento</span>
+											<span class="form-label">Categoria</span>
 											
 												<select class="form-control" id="Categoria" name="Categoria" required>
 								        			<option value="Cinema">Cinema</option>
@@ -93,7 +93,7 @@
 									</div>
 								</div>
 									<div class="form-group">
-										<span class="form-label">Data Evento</span>
+										<span class="form-label">Data Inizio</span>
 										<input class="form-control" id="DataEvento" name="DataEvento" type="date">
 									</div>
 								<div class="form-btn">
