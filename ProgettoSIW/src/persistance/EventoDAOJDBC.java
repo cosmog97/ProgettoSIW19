@@ -38,7 +38,7 @@ public class EventoDAOJDBC implements EventoDAO {
 				statement.setString(9,evento.getCreatore());
 				statement.setString(10, evento.getProvincia());
 				statement.setString(11,evento.getCitta());
-				System.out.println("ciaoooooooooooo");
+				System.out.println("ciao");
 				statement.executeUpdate();
 
 		}
