@@ -65,11 +65,35 @@ function loadImage (categoria) {
 	}
 }
 
+function scriviCookie(nomeCookie,valoreCookie,durataCookie)
+{
+  var scadenza = new Date();
+  var adesso = new Date();
+  scadenza.setTime(adesso.getTime() + (parseInt(durataCookie) * 60000));
+  document.cookie = nomeCookie + '=' + escape(valoreCookie) + '; expires=' + scadenza.toGMTString() + '; path=/';
+}
+
+
 function prenota(id) {
 
-	alert("id evento: "+id);
+	$.ajax({
+        url: "PrenotaEvento",
+        type: 'POST',
+        async: false,
+        contentType: "application/json",
+        data: JSON.stringify(id),
+       /* contentType: 'application/json',
+        mimeType: 'application/json',*/
+        success: function (data) {
+          //console.log(data);
+          //data1 = JSON.parse(JSON.stringify(data));
+        	window.location.replace("confermaevento.jsp");
 
-		$(location).attr('href','confermaevento.jsp');
+        },
+        error: function() {
+            alert("Errore. La prenotazione non è andata a buon fine. Ricarica la pagina");
+        }
+    });
 
 }
 
