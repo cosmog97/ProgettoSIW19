@@ -64,7 +64,9 @@ public class EventoDAOJDBC implements EventoDAO {
 		Connection connection = this.dataSource.getConnection();
 		List<Evento> temp = findAll();
 		for (Evento i : temp) {
-			if (String.valueOf(i.getId()) == id) {
+			System.out.println(String.valueOf(i.getId()));
+			if (String.valueOf(i.getId()).equals(id)) {
+				System.out.println("EVENTO TROVATO CON ID: "+id);
 				return i;
 			}
 		}

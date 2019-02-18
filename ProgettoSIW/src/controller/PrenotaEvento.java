@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,10 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+
+import model.Evento;
+import persistance.DatabaseManager;
+import persistance.EventoDAO;
 
 /**
  * Servlet implementation class PrenotaEvento
@@ -44,16 +49,20 @@ public class PrenotaEvento extends HttpServlet {
 		JsonElement data = new Gson().fromJson(request.getReader(), JsonElement.class);
 		HttpSession session = request.getSession();
 		String utente = (String) session.getAttribute("Username");
-		System.out.println("ID:" + data+ "  utente: "+utente);
-		/*if (!(utente.equals("") || utente.equals(null))) {
-			System.out.println("Entrato qua");
-			RequestDispatcher rd = request.getRequestDispatcher("/confermaevento.jsp");
-			rd.forward(request, response);
-		} 
-		else {
-			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
-			rd.forward(request, response);
-		}*/
+		System.out.println("ID:" + data + "  utente: "+utente);
+		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
+		Evento temp = t.findByPrimaryKey(data.toString());
+		Gson gson = new Gson();
+	    String json = gson.toJson(temp);
+
+	  /*  System.out.println("json: "+json);
+	    System.out.println("json creato");
+	    response.setContentType("application/json");
+	    response.setCharacterEncoding("UTF-8");
+	    response.getWriter().write(json);
+	    System.out.println("json inviato");*/
+	    temp.setNumattualeprenotati(temp.getNummaxprenotati()-temp.getNumattualeprenotati());
+	    session.setAttribute("Evento", temp);
 	}
 	
 }

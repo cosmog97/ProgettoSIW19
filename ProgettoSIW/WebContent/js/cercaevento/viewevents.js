@@ -84,11 +84,12 @@ function prenota(id) {
         data: JSON.stringify(id),
        /* contentType: 'application/json',
         mimeType: 'application/json',*/
+        	
         success: function (data) {
+        //	alert("PrenotaEvento contattato");
           //console.log(data);
           //data1 = JSON.parse(JSON.stringify(data));
-        	window.location.replace("confermaevento.jsp");
-
+        	window.location.href = "confermaevento.jsp";
         },
         error: function() {
             alert("Errore. La prenotazione non è andata a buon fine. Ricarica la pagina");
