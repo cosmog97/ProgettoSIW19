@@ -38,11 +38,11 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Conferma la tua prenotazione</h1>
               </div>
-              <form class="user" name="" action="" method="post">
+              <form class="user" name="" action="ConfermaEvento" method="post">
                 <div class="form-group">
                   <div align="center">Nome Evento</div>
-                  <input type="text" class="form-control form-control-user" id="Nomeevento" placeholder="${sessionScope.Evento.getNome()}" readonly>
-                	 
+                  <input type="text" class="form-control form-control-user" id="Nomeevento" value="${sessionScope.Evento.getNome()}" readonly>
+                	<input type="hidden" id="eventoID" name="eventoID" value="${sessionScope.Evento.getId()}">
                 </div>    
                 <div class="form-group row">
                 
@@ -89,11 +89,11 @@
                 </div>
                 <div class="form-group">
                   <div align="center">Posti da prenotare</div>
-                  <input type="number" min="1" max="${sessionScope.Evento.getNumattualeprenotati()}" class="form-control form-control-user" id="Postiprenotazione" min=1  placeholder="Posti da prenotare">
+                  <input type="number" min="1" value="1" max="${sessionScope.Evento.getNumattualeprenotati()}" class="form-control form-control-user" id="Postiprenotazione"  placeholder="Posti da prenotare">
                 </div>  
 
                 <a>
-                    <button class="btn btn-primary btn-user btn-block" type="submit" name="" type=submit>Prenotati</button>
+                    <button class="btn btn-primary btn-user btn-block" type="submit" name="ConfermaEvento" type=submit>Prenotati</button>
                 </a>
                 <hr>
               </form>
