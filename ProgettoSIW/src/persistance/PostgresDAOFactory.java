@@ -30,4 +30,11 @@ class PostgresDAOFactory extends DAOFactory {
 		// TODO Auto-generated method stub
 		return new UtenteDAOJDBC(dataSource);
 	}
+	
+	@Override
+	public PartecipazioneDAO getPartecipazioneDAO() {
+		// TODO Auto-generated method stub
+		return new PartecipazioneDAOJDBC(dataSource);
+	}
+	
 }

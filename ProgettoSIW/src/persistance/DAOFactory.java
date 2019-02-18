@@ -46,5 +46,7 @@ public abstract class DAOFactory {
 	
 	public abstract UtenteDAO getUtenteDAO();
 	
+	public abstract PartecipazioneDAO getPartecipazioneDAO();
+	
 
 }
