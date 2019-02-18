@@ -39,7 +39,7 @@ public class ConfermaEvento extends HttpServlet {
 		
 		String utente = (String) session.getAttribute("Username");
 		int idEvento = Integer.valueOf(request.getParameter("eventoID"));
-		String postiDaPrenotare = request.getParameter("Postiprenotazione");
+		int postiDaPrenotare = Integer.valueOf(request.getParameter("Postiprenotazione"));
 		System.out.println("utente: "+utente);
 		System.out.println("idEvento "+idEvento);
 		System.out.println("posti: "+postiDaPrenotare);

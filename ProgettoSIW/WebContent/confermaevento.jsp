@@ -89,11 +89,11 @@
                 </div>
                 <div class="form-group">
                   <div align="center">Posti da prenotare</div>
-                  <input type="number" min="1" value="1" max="${sessionScope.Evento.getNumattualeprenotati()}" class="form-control form-control-user" id="Postiprenotazione"  placeholder="Posti da prenotare">
+                  <input type="number" min="1" value="1" max="${sessionScope.Evento.getNumattualeprenotati()}" class="form-control form-control-user" id="Postiprenotazione" name="Postiprenotazione" placeholder="Posti da prenotare">
                 </div>  
 
                 <a>
-                    <button class="btn btn-primary btn-user btn-block" type="submit" name="ConfermaEvento" type=submit>Prenotati</button>
+                    <button class="btn btn-primary btn-user btn-block" type="submit" name="ConfermaEvento">Prenotati</button>
                 </a>
                 <hr>
               </form>
