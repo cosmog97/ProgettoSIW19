@@ -120,7 +120,7 @@
                   </div>
                   <div class="col-sm-6">
                   		<br>
-                         <button class="btn btn-primary btn-user btn-block" name="CreaEvento" type="submit">Crea evento</button>
+                         <button class="btn btn-primary btn-block" name="CreaEvento" type="submit">Crea evento</button>
                   </div>
                 </div>
                 
