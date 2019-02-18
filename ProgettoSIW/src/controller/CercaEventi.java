@@ -19,9 +19,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Evento;
+import model.Partecipazione;
 import model.Utente;
 import persistance.DatabaseManager;
 import persistance.EventoDAO;
+import persistance.PartecipazioneDAO;
 import persistance.UtenteDAO;
 
 import org.json.JSONException;
@@ -86,14 +88,23 @@ public class CercaEventi extends HttpServlet {
 
 		Timestamp dataAttuale = new Timestamp(System.currentTimeMillis());
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
+		PartecipazioneDAO c = DatabaseManager.getInstance().getDaoFactory().getPartecipazioneDAO();
 		List<Evento> temp;
+		List<Evento> daEliminare = new ArrayList<Evento>();
 		if (utente != null && utente != "") {
 			temp = t.findAllByDifferentCreator(utente, dataAttuale);
+			for (Evento i : temp) {
+				Partecipazione k = c.findByUtenteIdEvento(utente, i.getId());
+				if (k != null) {
+					daEliminare.add(i);
+				}
+			}
+			
 		}
 		else  {
 			temp = t.findAllwithDate(dataAttuale);
 		}
-		List<Evento> daEliminare = new ArrayList<Evento>();
+
 
 		//_____SORTING_______//
 		if (!nomeEvento.equals(null)) {

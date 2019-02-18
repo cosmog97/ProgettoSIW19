@@ -3,7 +3,7 @@ package model;
 public class Partecipazione {
 	String nomeutente = "";
 	int idevento = 0;
-	int postidisponibili = 0;
+	int postiprenotati = 0;
 	
 	public Partecipazione() {
 		
@@ -12,30 +12,30 @@ public class Partecipazione {
 	public Partecipazione(String n, int i, int p) {
 		this.nomeutente = n;
 		this.idevento = i;
-		this.postidisponibili = p;
+		this.postiprenotati = p;
 	}
 	
-	void setNomeutente (String n) {
+	public void setNomeutente (String n) {
 		this.nomeutente = n;
 	}
 	
-	String getNomeutente () {
+	public String getNomeutente () {
 		return nomeutente;
 	}
 	
-	void setIdEvento (int i) {
+	public void setIdEvento (int i) {
 		this.idevento = i;
 	}
 	
-	int getIdEvento () {
+	public int getIdEvento () {
 		return idevento;
 	}
 	
-	void setPostiDisponibili (int p) {
-		this.postidisponibili = p;
+	public void setPostiPrenotati (int p) {
+		this.postiprenotati = p;
 	}
 	
-	int getPostiDisponibili () {
-		return postidisponibili;
+	public int getPostiPrenotati () {
+		return postiprenotati;
 	}
 }
