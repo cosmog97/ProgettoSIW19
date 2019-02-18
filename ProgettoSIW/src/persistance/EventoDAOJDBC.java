@@ -261,4 +261,59 @@ public class EventoDAOJDBC implements EventoDAO {
 
 	}
 
+
+	@Override
+	public int findIdByElements(Evento e) {
+		Connection connection = this.dataSource.getConnection();
+		int val = -1;
+		try {
+			Class.forName("org.postgresql.Driver");
+			
+			String nomeevento = e.getNome();
+			String creatore = e.getCreatore();
+			String categoria = e.getCategoria();
+			String citta = e.getCitta();
+			String provincia = e.getProvincia();
+			Timestamp inizio = e.getInizio();
+			Timestamp fine = e.getFine();
+			Timestamp scadenza = e.getFine();
+			Timestamp creazione = e.getCreazione();
+			int nummax = e.getNummaxprenotati();
+			int numatt = e.getNumattualeprenotati();
+			
+			
+			String select = "SELECT \"IDEvento\" FROM gestioneeventidb.\"Evento\" WHERE \"NomeEvento\"='"+nomeevento+"', \"CategoriaEvento\"='"+categoria+"', \"NumAttPrenotati\"='"+numatt+"', \"NumMaxPrenotati\"='"+nummax+"', \"InizioEvento\"='"+inizio+"', \"FineEvento\"='"+fine+"', \"CreazioneEvento\"='"+creazione+"', \"ScadenzaEvento\"='"+scadenza+"', \"CreatoreEvento\"='"+creatore+"', \"Provincia\"='"+provincia+"', \"Citta\"='"+citta+"';";
+			
+			PreparedStatement statement = connection.prepareStatement(select);
+
+			ResultSet rs = statement.executeQuery();
+			
+            while ( rs.next() ) {
+            	val = rs.getInt(1);
+            }
+            
+            System.out.println("val1: "+val);
+			return val;
+		}
+		catch (SQLException e1) {
+			e1.printStackTrace();
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		finally {
+			
+			try {
+				connection.close();
+			} 
+			
+			catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}
+		System.out.println("val2: "+val);
+		return val;
+		
+	}
+
 }

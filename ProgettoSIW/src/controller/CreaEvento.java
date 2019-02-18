@@ -16,8 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Evento;
+import model.Partecipazione;
 import persistance.DatabaseManager;
 import persistance.EventoDAO;
+import persistance.PartecipazioneDAO;
 import persistance.UtenteDAO;
 
 /**
@@ -61,6 +63,7 @@ public class CreaEvento extends HttpServlet {
 		
 	   
 	    EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
+		PartecipazioneDAO c = DatabaseManager.getInstance().getDaoFactory().getPartecipazioneDAO();
 		//fare controlli su pk
 		Evento evento = new Evento();
 		
@@ -77,7 +80,8 @@ public class CreaEvento extends HttpServlet {
 		evento.setCitta(request.getParameter("Citta"));
 		
 		t.save(evento);
-		
+		int IdEvento = t.findIdByElements(evento);
+		c.save(new Partecipazione(creatore,IdEvento,1));
 		System.out.println("EVENTO CREATO"+evento.getCreatore()+" "+evento.getProvincia()+" "+evento.getScadenza());
 		
 		RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
