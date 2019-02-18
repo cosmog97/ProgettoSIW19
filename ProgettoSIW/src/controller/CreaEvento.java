@@ -54,7 +54,7 @@ public class CreaEvento extends HttpServlet {
 		
 		Timestamp dataAttuale = new Timestamp(System.currentTimeMillis());
 		String creatore = (String)session.getAttribute("Username");
-		
+		int maxPrenotati = Integer.parseInt(request.getParameter("NumeroPosti"));//num max prenotabili
 		
 		java.sql.Timestamp inizio = java.sql.Timestamp.valueOf(request.getParameter("Datainizio"));
 		java.sql.Timestamp fine = java.sql.Timestamp.valueOf(request.getParameter("DataFine")); 
@@ -64,13 +64,13 @@ public class CreaEvento extends HttpServlet {
 	   
 	    EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		PartecipazioneDAO c = DatabaseManager.getInstance().getDaoFactory().getPartecipazioneDAO();
-		//fare controlli su pk
+		
 		Evento evento = new Evento();
 		
 		evento.setNome(request.getParameter("NomeEvento"));
 		evento.setCategoria(request.getParameter("Categoria"));
 		evento.setNumattualeprenotati(1);
-		evento.setNummaxprenotati(4);
+		evento.setNummaxprenotati(maxPrenotati);
 		evento.setInizio(inizio);
 		evento.setFine(fine);
 		evento.setCreazione(dataAttuale);
@@ -82,7 +82,8 @@ public class CreaEvento extends HttpServlet {
 		t.save(evento);
 		int IdEvento = t.findIdByElements(evento);
 		c.save(new Partecipazione(creatore,IdEvento,1));
-		System.out.println("EVENTO CREATO"+evento.getCreatore()+" "+evento.getProvincia()+" "+evento.getScadenza());
+		//stampa da cancellare
+		System.out.println("EVENTO CREATO"+evento.getCreatore()+" "+evento.getProvincia()+" "+evento.getScadenza()+evento.getNummaxprenotati());
 		
 		RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
 		rd.forward(request, response);
