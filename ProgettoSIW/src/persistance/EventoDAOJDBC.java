@@ -282,7 +282,7 @@ public class EventoDAOJDBC implements EventoDAO {
 			int numatt = e.getNumattualeprenotati();
 			
 			
-			String select = "SELECT \"IDEvento\" FROM gestioneeventidb.\"Evento\" WHERE \"NomeEvento\"='"+nomeevento+"', \"CategoriaEvento\"='"+categoria+"', \"NumAttPrenotati\"='"+numatt+"', \"NumMaxPrenotati\"='"+nummax+"', \"InizioEvento\"='"+inizio+"', \"FineEvento\"='"+fine+"', \"CreazioneEvento\"='"+creazione+"', \"ScadenzaEvento\"='"+scadenza+"', \"CreatoreEvento\"='"+creatore+"', \"Provincia\"='"+provincia+"', \"Citta\"='"+citta+"';";
+			String select = "SELECT \"IDEvento\" FROM gestioneeventidb.\"Evento\" WHERE \"NomeEvento\"='"+nomeevento+"' and \"CategoriaEvento\"='"+categoria+"'and \"NumAttPrenotati\"='"+numatt+"' and \"NumMaxPrenotati\"='"+nummax+"' and \"InizioEvento\"='"+inizio+"' and \"FineEvento\"='"+fine+"'and \"CreazioneEvento\"='"+creazione+"'and \"ScadenzaEvento\"='"+scadenza+"' and \"CreatoreEvento\"='"+creatore+"'and \"Provincia\"='"+provincia+"' and \"Citta\"='"+citta+"';";
 			
 			PreparedStatement statement = connection.prepareStatement(select);
 
