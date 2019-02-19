@@ -98,12 +98,12 @@
                     <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-user" id="Datanascita" name="Datanascita" placeholder="${sessionScope.Datanascita} ">
                   </div>
                   <div class="col-sm-6">
-                    <div align="center">Password</div>
-                    <input type="password" class="form-control form-control-user" id="Password" placeholder="Password">
+                    <br>
+                   <button class="btn btn-primary btn-user btn-block" type="submit" name="ModificaProfilo" type=submit>Modifica dati personali</button>
                   </div>
                 </div>
                 
-                <button class="btn btn-primary btn-user btn-block" type="submit" name="ModificaProfilo" type=submit>Modifica dati personali</button>
+                
               </form>
               <br>
               <hr>
