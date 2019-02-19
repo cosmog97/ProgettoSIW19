@@ -69,7 +69,7 @@
           
            <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Statistiche</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Riepilogo</h6>
                 </div>
           <div class="card-body">
           <div align="center">Ecco un breve riepilogo sull'attività del tuo profilo, ${sessionScope.Nome}.</div>
@@ -160,22 +160,55 @@
 
          </div>
        </div>
+              <div class="row">
+
+            <div class="col-xl-8 col-lg-7">
+
+              <!-- Area Chart -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Cos'è eBooker</h6>
                 </div>
-               <div class="card-body">
-                 <div class="rwd-video">
+                <div class="card-body">
+                	eBooker è un'innovativa piattaforma
+                	<hr>
+                   <div class="rwd-video">
                		<iframe width="560" height="315" src="https://www.youtube.com/embed/ma-u0IOxLPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                	 </div>
-               </div>
+                  
+                </div>
+              </div>
 
+
+            </div>
+
+            <!-- Donut Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Statistiche</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-pie pt-4">
+                    <canvas id="myPieChart"></canvas>
+                  </div>
+                  <hr> Su eBooker sono stati creati 100 eventi.
+                </div>
+              </div>
+            </div>
+               
       </div>
+      
       <!-- End of Main Content -->
+            
+            
 
 
 
     </div>
+    
     <!-- End of Content Wrapper -->
 
   </div>
