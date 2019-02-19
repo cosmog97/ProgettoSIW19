@@ -192,7 +192,7 @@ public class EmailManager {
     	String completa = message1+message2+message3+message4+message5+message6+message7+finale+finale2;
     	String subject = "Cambio dati profilo avvenuto con successo.";
     	try {
-			 	System.out.println("asssa"); //eliminareeeeeee
+			 	System.out.println("assssa"); //eliminareeeeeee
 	            Properties props = new Properties();
 	            props.setProperty("mail.smtp.host", "smtp.gmail.com");
 	            props.setProperty("mail.smtp.port", "587");
