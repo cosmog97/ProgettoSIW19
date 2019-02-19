@@ -89,7 +89,7 @@
                       <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                      <i class="fas fa-business-time fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -106,11 +106,6 @@
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
                           <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                        </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -132,7 +127,7 @@
                       <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                      <i class="fas fa-paint-brush fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -181,6 +176,7 @@
                     <canvas id="myPieChart"></canvas>
                   </div>
                   <hr> Su eBooker sono stati creati 100 eventi.
+                  <br> Su eBooker sono presenti 10 utenti.
                 </div>
               </div>
             </div>
