@@ -84,47 +84,10 @@ public class Register extends HttpServlet {
 			 
 			 /*gestione email di benvenuto*/
 			 
-<<<<<<< Upstream, based on origin/master
-			 String from ="ebookersiw@gmail.com";
-		     String to = utente.getEmail();
-		     String subject = "Benvenuto su eBooker";
-		     String message = "Benvenuto"+utente.getNome()+"sul nostro sito, ora puoi creare e cercare gli eventi a cui vorresti partecipare. Enjoy yourself :)";
-		     
-		     
-			 try {
-				 	//java.security.Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider);
-		            System.out.println("in try");
-		            System.out.println(to); //stampa email
-				 	Properties props = new Properties();
-		            props.setProperty("mail.smtp.host", "smtp.gmail.com");
-		            props.setProperty("mail.smtp.port", "587");
-		            props.setProperty("mail.smtp.auth", "true");
-		            props.setProperty("mail.smtp.starttls.enable", "true");
-		            props.setProperty("mail.transport.protocol","smtp");
-		            
-		            Session mailsession = Session.getInstance(props,null);
-		 
-		            MimeMessage msg = new MimeMessage(mailsession);
-		            msg.setText(message);
-		            msg.setSubject(subject);
-		            msg.setFrom(new InternetAddress(from));
-		            msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-		            //Transport.send(msg);
-		            Transport transport = mailsession.getTransport("smtp");
-		            transport.connect("smtp.gmail.com", "ebookersiw@gmail.com", "prenotato.13");
-		            transport.sendMessage(msg,msg.getAllRecipients());
-		            transport.close();
-		        }catch (AddressException ex) {
-		        	System.out.println("email errata");
-		        } catch (MessagingException ex) {
-		        	System.out.println("email non inviata");
-		            
-		        }
-			 /*fine gestione email*/
-=======
+
 			 EmailManager em = new EmailManager();
 			 em.registerValidationEmail(utente.getNome(),utente.getEmail());
->>>>>>> e93fc2e Prova la mail <3 :*
+
 			 RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			 rd.forward(request, response);
 		}
