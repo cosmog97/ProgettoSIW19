@@ -91,7 +91,7 @@ public class EmailManager {
 		            transport.close();
 		            
 		        }catch (AddressException ex) {
-		        	System.out.println("email errata");
+		        	System.out.println("email sssserratas");
 		        } catch (MessagingException ex) {
 		        	System.out.println("email non inviata");
 		            
