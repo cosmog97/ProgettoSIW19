@@ -85,7 +85,7 @@ public class Register extends HttpServlet {
 			 
 			 String from ="ebookersiw@gmail.com";
 		     String to = utente.getEmail();
-		     String subject = "Benvenuto su ebooker";
+		     String subject = "Benvenuto su eBooker";
 		     String message = "Benvenuto"+utente.getNome()+"sul nostro sito, ora puoi creare e cercare gli eventi a cui vorresti partecipare. Enjoy yourself :)";
 		     
 		     
@@ -103,7 +103,7 @@ public class Register extends HttpServlet {
 		            Session mailsession = Session.getInstance(props,null);
 		 
 		            MimeMessage msg = new MimeMessage(mailsession);
-		            msg.setText("ciao ciao");
+		            msg.setText(message);
 		            msg.setSubject(subject);
 		            msg.setFrom(new InternetAddress(from));
 		            msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
