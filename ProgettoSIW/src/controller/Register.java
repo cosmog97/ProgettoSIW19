@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.util.Properties;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+/*import for email*/
+import javax.mail.AuthenticationFailedException;
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.io.*;
+import java.net.*;
+
+
+/*fine import for email*/
 
 import utility.PasswordManager;
 import model.Utente;
@@ -63,6 +81,44 @@ public class Register extends HttpServlet {
 
 			 t.save(utente);
 			 
+			 /*gestione email di benvenuto*/
+			 
+			 String from ="ebookersiw@gmail.com";
+		     String to = utente.getEmail();
+		     String subject = "Benvenuto su ebooker";
+		     String message = "Benvenuto"+utente.getNome()+"sul nostro sito, ora puoi creare e cercare gli eventi a cui vorresti partecipare. Enjoy yourself :)";
+		     
+		     
+			 try {
+				 	//java.security.Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider);
+		            System.out.println("in try");
+		            System.out.println(to); //stampa email
+				 	Properties props = new Properties();
+		            props.setProperty("mail.smtp.host", "smtp.gmail.com");
+		            props.setProperty("mail.smtp.port", "587");
+		            props.setProperty("mail.smtp.auth", "true");
+		            props.setProperty("mail.smtp.starttls.enable", "true");
+		            props.setProperty("mail.transport.protocol","smtp");
+		            
+		            Session mailsession = Session.getInstance(props,null);
+		 
+		            MimeMessage msg = new MimeMessage(mailsession);
+		            msg.setText("ciao ciao");
+		            msg.setSubject(subject);
+		            msg.setFrom(new InternetAddress(from));
+		            msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+		            //Transport.send(msg);
+		            Transport transport = mailsession.getTransport("smtp");
+		            transport.connect("smtp.gmail.com", "ebookersiw@gmail.com", "prenotato.13");
+		            transport.sendMessage(msg,msg.getAllRecipients());
+		            transport.close();
+		        }catch (AddressException ex) {
+		        	System.out.println("email errata");
+		        } catch (MessagingException ex) {
+		        	System.out.println("email non inviata");
+		            
+		        }
+			 /*fine gestione email*/
 			 RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			 rd.forward(request, response);
 		}
