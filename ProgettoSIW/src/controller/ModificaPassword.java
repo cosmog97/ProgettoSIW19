@@ -26,7 +26,7 @@ public class ModificaPassword extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public ModificaPassword() {
-        super();
+        super(); 
         // TODO Auto-generated constructor stub
     }
 
