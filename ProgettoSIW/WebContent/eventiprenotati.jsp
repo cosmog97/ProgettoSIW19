@@ -11,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>I miei eventi</title>
+  <title>Eventi prenotati</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -46,26 +46,26 @@
     		<br>
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">I miei eventi</h1>
+            <h1 class="h3 mb-0 text-gray-800">Eventi prenotati</h1>
             <a href="logout.jsp" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-power-off fa-sm text-white-50"></i>  Logout</a>
           </div>
           
            <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Eventi creati da ${sessionScope.Nome}</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Gestisci eventi prenotati</h6>
                 </div>
           <div class="card-body">
           
 
           <!-- Content Row -->
-	          <div class="">
-	            <div class="p-5">
-	   				
-	
-	            </div>
-	          </div>
+          <div class="">
+            <div class="p-5">
+   				
 
-     	 </div>
+            </div>
+          </div>
+
+      </div>
       <!-- End of Main Content -->
 
 
