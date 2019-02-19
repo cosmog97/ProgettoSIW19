@@ -102,8 +102,6 @@
                    <button class="btn btn-primary btn-user btn-block" type="submit" name="ModificaProfilo" type=submit>Modifica dati personali</button>
                   </div>
                 </div>
-                
-                
               </form>
               <br>
               <hr>

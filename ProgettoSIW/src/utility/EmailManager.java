@@ -26,8 +26,8 @@ public class EmailManager {
     
     public void registerValidationEmail(String nomeUtente,String to) {
     	String from ="ebookersiw@gmail.com";
-    	String message = "Benvenuto, "+nomeUtente+" ora puoi creare e cercare gli eventi che preferisci. Enjoy Yourself :)";
-    	String subject = "Benvenuto su ebooker";
+    	String message = "Benvenuto, "+nomeUtente+" su eBooker. Ora puoi creare e cercare gli eventi che preferisci.\nTrovare nuove amicizie e visitare nuovi posti è più facile! Organize Yourself!";
+    	String subject = "Benvenuto su eBooker";
     	//riepilogo dati?
     	try {
 		 	
@@ -52,21 +52,21 @@ public class EmailManager {
             transport.close();
             
         }catch (AddressException ex) {
-        	System.out.println("email errata");
+        	System.out.println("Email errata");
         } catch (MessagingException ex) {
-        	System.out.println("email non inviata");
+        	System.out.println("Email non inviata");
             
         }
     }//fine funzione
     
     public void creationValidationEmail(String nomeUtente,String to) {
     	String from ="ebookersiw@gmail.com";
-    	String message1 = "Salve "+" "+nomeUtente+" la informiamo che la sua creazione dell'evento e' andata a buon fine\n";
+    	String message1 = "Salve "+" "+nomeUtente+", la informiamo che la sua creazione dell'evento e' andata a buon fine\n";
     	String stringa1 = "Puo' trovare il suo evento creato su 'I miei eventi'\n";
-    	String finale = "Lo staff sempre a disposizione\n";
-    	String finale2 = "Distinti saluti, staff ebooker\n";
+    	String finale = "Lo staff e' sempre a sua disposizione\n";
+    	String finale2 = "Distinti saluti, staff eBooker\n";
     	String completa = message1+stringa1+finale+finale2;
-    	String subject = "Evento creato con successo.";
+    	String subject = "Evento creato con successo";
     	
 		try {
 				 	
@@ -91,21 +91,21 @@ public class EmailManager {
 		            transport.close();
 		            
 		        }catch (AddressException ex) {
-		        	System.out.println("email sssserratas");
+		        	System.out.println("Email errata ");
 		        } catch (MessagingException ex) {
-		        	System.out.println("email non inviata");
+		        	System.out.println("Email non inviata");
 		        }
     }//fine funzione
 
     public void passwordChangedEmail(String nomeUtente,String to,String passwordNuova) {
     	
     	String from ="ebookersiw@gmail.com";
-    	String message1 = "Salve "+" "+nomeUtente+" la informiamo che la sua password e' stata cambiata con successo in\n";
+    	String message1 = "Salve "+" "+nomeUtente+", la informiamo che la sua password e' stata cambiata con successo in\n";
     	String message2 = "Nuova Password: "+passwordNuova+"\n";
-    	String finale = "Lo staff sempre a disposizione\n";
-    	String finale2 = "Distinti saluti, staff ebooker\n";
+    	String finale = "Lo staff e' sempre a sua disposizione\n";
+    	String finale2 = "Distinti saluti, staff eBooker\n";
     	String completa = message1+message2+finale+finale2;
-    	String subject = "Password cambiata con successo.";
+    	String subject = "Password cambiata con successo";
     	try {
 		 	
             Properties props = new Properties();
@@ -129,24 +129,24 @@ public class EmailManager {
             transport.close();
             
         }catch (AddressException ex) {
-        	System.out.println("email errata");
+        	System.out.println("Email errata");
         } catch (MessagingException ex) {
-        	System.out.println("email non inviata");
+        	System.out.println("Email non inviata");
             
         }
     }//fine funzione
 	
     public void partecipazioneEmail(String nomeUtente,String to,String creatore,String luogo, Timestamp datainizio) {
     	String from ="ebookersiw@gmail.com";
-    	String message1 = "Salve "+" "+nomeUtente+" la informiamo che la sua prenotazione per l evento:\n";
+    	String message1 = "Salve "+" "+nomeUtente+" la informiamo che la sua prenotazione per l'evento:\n";
     	String stringa1 = "Di: "+creatore+"\n";
     	String stringa2 = "Presso: "+luogo+"\n";
     	String stringa3 = "In data: "+datainizio+"\n";
     	String stringa4 = "E' avvenuta con successo\n";
-    	String finale = "Lo staff sempre a disposizione\n";
-    	String finale2 = "Distinti saluti, staff ebooker\n";
+    	String finale = "Lo staff e' sempre a sua disposizione\n";
+    	String finale2 = "Distinti saluti, staff eBooker\n";
     	String completa = message1+stringa1+stringa2+stringa3+stringa4+finale+finale2;
-    	String subject = "Evento prenotato con successo.";
+    	String subject = "Evento prenotato con successo";
     	try {
 		 	
             Properties props = new Properties();
@@ -170,9 +170,9 @@ public class EmailManager {
             transport.close();
             
         }catch (AddressException ex) {
-        	System.out.println("email errata");
+        	System.out.println("Email errata");
         } catch (MessagingException ex) {
-        	System.out.println("email non inviata");
+        	System.out.println("Email non inviata");
             
         }
     }//fine funzione
@@ -184,12 +184,12 @@ public class EmailManager {
     	String message3 = "Cognome: "+cognome+"\n";
     	String message4 = "Email: "+email+"\n";
     	String message5 = "Data di Nascita: "+data+"\n";
-    	String message6 = "Data di Nascita: "+provincia+"\n";
-    	String message7 = "Data di Nascita: "+citta+"\n";
-    	String finale = "Lo staff sempre a disposizione.\n";
-    	String finale2 = "Distinti saluti, staff ebooker.\n";
+    	String message6 = "Provincia: "+provincia+"\n";
+    	String message7 = "Citta': "+citta+"\n";
+    	String finale = "Lo staff e' sempre a sua disposizione.\n";
+    	String finale2 = "Distinti saluti, staff eBooker.\n";
     	String completa = message1+message2+message3+message4+message5+message6+message7+finale+finale2;
-    	String subject = "Cambio dati profilo avvenuto con successo.";
+    	String subject = "Cambio dati profilo avvenuto con successo";
     	try {
 			 	System.out.println("bomba1"); //eliminareeeeeee
 	            Properties props = new Properties();
@@ -213,9 +213,9 @@ public class EmailManager {
 	            transport.close();
 	            
 	        }catch (AddressException ex) {
-	        	System.out.println("email errata");
+	        	System.out.println("Email errata");
 	        } catch (MessagingException ex) {
-	        	System.out.println("email non inviata");
+	        	System.out.println("Email non inviata");
 	            
 	        }
 	    	
