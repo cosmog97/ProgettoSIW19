@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -22,27 +23,12 @@
   <link href="css/playerresponsive.css" rel="stylesheet">
 
 
-
-  <script>
-    function show(shown, hidden) {
-        document.getElementById(shown).style.display='block';
-        document.getElementById(hidden).style.display='none';
-        return false;
-    }
-  </script>
-
-  <script>
-    $("#myspan").click(function(){
-      alert('I got a click');
-    });
-  </script>
-
-
-
 </head>
 
 <body id="page-top">
-  
+  <c:if test = "${sessionScope.Nome == null}">
+         <script>window.location.replace("404.html");</script>
+      </c:if>
   <!-- Page Wrapper -->
   <div id="wrapper">
 	<jsp:include page="navbar.jsp" />
