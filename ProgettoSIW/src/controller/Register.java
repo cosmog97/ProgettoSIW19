@@ -27,6 +27,7 @@ import javax.mail.internet.MimeMessage;
 import java.io.*;
 import java.net.*;
 
+import utility.EmailManager;
 
 /*fine import for email*/
 
@@ -83,6 +84,7 @@ public class Register extends HttpServlet {
 			 
 			 /*gestione email di benvenuto*/
 			 
+<<<<<<< Upstream, based on origin/master
 			 String from ="ebookersiw@gmail.com";
 		     String to = utente.getEmail();
 		     String subject = "Benvenuto su eBooker";
@@ -119,6 +121,10 @@ public class Register extends HttpServlet {
 		            
 		        }
 			 /*fine gestione email*/
+=======
+			 EmailManager em = new EmailManager();
+			 em.registerValidationEmail(utente.getNome(),utente.getEmail());
+>>>>>>> e93fc2e Prova la mail <3 :*
 			 RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			 rd.forward(request, response);
 		}

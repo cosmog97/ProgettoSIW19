@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import model.Utente;
 import persistance.DatabaseManager;
 import persistance.UtenteDAO;
+import utility.EmailManager;
 
 /**
  * Servlet implementation class ModificaPassword
@@ -47,6 +48,7 @@ public class ModificaPassword extends HttpServlet {
 		String vecchiaPassword = (String) request.getParameter("Vecchiapassword");
 		String nuovaPassword = (String) request.getParameter("Nuovapassword");
 		String ripetiNuovaPassword = (String) request.getParameter("Ripetinuovapassword");
+		String email = (String) session.getAttribute("Email");
 		Date data = new Date(System.currentTimeMillis());
 		
 		System.out.println("User :" + usernameCorrente);
@@ -60,6 +62,10 @@ public class ModificaPassword extends HttpServlet {
 		if (passwordDB.equals(vecchiaPassword) && nuovaPassword.equals(ripetiNuovaPassword)) {
 			System.out.println("Modifica password ok");
 			t.setPassword(usernameCorrente, nuovaPassword, data);
+			
+			EmailManager em = new EmailManager();
+			em.passwordChangedEmail(usernameCorrente, email, nuovaPassword);
+			
 			session.setAttribute("Ultimamodpassword",data);
 		}
 		RequestDispatcher rd = request.getRequestDispatcher("modificaprofilo.jsp");

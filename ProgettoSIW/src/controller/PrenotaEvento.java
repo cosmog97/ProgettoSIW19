@@ -18,6 +18,7 @@ import com.google.gson.JsonElement;
 import model.Evento;
 import persistance.DatabaseManager;
 import persistance.EventoDAO;
+import utility.EmailManager;
 
 /**
  * Servlet implementation class PrenotaEvento
@@ -48,13 +49,21 @@ public class PrenotaEvento extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JsonElement data = new Gson().fromJson(request.getReader(), JsonElement.class);
 		HttpSession session = request.getSession();
+		
 		String utente = (String) session.getAttribute("Username");
+		String email = (String)session.getAttribute("Email");
+		String creatore = (String)session.getAttribute("Creatore");
+		String luogo = (String)session.getAttribute("Citta");
+		
+		
 		System.out.println("ID:" + data + "  utente: "+utente);
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		Evento temp = t.findByPrimaryKey(data.toString());
 		Gson gson = new Gson();
 	    String json = gson.toJson(temp);
-
+	    
+	    EmailManager em = new EmailManager();
+	    em.partecipazioneEmail(utente,email,temp.getCreatore(),temp.getCitta(),temp.getInizio());
 	  /*  System.out.println("json: "+json);
 	    System.out.println("json creato");
 	    response.setContentType("application/json");

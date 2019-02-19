@@ -21,6 +21,7 @@ import persistance.DatabaseManager;
 import persistance.EventoDAO;
 import persistance.PartecipazioneDAO;
 import persistance.UtenteDAO;
+import utility.EmailManager;
 
 /**
  * Servlet implementation class CreaEvento
@@ -54,6 +55,7 @@ public class CreaEvento extends HttpServlet {
 		
 		Timestamp dataAttuale = new Timestamp(System.currentTimeMillis());
 		String creatore = (String)session.getAttribute("Username");
+		String email = (String)session.getAttribute("Email");
 		int maxPrenotati = Integer.parseInt(request.getParameter("NumeroPosti"));//num max prenotabili
 		
 		java.sql.Timestamp inizio = java.sql.Timestamp.valueOf(request.getParameter("Datainizio"));
@@ -80,6 +82,12 @@ public class CreaEvento extends HttpServlet {
 		evento.setCitta(request.getParameter("Citta"));
 		
 		t.save(evento);
+		
+		//email
+		EmailManager em = new EmailManager();
+		em.creationValidationEmail(creatore,email);
+		//
+		
 		int IdEvento = t.findIdByElements(evento);
 		c.save(new Partecipazione(creatore,IdEvento,1));
 		//stampa da cancellare

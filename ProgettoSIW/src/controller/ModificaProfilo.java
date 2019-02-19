@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import model.Utente;
 import persistance.DatabaseManager;
 import persistance.UtenteDAO;
+import utility.EmailManager;
 
 /**
  * Servlet implementation class ModificaProfilo
@@ -121,6 +122,11 @@ public class ModificaProfilo extends HttpServlet {
 			session.setAttribute("Datanascita",temp2.getDatanascita());
 			session.setAttribute("Provincia",temp2.getProvincia());
 			session.setAttribute("Citta",temp2.getCitta());
+			
+			EmailManager em = new EmailManager();
+		    em.profilomodificatoEmail(usernameCorrente,temp2.getEmail(),temp2.getNome(),temp2.getCognome(),temp2.getEmail(),temp2.getDatanascita(),temp2.getProvincia(),temp2.getCitta());;
+			
+			
 			RequestDispatcher rd = request.getRequestDispatcher("modificaprofilo.jsp");
 			rd.forward(request, response);
 		}
