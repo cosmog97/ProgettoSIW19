@@ -108,18 +108,7 @@ public class Login extends HttpServlet {
 		}
 
 	}
-	/*private class SMTPAuthenticator extends Authenticator {
-		 
-        private PasswordAuthentication authentication;
- 
-        public SMTPAuthenticator(String login, String password) {
-            authentication = new PasswordAuthentication(login, password);
-        }
- 
-        protected PasswordAuthentication getPasswordAuthentication() {
-            return authentication;
-        }
-    }*/
+	
 	
  
     
