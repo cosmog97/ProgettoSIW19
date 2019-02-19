@@ -94,7 +94,6 @@ public class EmailManager {
 		        	System.out.println("email sssserratas");
 		        } catch (MessagingException ex) {
 		        	System.out.println("email non inviata");
-		            
 		        }
     }//fine funzione
 
