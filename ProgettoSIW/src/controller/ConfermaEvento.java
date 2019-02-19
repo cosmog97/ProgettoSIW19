@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Evento;
 import model.Partecipazione;
 import persistance.DatabaseManager;
+import persistance.EventoDAO;
 import persistance.PartecipazioneDAO;
 
 /**
@@ -48,8 +50,12 @@ public class ConfermaEvento extends HttpServlet {
 		System.out.println("utente: "+utente);
 		System.out.println("idEvento "+idEvento);
 		System.out.println("posti: "+postiDaPrenotare);
+		EventoDAO k = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		PartecipazioneDAO c = DatabaseManager.getInstance().getDaoFactory().getPartecipazioneDAO();
 		c.save(new Partecipazione(utente,idEvento,postiDaPrenotare));
+		Evento temp = k.findByPrimaryKey(request.getParameter("eventoID"));
+		temp.setNumattualeprenotati(temp.getNumattualeprenotati() + postiDaPrenotare);
+		k.update(temp);
 		session.removeAttribute("Evento");
 		RequestDispatcher rd = request.getRequestDispatcher("eventoconfermato.html");
 		rd.forward(request, response);

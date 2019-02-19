@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -250,8 +251,32 @@ public class EventoDAOJDBC implements EventoDAO {
 	}
 	
 	@Override
-	public void update(Evento evento) {
-		// TODO Auto-generated method stub
+	public void update(Evento e) {
+		Connection connection = this.dataSource.getConnection();		
+		try {
+				Class.forName("org.postgresql.Driver");
+
+				String update = "UPDATE gestioneeventidb.\"Evento\" SET \"NomeEvento\"='"+e.getNome()+"', \"CategoriaEvento\"='"+e.getCategoria()+"', \"NumAttPrenotati\"='"+e.getNumattualeprenotati()+"', \"NumMaxPrenotati\"='"+e.getNummaxprenotati()+"', \"InizioEvento\"='"+e.getInizio()+"', \"FineEvento\"='"+e.getFine()+"', \"CreazioneEvento\"='"+e.getCreazione()+"', \"ScadenzaEvento\"='"+e.getScadenza()+"', \"CreatoreEvento\"='"+e.getCreatore()+"', \"Provincia\"='"+e.getProvincia()+"', \"Citta\"='"+e.getProvincia()+"' WHERE \"IDEvento\"='"+e.getId()+"';";
+				System.out.println(update);
+				Statement statement = connection.createStatement();
+
+				statement.executeUpdate(update);
+			}
+		catch (SQLException e1) {
+				e1.printStackTrace();
+		} catch (ClassNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+		}
+		finally {
+				try {
+					connection.close();
+				} 
+				catch (SQLException e1) {
+						e1.printStackTrace();
+				}
+			}
+		
 
 	}
 
