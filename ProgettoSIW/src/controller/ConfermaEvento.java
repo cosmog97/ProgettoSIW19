@@ -1,12 +1,18 @@
 package controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import model.Partecipazione;
+import persistance.DatabaseManager;
+import persistance.PartecipazioneDAO;
 
 /**
  * Servlet implementation class ConfermaEvento
@@ -28,7 +34,7 @@ public class ConfermaEvento extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request,response);
 	}
 
 	/**
@@ -36,13 +42,17 @@ public class ConfermaEvento extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		
 		String utente = (String) session.getAttribute("Username");
 		int idEvento = Integer.valueOf(request.getParameter("eventoID"));
 		int postiDaPrenotare = Integer.valueOf(request.getParameter("Postiprenotazione"));
 		System.out.println("utente: "+utente);
 		System.out.println("idEvento "+idEvento);
 		System.out.println("posti: "+postiDaPrenotare);
+		PartecipazioneDAO c = DatabaseManager.getInstance().getDaoFactory().getPartecipazioneDAO();
+		c.save(new Partecipazione(utente,idEvento,postiDaPrenotare));
+		session.removeAttribute("Evento");
+		RequestDispatcher rd = request.getRequestDispatcher("eventoconfermato.html");
+		rd.forward(request, response);
 	}
 
 }
