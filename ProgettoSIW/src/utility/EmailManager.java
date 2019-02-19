@@ -142,7 +142,7 @@ public class EmailManager {
     	String stringa1 = "Di: "+creatore+"\n";
     	String stringa2 = "Presso: "+luogo+"\n";
     	String stringa3 = "In data: "+datainizio+"\n";
-    	String stringa4 = "E' avvenuta con successo\n";
+    	String stringa4 = "E' avvenuta con successo.\n";
     	String finale = "Lo staff e' sempre a sua disposizione\n";
     	String finale2 = "Distinti saluti, staff eBooker\n";
     	String completa = message1+stringa1+stringa2+stringa3+stringa4+finale+finale2;

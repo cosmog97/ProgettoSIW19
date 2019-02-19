@@ -28,6 +28,7 @@
 </head>
 <body>
 	<div class="bg-gradient-primary">
+	
 	 <div class="container">
 	 <div id="content">
 
@@ -42,7 +43,8 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-center">Cerca il tuo evento</h6>
                 </div>
-               	Benvenuto ${sessionScope.Nome}
+               <br>
+               <div align="center">	${sessionScope.Nome}, cerca i tuoi eventi preferiti. Compila il seguente modulo per perfezionare la ricerca.</div>
                 <div class="p-4">
                   <div>
            

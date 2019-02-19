@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>eBookers</title>
+	<title>eBooker</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -31,7 +31,7 @@
 <body>
 	
 	<div class="header">
-		<a href="#default" class="logo">eBooker</a>
+		<a href="#default" class="logo">EBOOKER</a>
 		<div class="header-right">
 			<a><button class="btn" onclick="window.location.href='contatti.jsp';">Contatti</button></a>
 			<c:choose>
