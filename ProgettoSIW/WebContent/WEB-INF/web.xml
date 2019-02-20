@@ -33,11 +33,4 @@
     <servlet-name>CreaEvento</servlet-name>
     <url-pattern>/creaevento</url-pattern>
   </servlet-mapping>
-  
-  
- 
-  
-  
-  
-  
 </web-app>

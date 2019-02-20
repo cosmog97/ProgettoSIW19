@@ -16,5 +16,6 @@ public interface EventoDAO {
 	public void delete(Evento evento);
 	List<Evento> findAllByDifferentCreator(String utente, Timestamp date);
 	List<Evento> findAllwithDate(Timestamp date);
+	List<Evento> findAllByCreator(String utente);
 	
 }
