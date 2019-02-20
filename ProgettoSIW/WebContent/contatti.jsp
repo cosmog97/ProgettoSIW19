@@ -68,7 +68,7 @@
 	    </div>
 	
 	    <div class="col-sm-4" id="contact2">
-	        <h3>Sedi e Contatti</h3>
+	        <h3>eBooker S.r.l.</h3>
 	        <hr align="left" width="50%">
 	        <h4 class="pt-2">Sede operativa</h4>
 	        <i class="fas fa-globe" style="color:#000"></i> Via Pietro Bucci, 87036 Arcavacata, Rende (CS)<br>
