@@ -39,7 +39,7 @@
 </head>
 
 <body>
-	
+
 	<div class="header">
 		<a href="#default" class="logo">EBOOKER</a>
 		<div class="header-right">
@@ -76,15 +76,14 @@
 	        <i class="fas fa-phone" style="color:#000"></i> <a href="tel:+"> +39 3338884441 </a><br>
 	        <i class="fab fa-whatsapp" style="color:#000"></i><a href="tel:+"> +39 3338884442 </a><br>
 	        <h4 class="pt-2">Email</h4>
-	        <i class="fa fa-envelope" style="color:#000"></i> <a href="">ebookersiw@gmail.com</a><br>
+	        <i class="fa fa-envelope" style="color:#000"></i> <a href="mailto:ebookersiw@gmail.com">ebookersiw@gmail.com</a><br>
 	      </div>
 	  </div>
+	
+		<br><br>
+		<h1 class="text-center">Lo staff di eBooker</h1>
+		<hr>
 	</div>
-
-
-
-	<br><br>
-
 
 
 </body>
