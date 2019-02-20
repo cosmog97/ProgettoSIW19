@@ -20,8 +20,8 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <!--  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
 
 </head>
 
@@ -58,7 +58,15 @@
                   <h6 class="m-0 font-weight-bold text-primary">Gestisci eventi creati da ${sessionScope.Username}</h6>
                 </div>
           <div class="card-body">
-      
+		      <div class="" style="overflow-x:auto;">
+		
+		
+		
+		    	<div id="tableGoesHere" class="col-md-6">
+		      
+		    
+		  		</div><!-- /row -->
+			  </div><!-- container -->
 
      	 </div>
       <!-- End of Main Content -->
