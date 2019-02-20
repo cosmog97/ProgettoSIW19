@@ -17,6 +17,10 @@
 
 	function json2table(json, classes) {
 		  var cols = Object.keys(json[0]);
+
+		  cols.splice(3,1); //controllare bene
+		  cols.splice(0,1);
+		  cols.push('Azione');
 		  
 		  var headerRow = '';
 		  var bodyRows = '';
@@ -36,6 +40,7 @@
 
 		    cols.map(function(colName) {
 		      bodyRows += '<td>' + row[colName] + '</td>';
+		      
 		    })
 
 		    bodyRows += '</tr>';
