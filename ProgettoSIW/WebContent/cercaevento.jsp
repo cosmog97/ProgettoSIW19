@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,9 +25,27 @@
 	.product img {
 		margin-bottom: 10px;
 	}</style>
-	
+		<link type="text/css" rel="stylesheet" href="css/headerCSS.css" />
+		
 </head>
 <body>
+	<div class="header">
+		<a href="#default" class="logo">EBOOKER</a>
+		<div class="header-right">
+			<a><button class="btn" onclick="window.location.href='index.jsp';">Home</button></a>
+			<c:choose>
+			    <c:when test="${sessionScope.Nome == null}">
+			        <a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='login.jsp';">Accedi</button></a>
+            		<a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='register.jsp';">Registrati</button></a>
+			        
+			    </c:when>    
+			    <c:otherwise>
+			        <a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='dashboard.jsp';">Dashboard</button></a>
+			        <a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='logout.jsp';">Logout</button></a>
+			    </c:otherwise>
+			</c:choose>
+		</div>
+	</div>
 	<div class="bg-gradient-primary">
 	
 	 <div class="container">
