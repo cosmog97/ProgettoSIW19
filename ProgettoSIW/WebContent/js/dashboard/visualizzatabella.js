@@ -1,6 +1,7 @@
 
 
-function visualizzaEventi() {
+function cercaTuoiEventi() {
+
 	$.ajax({
         url: "VisualizzaEventiCreati",
         type: 'POST',
@@ -10,13 +11,16 @@ function visualizzaEventi() {
        /* contentType: 'application/json',
         mimeType: 'application/json',*/
         success: function (data) {
-          //console.log(data);
-          //data1 = JSON.parse(JSON.stringify(data));
-        	console.log(data);
-
+        	visualizzaTuoiEventi(data);
         },
         error: function() {
             alert("Errore. La visualizzazione non è andata a buon fine. Ricarica la pagina");
         }
     });
+
+}
+
+
+function visualizzaTuoiEventi(data) {
+	console.log(data);
 }

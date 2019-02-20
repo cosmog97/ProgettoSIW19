@@ -63,7 +63,7 @@
           <!-- Content Row -->
 	          <div class="">
 	            <div class="p-5">
-	   				<button onclick="visualizzaEventi()">Click me</button>
+	   				<button onclick="cercaTuoiEventi()">Click me</button>
 	
 	            </div>
 	          </div>
@@ -90,7 +90,8 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-	<script src="js/dashboard/visualizzatabella.js"></script>
+  <script src="js/dashboard/visualizzatabella.js"></script>
+
 
   
 </body>
