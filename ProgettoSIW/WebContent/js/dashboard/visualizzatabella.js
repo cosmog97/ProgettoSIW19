@@ -1,6 +1,6 @@
 
 
-function cercaTuoiEventi() {
+
 
 	$.ajax({
         url: "VisualizzaEventiCreati",
@@ -18,9 +18,10 @@ function cercaTuoiEventi() {
         }
     });
 
-}
+
 
 
 function visualizzaTuoiEventi(data) {
+
 	console.log(data);
 }

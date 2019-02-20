@@ -20,8 +20,8 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 </head>
 
@@ -55,18 +55,10 @@
           
            <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Eventi creati da ${sessionScope.Nome}</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Gestisci eventi creati da ${sessionScope.Username}</h6>
                 </div>
           <div class="card-body">
-          
-
-          <!-- Content Row -->
-	          <div class="">
-	            <div class="p-5">
-	   				<button onclick="cercaTuoiEventi()">Click me</button>
-	
-	            </div>
-	          </div>
+      
 
      	 </div>
       <!-- End of Main Content -->
@@ -79,16 +71,11 @@
   </div>
   <!-- End of Page Wrapper -->
 
+</div>
+</div>
+</div>
 
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
   <script src="js/dashboard/visualizzatabella.js"></script>
 
