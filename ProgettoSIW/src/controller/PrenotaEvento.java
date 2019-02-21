@@ -62,8 +62,7 @@ public class PrenotaEvento extends HttpServlet {
 		Gson gson = new Gson();
 	    String json = gson.toJson(temp);
 	    
-	    EmailManager em = new EmailManager();
-	    em.partecipazioneEmail(utente,email,temp.getCreatore(),temp.getCitta(),temp.getInizio());
+	    
 	  /*  System.out.println("json: "+json);
 	    System.out.println("json creato");
 	    response.setContentType("application/json");

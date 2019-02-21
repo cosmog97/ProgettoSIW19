@@ -15,6 +15,7 @@ import model.Partecipazione;
 import persistance.DatabaseManager;
 import persistance.EventoDAO;
 import persistance.PartecipazioneDAO;
+import utility.EmailManager;
 
 /**
  * Servlet implementation class ConfermaEvento
@@ -45,6 +46,7 @@ public class ConfermaEvento extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String utente = (String) session.getAttribute("Username");
+		String email = (String) session.getAttribute("Email");
 		int idEvento = Integer.valueOf(request.getParameter("eventoID"));
 		int postiDaPrenotare = Integer.valueOf(request.getParameter("Postiprenotazione"));
 		System.out.println("utente: "+utente);
@@ -56,6 +58,10 @@ public class ConfermaEvento extends HttpServlet {
 		Evento temp = k.findByPrimaryKey(request.getParameter("eventoID"));
 		temp.setNumattualeprenotati(temp.getNumattualeprenotati() + postiDaPrenotare);
 		k.update(temp);
+		
+		EmailManager em = new EmailManager();
+	    em.partecipazioneEmail(utente,email,temp.getCreatore(),temp.getCitta(),temp.getInizio());
+		
 		session.removeAttribute("Evento");
 		RequestDispatcher rd = request.getRequestDispatcher("eventoconfermato.html");
 		rd.forward(request, response);

@@ -11,6 +11,7 @@ import javax.mail.internet.MimeMessage;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Properties;
 
 
@@ -221,6 +222,92 @@ public class EmailManager {
 	    	
 	    }//fine funzione
     	
+    
+    	public void eventoeliminatoEmail(String creatore,List<String> to) {
+    		String from ="ebookersiw@gmail.com";
+    		String message = "Salve, volevamo informarla che l evento di "+creatore+"a cui eri prenotato è stato eliminato\n";
+    		String message2 = "Spero riesca a trovare un evento simile\n";
+    		String finale = "Lo staff e' sempre a sua disposizione.\n";
+        	String finale2 = "Distinti saluti, staff eBooker.\n";
+        	String completa = message+message2+finale+finale2;
+        	String subject = "Evento eliminato";
+        	
+        	
+        	try {
+			 	System.out.println("bomba1"); //eliminareeeeeee
+	            Properties props = new Properties();
+	            props.setProperty("mail.smtp.host", "smtp.gmail.com");
+	            props.setProperty("mail.smtp.port", "587");
+	            props.setProperty("mail.smtp.auth", "true");
+	            props.setProperty("mail.smtp.starttls.enable", "true");
+	            props.setProperty("mail.transport.protocol","smtp");
+	            
+	            Session mailsession = Session.getInstance(props,null);
+	 
+	            MimeMessage msg = new MimeMessage(mailsession);
+	            msg.setText(completa);
+	            msg.setSubject(subject);
+	            msg.setFrom(new InternetAddress(from));
+	            for (int i = 0; i < to.size(); i++) {
+	    			msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to.get(i)));
+	            }
+	            
+	            
+	            Transport transport = mailsession.getTransport("smtp");
+	            transport.connect("smtp.gmail.com", "ebookersiw@gmail.com", "prenotato.13");
+	            transport.sendMessage(msg,msg.getAllRecipients());
+	            transport.close();
+	            
+	        }catch (AddressException ex) {
+	        	System.out.println("Email errata");
+	        } catch (MessagingException ex) {
+	        	System.out.println("Email non inviata");
+	            
+	        }
+        	
+    	
+    	}//fine funzione
+    	
+    	public void tuoeventoeliminato(String nomeUtente,String to) {
+    		String from ="ebookersiw@gmail.com";
+    		String message = "Salve, "+nomeUtente+" confermiamo l eliminazione del tuo evento.\n";
+    		String finale = "Lo staff e' sempre a sua disposizione.\n";
+        	String finale2 = "Distinti saluti, staff eBooker.\n";
+        	String completa = message+finale+finale2;
+        	String subject = "Evento eliminato";
+        	
+        	try {
+			 	System.out.println("bomba1"); //eliminareeeeeee
+	            Properties props = new Properties();
+	            props.setProperty("mail.smtp.host", "smtp.gmail.com");
+	            props.setProperty("mail.smtp.port", "587");
+	            props.setProperty("mail.smtp.auth", "true");
+	            props.setProperty("mail.smtp.starttls.enable", "true");
+	            props.setProperty("mail.transport.protocol","smtp");
+	            
+	            Session mailsession = Session.getInstance(props,null);
+	 
+	            MimeMessage msg = new MimeMessage(mailsession);
+	            msg.setText(completa);
+	            msg.setSubject(subject);
+	            msg.setFrom(new InternetAddress(from));
+	            msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+	            
+	            
+	            
+	            Transport transport = mailsession.getTransport("smtp");
+	            transport.connect("smtp.gmail.com", "ebookersiw@gmail.com", "prenotato.13");
+	            transport.sendMessage(msg,msg.getAllRecipients());
+	            transport.close();
+	            
+	        }catch (AddressException ex) {
+	        	System.out.println("Email errata");
+	        } catch (MessagingException ex) {
+	        	System.out.println("Email non inviata");
+	            
+	        }
+    		
+    	}//fine funzione
     	
     	
     	

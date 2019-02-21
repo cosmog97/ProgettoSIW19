@@ -13,9 +13,11 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 
+import model.Evento;
 import persistance.DatabaseManager;
 import persistance.EventoDAO;
 import persistance.PartecipazioneDAO;
+import utility.EmailManager;
 
 /**
  * Servlet implementation class EliminaEventoCreatore
@@ -47,11 +49,19 @@ public class EliminaEventoCreatore extends HttpServlet {
 		HttpSession session = request.getSession();
 		String utente = (String) session.getAttribute("Username");
 		String emailUtente = (String) session.getAttribute("Email");
+		
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		PartecipazioneDAO k = DatabaseManager.getInstance().getDaoFactory().getPartecipazioneDAO();
+		
+		Evento temp = t.findByPrimaryKey(data.getAsString());
+		
 		//___lista di emailprenotati____
 		List<String> emailPrenotati = k.getEmailByEvento(data.getAsInt());
-
+		
+		EmailManager em = new EmailManager();
+		em.eventoeliminatoEmail(temp.getCreatore(),emailPrenotati);
+		em.tuoeventoeliminato(utente,emailUtente);
+		
 		System.out.println("Email creatore: "+emailUtente);
 		System.out.println("Id Evento da eliminare: "+data);
 		k.deleteByIdEvento(data.getAsInt());
