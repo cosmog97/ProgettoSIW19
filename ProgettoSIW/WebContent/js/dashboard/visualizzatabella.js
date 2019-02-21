@@ -43,7 +43,8 @@
 		    	  bodyRows += '<td>' + row[colName] + '</td>';
 		      }
 		      else {
-		    	  bodyRows += '<td>' + '<button class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">Test</button>' + '</td>';
+		    	  id = row['id'];
+		    	  bodyRows += '<td>' + '<button class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="eliminaEvento('+id+')">Elimina</button>' + '</td>';
 		      }
 		      
 		    })
