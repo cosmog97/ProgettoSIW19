@@ -337,8 +337,33 @@ public class EventoDAOJDBC implements EventoDAO {
 	}
 
 	@Override
-	public void delete(Evento evento) {
-		// TODO Auto-generated method stub
+	public void delete(int idevento) {
+		Connection connection = this.dataSource.getConnection();
+		try {
+			Class.forName("org.postgresql.Driver");
+
+			String delete = "DELETE FROM gestioneeventidb.\"Evento\" WHERE \"IDEvento\"='"+idevento+"';";
+			Statement statement = connection.createStatement();
+
+			statement.executeUpdate(delete);
+			
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			
+			try {
+				connection.close();
+			} 
+			
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 
 	}
 

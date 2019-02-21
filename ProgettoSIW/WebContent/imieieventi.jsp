@@ -58,7 +58,10 @@
                   <h6 class="m-0 font-weight-bold text-primary">Gestisci eventi creati da ${sessionScope.Username}</h6>
                 </div>
           <div class="card-body">
+          <div align="center">Clicca sul tasto "Elimina" per eliminare l'evento selezionato e disdire le prenotazioni effettuate dagli utenti prenotati.</div>
+          
           	<div class="p-5">
+          	
 		      <div class="" style="overflow-x:auto;">
 		
 		

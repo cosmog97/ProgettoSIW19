@@ -13,9 +13,10 @@ public interface EventoDAO {
 	public int findIdByElements(Evento e);	
 	public List<Evento> findAll();
 	public void update(Evento evento);
-	public void delete(Evento evento);
-	List<Evento> findAllByDifferentCreator(String utente, Timestamp date);
-	List<Evento> findAllwithDate(Timestamp date);
-	List<Evento> findAllByCreator(String utente);
+	public void delete(int idevento);
+	public List<Evento> findAllByDifferentCreator(String utente, Timestamp date);
+	public List<Evento> findAllwithDate(Timestamp date);
+	public List<Evento> findAllByCreator(String utente);
+	
 	
 }

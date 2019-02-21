@@ -154,7 +154,7 @@
                 	eBooker è un'innovativa piattaforma
                 	<hr>
                    <div class="rwd-video">
-               		<iframe width="560" height="315" src="https://www.youtube.com/embed/ma-u0IOxLPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               		<iframe width="560" height="315" src="https://www.youtube.com/embed/kJQK6r0Tj0c?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                	 </div>
                   
                 </div>

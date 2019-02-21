@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,6 +136,76 @@ public class PartecipazioneDAOJDBC implements PartecipazioneDAO {
 			}
 		}
 		return sorted;
+	}
+	
+	@Override
+	public void deleteByIdEvento (int idevento) {
+		Connection connection = this.dataSource.getConnection();
+		try {
+			Class.forName("org.postgresql.Driver");
+			
+			String delete = "DELETE FROM gestioneeventidb.\"Partecipazioni\" WHERE \"IDEvento\"='"+idevento+"';";
+			Statement statement = connection.createStatement();
+
+			statement.executeUpdate(delete);
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			
+			try {
+				connection.close();
+			} 
+			
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public List<String> getEmailByEvento(int idevento) {
+		Connection connection = this.dataSource.getConnection();
+		List<String> temp = new ArrayList<String>();
+		try {
+			Class.forName("org.postgresql.Driver");
+			
+			String select = "SELECT \"Email\" FROM gestioneeventidb.\"Utente\" WHERE \"Username\" IN (SELECT \"Username\" FROM gestioneeventidb.\"Partecipazioni\" WHERE \"IDEvento\"='"+idevento+"');";
+			PreparedStatement statement = connection.prepareStatement(select);
+
+			ResultSet rs = statement.executeQuery();
+			
+            while ( rs.next() ) {
+	       	     temp.add(rs.getString(1));
+            }
+
+            return temp;
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			
+			try {
+				connection.close();
+			} 
+			
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+		
 	}
 	
 }

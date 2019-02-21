@@ -9,7 +9,7 @@ function eliminaEvento(id) {
         async: true,
         data: JSON.stringify(id),
         success: function (data) {
-        	
+        	window.location.replace('imieieventi.jsp');
         },
         error: function() {
             alert("Errore. Non è stato possibile eliminare l'evento. Ricarica la pagina");
