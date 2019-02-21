@@ -28,6 +28,15 @@
 		  classes = classes || '';
 
 		  function capitalizeFirstLetter(string) {
+			 if(string == 'nummaxprenotati') {
+				 return "Num. max prenotati";
+			 }
+			 if(string == 'numattualeprenotati'){
+				 return "Num. attuale prenotati";
+			 }
+			 if(string == 'citta') {
+				 return "Citta'";
+			 }
 		    return string.charAt(0).toUpperCase() + string.slice(1);
 		  }
 

@@ -58,15 +58,14 @@
                   <h6 class="m-0 font-weight-bold text-primary">Gestisci eventi creati da ${sessionScope.Username}</h6>
                 </div>
           <div class="card-body">
+          	<div class="p-5">
 		      <div class="" style="overflow-x:auto;">
 		
 		
 		
-		    	<div id="tableGoesHere" class="col-md-6">
-		      
-		    
-		  		</div><!-- /row -->
-			  </div><!-- container -->
+		    	<div id="tableGoesHere" class="col-md-6"></div>
+		  	  </div><!-- /row -->
+			</div><!-- container -->
 
      	 </div>
       <!-- End of Main Content -->
