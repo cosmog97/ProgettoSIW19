@@ -371,7 +371,7 @@ public class EventoDAOJDBC implements EventoDAO {
 	@Override
 	public int findIdByElements(Evento e) {
 		Connection connection = this.dataSource.getConnection();
-		int val = -1;
+
 		try {
 			Class.forName("org.postgresql.Driver");
 			
@@ -395,11 +395,10 @@ public class EventoDAOJDBC implements EventoDAO {
 			ResultSet rs = statement.executeQuery();
 			
             while ( rs.next() ) {
-            	val = rs.getInt(1);
+            	return rs.getInt(1);
             }
             
-            System.out.println("val1: "+val);
-			return val;
+
 		}
 		catch (SQLException e1) {
 			e1.printStackTrace();
@@ -417,8 +416,9 @@ public class EventoDAOJDBC implements EventoDAO {
 				e1.printStackTrace();
 			}
 		}
-		System.out.println("val2: "+val);
-		return val;
+		return -1;
+
+
 		
 	}
 
