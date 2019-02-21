@@ -39,7 +39,12 @@
 		    bodyRows += '<tr>';
 
 		    cols.map(function(colName) {
-		      bodyRows += '<td>' + row[colName] + '</td>';
+		      if (colName != 'Azione') {
+		    	  bodyRows += '<td>' + row[colName] + '</td>';
+		      }
+		      else {
+		    	  bodyRows += '<td>' + '<button class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">Test</button>' + '</td>';
+		      }
 		      
 		    })
 
