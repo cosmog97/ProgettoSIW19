@@ -175,8 +175,8 @@
                   <div class="chart-pie pt-4">
                     <canvas id="myPieChart"></canvas>
                   </div>
-                  <hr> <div id="numeventi">Su eBooker sono stati creati 100 eventi.</div> 
-                  <div id="numutenti">Su eBooker sono presenti 10 utenti.</div>
+                  <hr> <div id="numeventi"></div> 
+                  <div id="numutenti"></div>
                 </div>
               </div>
             </div>

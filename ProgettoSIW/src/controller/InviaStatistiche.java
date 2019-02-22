@@ -45,18 +45,18 @@ public class InviaStatistiche extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		UtenteDAO k = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
-		int numeroEventi = t.sizeEventi();
-		int numeroUtenti = k.sizeUtenti();
-		int cinema = t.sizeByCategoria("Cinema");
-		int convegni = t.sizeByCategoria("Convegni");
-		int feste = t.sizeByCategoria("Feste");
-		int musica = t.sizeByCategoria("Musica");
-		int istruzione = t.sizeByCategoria("Istruzione");
-		int sport = t.sizeByCategoria("Sport");
-		int teatro = t.sizeByCategoria("Teatro");
-		int viaggi = t.sizeByCategoria("Viaggi");
+		float numeroEventi = t.sizeEventi();
+		float numeroUtenti = k.sizeUtenti();
+		float cinema = (t.sizeByCategoria("Cinema")/numeroEventi)*100;
+		float convegni = (t.sizeByCategoria("Convegni")/numeroEventi)*100;;
+		float feste = (t.sizeByCategoria("Feste")/numeroEventi)*100;;
+		float musica = (t.sizeByCategoria("Musica")/numeroEventi)*100;
+		float istruzione = (t.sizeByCategoria("Istruzione")/numeroEventi)*100;;
+		float sport = (t.sizeByCategoria("Sport")/numeroEventi)*100;;
+		float teatro = (t.sizeByCategoria("Teatro")/numeroEventi)*100;;
+		float viaggi = (t.sizeByCategoria("Viaggi")/numeroEventi)*100;;
 		
-		List<Integer> statistiche = new ArrayList<>();
+		List<Float> statistiche = new ArrayList<>();
 		statistiche.add(cinema);
 		statistiche.add(convegni);
 		statistiche.add(feste);
