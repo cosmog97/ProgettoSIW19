@@ -17,6 +17,7 @@ public interface EventoDAO {
 	public List<Evento> findAllByDifferentCreator(String utente, Timestamp date);
 	public List<Evento> findAllwithDate(Timestamp date);
 	public List<Evento> findAllByCreator(String utente);
-	
+	public int sizeEventi();
+	public int sizeByCategoria(String categoria);
 	
 }

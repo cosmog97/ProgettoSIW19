@@ -193,5 +193,37 @@ public class UtenteDAOJDBC implements UtenteDAO {
 
 	}
 
+	@Override
+	public int sizeUtenti() {
+		
+		Connection connection = this.dataSource.getConnection();		
+		try {
+				Class.forName("org.postgresql.Driver");
+				String select = "SELECT count(*) FROM gestioneeventidb.\"Utente\";";
+				PreparedStatement statement = connection.prepareStatement(select);
+
+				ResultSet rs = statement.executeQuery();
+				
+	            while ( rs.next() ) {
+	                 return rs.getInt(1);
+	            }
+			}
+		catch (SQLException e) {
+				e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+		}
+		finally {
+				try {
+					connection.close();
+				} 
+				catch (SQLException e) {
+						e.printStackTrace();
+				}
+			}
+		return 0;
+		
+	}
 }
 		

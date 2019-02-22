@@ -422,4 +422,86 @@ public class EventoDAOJDBC implements EventoDAO {
 		
 	}
 
+
+	@Override
+	public int sizeEventi() {
+		Connection connection = this.dataSource.getConnection();
+
+		try {
+			Class.forName("org.postgresql.Driver");
+		
+			
+			
+			String select = "SELECT count(*) FROM gestioneeventidb.\"Evento\";";
+			
+			PreparedStatement statement = connection.prepareStatement(select);
+
+			ResultSet rs = statement.executeQuery();
+			
+            while ( rs.next() ) {
+            	return rs.getInt(1);
+            }
+            
+
+		}
+		catch (SQLException e1) {
+			e1.printStackTrace();
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		finally {
+			
+			try {
+				connection.close();
+			} 
+			
+			catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}
+		return 0;
+	}
+
+
+	@Override
+	public int sizeByCategoria(String categoria) {
+		Connection connection = this.dataSource.getConnection();
+
+		try {
+			Class.forName("org.postgresql.Driver");
+		
+			
+			
+			String select = "SELECT count(*) FROM gestioneeventidb.\"Evento\" WHERE \"CategoriaEvento\"='"+categoria+"';";
+			
+			PreparedStatement statement = connection.prepareStatement(select);
+
+			ResultSet rs = statement.executeQuery();
+			
+            while ( rs.next() ) {
+            	return rs.getInt(1);
+            }
+            
+
+		}
+		catch (SQLException e1) {
+			e1.printStackTrace();
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		finally {
+			
+			try {
+				connection.close();
+			} 
+			
+			catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}
+		return 0;
+	}
+
 }
