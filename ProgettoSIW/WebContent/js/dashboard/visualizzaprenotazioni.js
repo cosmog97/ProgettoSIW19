@@ -2,7 +2,7 @@
  * 
  */
 $.ajax({
-        url: "VisualizzaEventiCreati",
+        url: "VisualizzaEventiPrenotati",
         type: 'POST',
         async: true,
         /*contentType: "application/json",
@@ -20,7 +20,7 @@ $.ajax({
 	function json2table(json, classes) {
 		  var cols = Object.keys(json[0]);
 
-		  cols.splice(3,1); //controllare bene
+		  //cols.splice(3,1); //controllare bene
 		  cols.splice(0,1);
 		  cols.push('Azione');
 		  
@@ -30,15 +30,16 @@ $.ajax({
 		  classes = classes || '';
 
 		  function capitalizeFirstLetter(string) {
-			 if(string == 'nummaxprenotati') {
-				 return "Num. max prenotati";
-			 }
-			 if(string == 'numattualeprenotati'){
-				 return "Num. attuale prenotati";
-			 }
-			 if(string == 'citta') {
-				 return "Citta'";
-			 }
+	
+			  if(string == 'nummaxprenotati') {
+					 return "Num. max prenotati";
+				 }
+				 if(string == 'numattualeprenotati'){
+					 return "Num. prenotati";
+				 }
+				 if(string == 'citta') {
+					 return "Citta'";
+				 }
 		    return string.charAt(0).toUpperCase() + string.slice(1);
 		  }
 
@@ -55,7 +56,7 @@ $.ajax({
 		      }
 		      else {
 		    	  id = row['id'];
-		    	  bodyRows += '<td>' + '<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="eliminaEvento('+id+')">Elimina</button>' + '</td>';
+		    	  bodyRows += '<td>' + '<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="disdiciEvento('+id+')">Disdici</button>' + '</td>';
 		      }
 		      
 		    })
@@ -83,16 +84,4 @@ function visualizzaTuoiEventi(data) {
 
 	document.getElementById('tableGoesHere').innerHTML = json2table(defaultData, 'table');
 
-		/* Live example */
-
-	/*	var dom = {
-		  data: document.getElementById('data'),
-		  table: document.getElementById('tableGoesHere'),
-		};
-
-		dom.data.value = JSON.stringify(defaultData);
-		dom.data.addEventListener('input', function() {
-		  dom.table.innerHTML = json2table(JSON.parse(dom.data.value), 'table');
-		});
-*/
 }

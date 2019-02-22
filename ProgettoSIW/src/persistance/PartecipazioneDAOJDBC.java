@@ -208,4 +208,46 @@ public class PartecipazioneDAOJDBC implements PartecipazioneDAO {
 		
 	}
 	
+	public List<Partecipazione> findPrenotazioni(String utente) {
+		Connection connection = this.dataSource.getConnection();
+		List<Partecipazione> temp = new ArrayList<Partecipazione>();
+		try {
+			Class.forName("org.postgresql.Driver");
+			
+			String select = "select * from gestioneeventidb.\"Partecipazioni\" where \"Username\" = '"+utente+"' and \"IDEvento\" in (Select \"IDEvento\" from gestioneeventidb.\"Evento\" where \"CreatoreEvento\" != '"+utente+"');";
+			PreparedStatement statement = connection.prepareStatement(select);
+
+			ResultSet rs = statement.executeQuery();
+			
+            while ( rs.next() ) {
+	       	     Partecipazione  val = new Partecipazione();
+	       	     val.setIdEvento(rs.getInt(2));
+	       	     val.setNomeutente(rs.getString(1));
+	       	     val.setPostiPrenotati(rs.getInt(3));
+	       	     temp.add(val);
+            }
+
+            return temp;
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			
+			try {
+				connection.close();
+			} 
+			
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+		
+	}
+	
 }

@@ -10,9 +10,9 @@ public interface PartecipazioneDAO {
 	public List<Partecipazione> findAll();
 	public void update(Partecipazione partecipazione);
 	public void delete(Partecipazione partecipazione);
-	List<Partecipazione> findAllByUtente(String utente);
-	List<Partecipazione> findAllByEvento(int idevento);
-	void deleteByIdEvento(int idevento);
-	List<String> getEmailByEvento(int idevento);
-
+	public List<Partecipazione> findAllByUtente(String utente);
+	public List<Partecipazione> findAllByEvento(int idevento);
+	public void deleteByIdEvento(int idevento);
+	public List<String> getEmailByEvento(int idevento);
+	public List<Partecipazione> findPrenotazioni(String utente);
 }
