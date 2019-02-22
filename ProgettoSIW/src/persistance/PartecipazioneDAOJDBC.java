@@ -109,9 +109,34 @@ public class PartecipazioneDAOJDBC implements PartecipazioneDAO {
 	}
 
 	@Override
-	public void delete(Partecipazione partecipazione) {
-		// TODO Auto-generated method stub
-		
+	public void delete(Partecipazione p) {
+		Connection connection = this.dataSource.getConnection();
+		try {
+			Class.forName("org.postgresql.Driver");
+			
+			String delete = "DELETE FROM gestioneeventidb.\"Partecipazioni\" WHERE \"IDEvento\"='"+p.getIdEvento()+"' and \"Username\"='"+p.getNomeutente()+"' and \"Posti\"='"+p.getPostiPrenotati()+"';";
+			Statement statement = connection.createStatement();
+
+			statement.executeUpdate(delete);
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			
+			try {
+				connection.close();
+			} 
+			
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override
