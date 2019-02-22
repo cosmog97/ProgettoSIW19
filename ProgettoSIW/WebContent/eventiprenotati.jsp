@@ -63,7 +63,12 @@
           <!-- Content Row -->
           <div class="">
             <div class="p-5">
-   				
+   				<div class="" style="overflow-x:auto;">
+		
+		
+		
+		    	<div id="tableGoesHere" class="col-md-6"></div>
+		  	  </div><!-- /row -->
 
             </div>
           </div>
@@ -90,7 +95,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
+ <script src="js/dashboard/visualizzaprenotazioni.js"></script>
 
   
 </body>
