@@ -49,9 +49,12 @@ public class ConfermaEvento extends HttpServlet {
 		String email = (String) session.getAttribute("Email");
 		int idEvento = Integer.valueOf(request.getParameter("eventoID"));
 		int postiDaPrenotare = Integer.valueOf(request.getParameter("Postiprenotazione"));
-		System.out.println("utente: "+utente);
-		System.out.println("idEvento "+idEvento);
-		System.out.println("posti: "+postiDaPrenotare);
+		if(utente == null) {
+			session.removeAttribute("Evento");
+			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			rd.forward(request, response);
+			return;
+		}
 		EventoDAO k = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		PartecipazioneDAO c = DatabaseManager.getInstance().getDaoFactory().getPartecipazioneDAO();
 		c.save(new Partecipazione(utente,idEvento,postiDaPrenotare));

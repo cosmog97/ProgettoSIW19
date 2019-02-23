@@ -91,7 +91,7 @@
                   <div align="center">Posti da prenotare</div>
                   <input type="number" min="1" value="1" max="${sessionScope.Evento.getNumattualeprenotati()}" class="form-control form-control-user" id="Postiprenotazione" name="Postiprenotazione" placeholder="Posti da prenotare">
                 </div>  
-
+				<div align="center">Devi aver fatto l'accesso per prenotarti all'evento.</div>
                 <a>
                     <button class="btn btn-primary btn-user btn-block" type="submit" name="ConfermaEvento">Prenotati</button>
                 </a>
