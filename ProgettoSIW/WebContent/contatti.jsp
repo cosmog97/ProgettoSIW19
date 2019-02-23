@@ -36,6 +36,7 @@
 			    letter-spacing:3px;
 			}
 	</style>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
 </head>
 
 <body>
@@ -48,7 +49,6 @@
 			    <c:when test="${sessionScope.Nome == null}">
 			        <a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='login.jsp';">Accedi</button></a>
             		<a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='register.jsp';">Registrati</button></a>
-			        
 			    </c:when>    
 			    <c:otherwise>
 			        <a><button class="btn btn-primary btn-user btn-block" onclick="window.location.href='dashboard.jsp';">Dashboard</button></a>
@@ -57,7 +57,7 @@
 			</c:choose>
 		</div>
 	</div>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	
 
 	<div class="container">
 	<h1 class="text-center">Contatti</h1>

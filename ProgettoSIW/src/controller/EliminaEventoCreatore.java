@@ -59,7 +59,9 @@ public class EliminaEventoCreatore extends HttpServlet {
 		List<String> emailPrenotati = k.getEmailByEvento(data.getAsInt());
 		
 		EmailManager em = new EmailManager();
+		if (emailPrenotati.size()> 1) {
 		em.eventoeliminatoEmail(temp.getCreatore(),emailPrenotati);
+		}
 		em.tuoeventoeliminato(utente,emailUtente);
 		
 		System.out.println("Email creatore: "+emailUtente);
