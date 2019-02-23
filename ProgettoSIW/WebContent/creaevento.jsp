@@ -30,34 +30,7 @@
          <script>window.location.replace("404.html");</script>
       </c:if>
       
-      <script>
-		function controllaform(){
-			var NomeEvento = $.trim($('#NomeEvento').val());
-			var Datainizio = $.trim($('#Datainizio').val());
-			var DataFine = $.trim($('#DataFine').val());
-			var DataScadenza = $.trim($('#DataScadenza').val());
-			var Categoria = $.trim($('#Categoria').val());
- 			var Provincia = $.trim($('#Provincia').val());
-			var Citta = $.trim($('#Citta').val());
-			var NumeroPosti = $.trim($('#NumeroPosti').val());
-		  	
-			
-		    // Check if empty of not
-		    
-		    if (NomeEvento === '' || Datainizio === '' || DataFine === '' || DataScadenza === '' || Categoria === '' || Provincia === '' || Citta === '' || NumeroPosti == '') 
-		    {
-		        alert('Tutti i campi sono obbligatori!');
-		        return false;
-		    }
-		    else{
-		   		if((Datainizio > DataFine && DataScadenza > DataFine) || (Datainizio >= DataFine && DataScadenza > DataFine) || (Datainizio <= DataFine && DataScadenza > DataFine)){
-		    			alert('controlla le date!');
-		    			return false;
-		    	}
-		   		return true;
-		    }
-		  }
-	</script>
+      <script src="js/validaFormCreaEvento.js"></script>
       
       
      
@@ -179,7 +152,7 @@
   </div>
   <!-- End of Page Wrapper -->
 
-
+</div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>

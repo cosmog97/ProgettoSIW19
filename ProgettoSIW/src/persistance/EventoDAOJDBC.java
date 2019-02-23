@@ -39,7 +39,6 @@ public class EventoDAOJDBC implements EventoDAO {
 				statement.setString(9,evento.getCreatore());
 				statement.setString(10, evento.getProvincia());
 				statement.setString(11,evento.getCitta());
-				System.out.println("ciaos");
 				statement.executeUpdate();
 
 		}
@@ -62,12 +61,9 @@ public class EventoDAOJDBC implements EventoDAO {
 
 	@Override
 	public Evento findByPrimaryKey(String id) {
-		Connection connection = this.dataSource.getConnection();
 		List<Evento> temp = findAll();
 		for (Evento i : temp) {
-			System.out.println(String.valueOf(i.getId()));
 			if (String.valueOf(i.getId()).equals(id)) {
-				System.out.println("EVENTO TROVATO CON ID: "+id);
 				return i;
 			}
 		}
@@ -313,7 +309,6 @@ public class EventoDAOJDBC implements EventoDAO {
 				Class.forName("org.postgresql.Driver");
 
 				String update = "UPDATE gestioneeventidb.\"Evento\" SET \"NomeEvento\"='"+e.getNome()+"', \"CategoriaEvento\"='"+e.getCategoria()+"', \"NumAttPrenotati\"='"+e.getNumattualeprenotati()+"', \"NumMaxPrenotati\"='"+e.getNummaxprenotati()+"', \"InizioEvento\"='"+e.getInizio()+"', \"FineEvento\"='"+e.getFine()+"', \"CreazioneEvento\"='"+e.getCreazione()+"', \"ScadenzaEvento\"='"+e.getScadenza()+"', \"CreatoreEvento\"='"+e.getCreatore()+"', \"Provincia\"='"+e.getProvincia()+"', \"Citta\"='"+e.getProvincia()+"' WHERE \"IDEvento\"='"+e.getId()+"';";
-				System.out.println(update);
 				Statement statement = connection.createStatement();
 
 				statement.executeUpdate(update);
