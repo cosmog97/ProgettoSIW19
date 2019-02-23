@@ -81,6 +81,11 @@ public class CreaEvento extends HttpServlet {
 		evento.setProvincia(request.getParameter("Provincia"));
 		evento.setCitta(request.getParameter("Citta"));
 		
+		/*if(evento.getInizio().after(evento.getFine())) {
+			System.out.println("inizio DOPO di fine");
+		}*/
+		
+		
 		t.save(evento);
 		
 		//email

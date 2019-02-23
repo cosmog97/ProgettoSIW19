@@ -29,6 +29,38 @@
     <c:if test = "${sessionScope.Nome == null}">
          <script>window.location.replace("404.html");</script>
       </c:if>
+      
+      <script>
+		function controllaform(){
+			var NomeEvento = $.trim($('#NomeEvento').val());
+			var Datainizio = $.trim($('#Datainizio').val());
+			var DataFine = $.trim($('#DataFine').val());
+			var DataScadenza = $.trim($('#DataScadenza').val());
+			var Categoria = $.trim($('#Categoria').val());
+ 			var Provincia = $.trim($('#Provincia').val());
+			var Citta = $.trim($('#Citta').val());
+			var NumeroPosti = $.trim($('#NumeroPosti').val());
+		  	
+			
+		    // Check if empty of not
+		    
+		    if (NomeEvento === '' || Datainizio === '' || DataFine === '' || DataScadenza === '' || Categoria === '' || Provincia === '' || Citta === '' || NumeroPosti == '') 
+		    {
+		        alert('Tutti i campi sono obbligatori!');
+		        return false;
+		    }
+		    else{
+		   		if((Datainizio > DataFine && DataScadenza > DataFine) || (Datainizio >= DataFine && DataScadenza > DataFine) || (Datainizio <= DataFine && DataScadenza > DataFine)){
+		    			alert('controlla le date!');
+		    			return false;
+		    	}
+		   		return true;
+		    }
+		  }
+	</script>
+      
+      
+     
   <!-- Page Wrapper -->
   <div id="wrapper">
 	<jsp:include page="navbar.jsp" />
@@ -68,7 +100,7 @@
               </div>-->   
               <form class="user" name="CreaEvento" action="CreaEvento" method="post">
 
-	            <div class="form-group">
+	            <div class="form-group-required">
                   <div align="center">Nome evento</div>
                   <input type="text" class="form-control" name="NomeEvento" id="NomeEvento" placeholder="Inserisci il nome dell'evento">
                 </div>
@@ -95,7 +127,7 @@
 								        			<option value="Convegni">Convegni</option>
 								        			<option value="Feste">Feste</option>
 								        			<option value="Musica">Musica</option>
-								        			<option value="Teatro">Istruzione</option>
+								        			<option value="Istruzione">Istruzione</option>
 								        			<option value="Sport">Sport</option>
 								          			<option value="Teatro">Teatro</option>
 								          			<option value="Viaggi">Viaggi</option>
@@ -123,7 +155,7 @@
                   </div>
                   <div class="col-sm-6">
                   		<br>
-                         <button class="btn btn-primary btn-block" name="CreaEvento" type="submit">Crea evento</button>
+                         <button class="btn btn-primary btn-block" name="CreaEvento" type="submit" onclick="return controllaform()">Crea evento</button>
                   </div>
                 </div>
                 
