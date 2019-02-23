@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -25,7 +26,9 @@
 </head>
 
 <body class="bg-gradient-primary">
-
+    <c:if test = "${sessionScope.Evento == null}">
+         <script>window.location.replace("404.html");</script>
+      </c:if>
   <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -91,7 +94,7 @@
                   <div align="center">Posti da prenotare</div>
                   <input type="number" min="1" value="1" max="${sessionScope.Evento.getNumattualeprenotati()}" class="form-control form-control-user" id="Postiprenotazione" name="Postiprenotazione" placeholder="Posti da prenotare">
                 </div>  
-				<div align="center">Devi aver fatto l'accesso per prenotarti all'evento.</div>
+				<div align="center" class="small">Devi aver fatto l'accesso per prenotarti all'evento.</div>
                 <a>
                     <button class="btn btn-primary btn-user btn-block" type="submit" name="ConfermaEvento">Prenotati</button>
                 </a>
