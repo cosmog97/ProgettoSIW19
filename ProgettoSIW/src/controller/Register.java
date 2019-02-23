@@ -65,7 +65,7 @@ public class Register extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   	    UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();	
-		if(t.findByPrimaryKey(request.getParameter("Username")) != null) {
+		if(t.findByPrimaryKey(request.getParameter("Username")) == null) {
 	   	     Utente utente = new Utente();
 	   	     utente.setUsername(request.getParameter("Username"));
 	   	     //utente.setPassword(PasswordManager.getPasswordCrypto(request.getParameter("Password")));

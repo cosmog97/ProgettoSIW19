@@ -71,7 +71,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				return i;
 			}
 		}
-		return new Utente();
+		return null;
 	}
 
 	@Override

@@ -23,7 +23,10 @@
 </head>
 
 <body class="bg-gradient-primary">
-
+	
+<script src="js/validaRegisterForm.js"></script>
+	
+	
   <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -93,7 +96,7 @@
                 	<a class="small">Tutti i campi sono obbligatori</a>
               	</div>
                 <a>
-                    <button class="btn btn-primary btn-user btn-block" type="submit" name="Register" type=submit>Registrati</button>
+                    <button class="btn btn-primary btn-user btn-block" type="submit" name="Register" type=submit onclick="return controllaformregistrazione()">Registrati</button>
                 </a>
                 <hr>
               </form>
