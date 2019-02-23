@@ -19,5 +19,6 @@ public interface EventoDAO {
 	public List<Evento> findAllByCreator(String utente);
 	public int sizeEventi();
 	public int sizeByCategoria(String categoria);
+
 	
 }

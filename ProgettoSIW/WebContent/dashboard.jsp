@@ -69,7 +69,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Prossimo evento</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="prossimo"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -86,7 +86,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Eventi in scadenza</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="scadenza"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-business-time fa-2x text-gray-300"></i>
@@ -105,7 +105,7 @@
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Eventi prenotati</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="prenotati"></div>
                         </div>
                       </div>
                     </div>
@@ -124,7 +124,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Eventi creati</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="creati"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-paint-brush fa-2x text-gray-300"></i>
@@ -148,10 +148,10 @@
               <!-- Area Chart -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Cos'è eBooker</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Cos'è EBOOKER</h6>
                 </div>
                 <div class="card-body">
-                	eBooker è un'innovativa piattaforma
+                	<strong>EBOOKER</strong> è un'innovativa piattaforma Web, nata dall'idea di due giovani studenti dell'<a href="http://www.unical.it">Università della Calabria</a>. L'idea è quella di aumentare la coesione sociale fra chi organizza gli eventi, in particolar modo gli enti pubblici, e gli studenti del Campus. Organizzare una partita di calcio fra amici e conoscenti non è mai stato così semplice! <strong>Organize yourself!</strong> 
                 	<hr>
                    <div class="rwd-video">
                		<iframe width="560" height="315" src="https://www.youtube.com/embed/kJQK6r0Tj0c?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -215,6 +215,7 @@
  
 
   <script src="js/statistiche/visualizzastatistiche.js"></script>
+  <script src="js/statistiche/visualizzariepilogo.js"></script>
   
 </body>
 
