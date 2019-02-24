@@ -15,7 +15,7 @@
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+	<script src="js/cercaevento/indextocercaevento.js"></script>
 	<!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="css/index/bootstrap.min.css" />
 	
@@ -106,7 +106,7 @@
 									</div>
 								<div class="form-btn">
 									<a>
-                      					<button class="btn btn-primary btn-user btn-block" type="submit" name="CercaEvento" type=submit>Cerca Evento</button>
+                      					<button class="btn btn-primary btn-user btn-block" onclick='indexToCercaEvento()'>Cerca Evento</button>
                     				</a>
 	
 								</div>
