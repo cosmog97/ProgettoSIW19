@@ -63,7 +63,18 @@
                   <h6 class="m-0 font-weight-bold text-primary text-center">Cerca il tuo evento</h6>
                 </div>
                <br>
-               <div align="center">	${sessionScope.Nome}, cerca i tuoi eventi preferiti. Compila il seguente modulo per perfezionare la ricerca.</div>
+               <div align="center">
+               		<c:choose>
+					    <c:when test="${sessionScope.Nome == null}">
+					       Cerca i tuoi eventi preferiti. Compila il seguente modulo per perfezionare la ricerca. Accedi o registrati per prenotarti.
+					    </c:when>    
+					    <c:otherwise>
+					        ${sessionScope.Nome}, cerca i tuoi eventi preferiti. Compila il seguente modulo per perfezionare la ricerca.
+					    </c:otherwise>
+					</c:choose>
+               
+               
+               </div>
                 <div class="p-4">
                   <div>
            

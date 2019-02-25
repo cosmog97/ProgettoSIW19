@@ -100,10 +100,6 @@
                 </a>
                 <hr>
               </form>
-
-              <div class="text-center">
-                <a class="small" href="index.jsp">Password dimentica poi vediamo</a>
-              </div>
               <div class="text-center">
                 <a class="small" href="login.jsp">Hai già un account? Accedi!</a>
               </div>

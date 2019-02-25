@@ -55,10 +55,6 @@
                     </a>
                     <hr>
                   </form>
-                 
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">Password dimenticata da vedere</a>
-                  </div>
                   <div class="text-center">
                     <a class="small" href="register.jsp">Non sei registrato? Crea un account!</a>
                   </div>
