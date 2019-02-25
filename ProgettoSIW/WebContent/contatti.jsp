@@ -42,7 +42,7 @@
 <body>
 
 	<div class="header">
-		<a href="#default" class="logo">EBOOKER</a>
+		<a href="index.jsp" class="logo">EBOOKER</a>
 		<div class="header-right">
 			<a><button class="btn" onclick="window.location.href='index.jsp';">Home</button></a>
 			<c:choose>
@@ -81,10 +81,21 @@
 	  </div>
 	
 		<br><br>
-		<h1 class="text-center">Lo staff di eBooker</h1>
+		<h1 class="text-center">Lo staff di EBOOKER</h1>
 		<hr>
-	</div>
+		<div class="col-sm-4" id="staff">
+			<h4 class="text-center">Bla bla bla</h4>
+		</div>
 
+	</div>
+	
+	  <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; EBOOKER 2019</span>
+          </div>
+        </div>
+      </footer>
 
 </body>
 </html>

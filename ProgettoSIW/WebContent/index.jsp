@@ -31,7 +31,7 @@
 <body>
 	
 	<div class="header">
-		<a href="#default" class="logo">EBOOKER</a>
+		<a href="index.jsp" class="logo">EBOOKER</a>
 		<div class="header-right">
 			<a><button class="btn" onclick="window.location.href='contatti.jsp';">Contatti</button></a>
 			<c:choose>
@@ -105,8 +105,7 @@
 										<input class="form-control" id="DataEvento" name="DataEvento" type="date">
 									</div>
 								<div class="form-btn">
-									<a>
-                      					<button class="btn btn-primary btn-user btn-block" onclick='indexToCercaEvento()'>Cerca Evento</button>
+									<a class="btn btn-primary btn-user btn-block" onclick='indexToCercaEvento()'>Cerca Evento
                     				</a>
 	
 								</div>
@@ -116,7 +115,15 @@
 				</div>
 			</div>
 		</div>
+		
 	</div>
+	  <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; EBOOKER 2019</span>
+          </div>
+        </div>
+      </footer>
 </body>
 
 </html>

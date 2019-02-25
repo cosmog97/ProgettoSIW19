@@ -30,7 +30,7 @@
 </head>
 <body>
 	<div class="header">
-		<a href="#default" class="logo">EBOOKER</a>
+		<a href="index.jsp" class="logo">EBOOKER</a>
 		<div class="header-right">
 			<a><button class="btn" onclick="window.location.href='index.jsp';">Home</button></a>
 			<c:choose>
@@ -141,6 +141,13 @@
 			<div class="row" id="products"></div>
 		</div>
 	</div>
+	      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; EBOOKER 2019</span>
+          </div>
+        </div>
+      </footer>
 </div>
 </body>
 </html>
