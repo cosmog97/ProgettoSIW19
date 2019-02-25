@@ -17,10 +17,13 @@ function controllaform(){
 		        return false;
 		    }
 		    else{
-		   		if((Datainizio >= DataFine && DataScadenza >= DataFine) || (Datainizio >= DataFine && DataScadenza > DataFine) || (Datainizio <= DataFine && DataScadenza > DataFine)){
-		    			alert("Controlla le date. La data della fine dell'evento non può essere precedente a quella dell'inizio. La data di scadenza delle prenotazioni deve essere antecedente rispetto all'inizio.");
-		    			return false;
+		   		if(Datainizio < Datafine && Datainizio > DataScadenza && DataScadenza < Datafine ){
+		    			return true;
 		    	}
-		   		return true;
+		   		else{
+		   			alert("Controlla le date. La data della fine dell'evento non può essere precedente a quella dell'inizio. La data di scadenza delle prenotazioni deve essere antecedente rispetto all'inizio.");
+		   			return false;
+		   		}
+		   		
 		    }
 		  }

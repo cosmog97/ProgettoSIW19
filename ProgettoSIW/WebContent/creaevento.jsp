@@ -80,17 +80,17 @@
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                   	<div align="center">Data inizio</div>
-                    <input type="datetime" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:00" class="form-control" name="Datainizio" id="Datainizio" placeholder="yyyy-mm-dd hh:mm:00">
+                    <input type="datetime-local" class="form-control" name="Datainizio" id="Datainizio">
                   </div>
                   <div class="col-sm-6">
                     <div align="center">Data fine</div>
-                    <input type="datetime" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:00" class="form-control" name="DataFine" id="DataFine" placeholder="yyyy-mm-dd hh:mm:00">
+                    <input type="datetime-local" class="form-control" name="DataFine" id="DataFine" >
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                   	<div align="center">Data scadenza prenotazioni</div>
-                    <input type="datetime" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:00" class="form-control" name="DataScadenza" id="DataScadenza" placeholder="yyyy-mm-dd hh:mm:00">
+                    <input type="datetime-local" class="form-control" name="DataScadenza" id="DataScadenza">
                   </div>
 				<div class="col-sm-6">
 

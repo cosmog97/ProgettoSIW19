@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
+
 import model.Evento;
 import model.Partecipazione;
 import persistance.DatabaseManager;
@@ -57,10 +59,17 @@ public class CreaEvento extends HttpServlet {
 		String creatore = (String)session.getAttribute("Username");
 		String email = (String)session.getAttribute("Email");
 		int maxPrenotati = Integer.parseInt(request.getParameter("NumeroPosti"));//num max prenotabili
+		String inizio1 = (String) request.getParameter("Datainizio");
+		String fine1 = (String) request.getParameter("DataFine");
+		String scadenza1 = (String) request.getParameter("DataScadenza");
+		inizio1 += ":00";
+		fine1 += ":00";
+		scadenza1 += ":00";
+
 		
-		java.sql.Timestamp inizio = java.sql.Timestamp.valueOf(request.getParameter("Datainizio"));
-		java.sql.Timestamp fine = java.sql.Timestamp.valueOf(request.getParameter("DataFine")); 
-		java.sql.Timestamp scadenza = java.sql.Timestamp.valueOf(request.getParameter("DataScadenza")); 
+		java.sql.Timestamp inizio = java.sql.Timestamp.valueOf(inizio1.replace("T"," "));
+		java.sql.Timestamp fine = java.sql.Timestamp.valueOf(fine1.replace("T"," ")); 
+		java.sql.Timestamp scadenza = java.sql.Timestamp.valueOf(scadenza1.replace("T"," ")); 
 		
 		
 	   
@@ -89,7 +98,7 @@ public class CreaEvento extends HttpServlet {
 		int IdEvento = t.findIdByElements(evento);
 		c.save(new Partecipazione(creatore,IdEvento,1));
 		
-		RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("imieieventi.jsp");
 		rd.forward(request, response);
 		
 		

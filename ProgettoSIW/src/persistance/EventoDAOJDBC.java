@@ -375,23 +375,20 @@ public class EventoDAOJDBC implements EventoDAO {
 			String categoria = e.getCategoria();
 			String citta = e.getCitta();
 			String provincia = e.getProvincia();
-			Timestamp inizio = e.getInizio();
-			Timestamp fine = e.getFine();
-			Timestamp scadenza = e.getFine();
 			Timestamp creazione = e.getCreazione();
 			int nummax = e.getNummaxprenotati();
 			int numatt = e.getNumattualeprenotati();
 			
 			
-			String select = "SELECT \"IDEvento\" FROM gestioneeventidb.\"Evento\" WHERE \"NomeEvento\"='"+nomeevento+"' and \"CategoriaEvento\"='"+categoria+"'and \"NumAttPrenotati\"='"+numatt+"' and \"NumMaxPrenotati\"='"+nummax+"' and \"InizioEvento\"='"+inizio+"' and \"FineEvento\"='"+fine+"'and \"CreazioneEvento\"='"+creazione+"'and \"ScadenzaEvento\"='"+scadenza+"' and \"CreatoreEvento\"='"+creatore+"'and \"Provincia\"='"+provincia+"' and \"Citta\"='"+citta+"';";
-			
+			String select = "SELECT \"IDEvento\" FROM gestioneeventidb.\"Evento\" WHERE \"NomeEvento\"='"+nomeevento+"' and \"CategoriaEvento\"='"+categoria+"'and \"NumAttPrenotati\"='"+numatt+"' and \"NumMaxPrenotati\"='"+nummax+"' and \"CreazioneEvento\"='"+creazione+"' and \"CreatoreEvento\"='"+creatore+"'and \"Provincia\"='"+provincia+"' and \"Citta\"='"+citta+"';";
 			PreparedStatement statement = connection.prepareStatement(select);
 
 			ResultSet rs = statement.executeQuery();
 			
-            while ( rs.next() ) {
-            	return rs.getInt(1);
-            }
+			while(rs.next()) {
+			       return rs.getInt(1);
+			}
+     
             
 
 		}
@@ -413,8 +410,6 @@ public class EventoDAOJDBC implements EventoDAO {
 		}
 		return -1;
 
-
-		
 	}
 
 
