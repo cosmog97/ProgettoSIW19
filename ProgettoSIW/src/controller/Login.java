@@ -26,6 +26,7 @@ import java.security.*;
 
 import model.Utente;
 import persistance.*;
+import utility.PasswordManager;
 
 
 /**
@@ -62,25 +63,30 @@ public class Login extends HttpServlet {
 		Utente temp = t.findByPrimaryKey(username);
 	
 		if (temp != null && temp.getUsername().equals(username)) {
-			if(password.equals(temp.getPassword())) {
+			try {
+				if(PasswordManager.getPasswordCrypto(password).equals(temp.getPassword())) {
 
-				HttpSession session = request.getSession();
-				session.setAttribute("Username", username);
-				session.setAttribute("Nome",temp.getNome());
-				session.setAttribute("Cognome",temp.getCognome());
-				session.setAttribute("Email",temp.getEmail());
-				session.setAttribute("Datanascita",temp.getDatanascita());
-				session.setAttribute("Ultimamodpassword",temp.getUltimamodpsw());
-				session.setAttribute("Provincia",temp.getProvincia());
-				session.setAttribute("Citta",temp.getCitta());
+					HttpSession session = request.getSession();
+					session.setAttribute("Username", username);
+					session.setAttribute("Nome",temp.getNome());
+					session.setAttribute("Cognome",temp.getCognome());
+					session.setAttribute("Email",temp.getEmail());
+					session.setAttribute("Datanascita",temp.getDatanascita());
+					session.setAttribute("Ultimamodpassword",temp.getUltimamodpsw());
+					session.setAttribute("Provincia",temp.getProvincia());
+					session.setAttribute("Citta",temp.getCitta());
 
-				RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
-				rd.forward(request, response);
+					RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
+					rd.forward(request, response);
 
-			}
-			else {
-				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-				rd.forward(request, response);
+				}
+				else {
+					RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+					rd.forward(request, response);
+				}
+			} catch (NoSuchAlgorithmException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 		else {

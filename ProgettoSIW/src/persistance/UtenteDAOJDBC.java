@@ -63,11 +63,10 @@ public class UtenteDAOJDBC implements UtenteDAO {
 
 	@Override
 	public Utente findByPrimaryKey(String nomeutente) {
-		System.out.println("nomeutentedatrovare "+nomeutente);
 		List<Utente> temp = findAll();
 		for (Utente i : temp) {
 			if (i.getUsername().equals( nomeutente)) {
-				System.out.println("Trovato: " + i.getUsername());
+
 				return i;
 			}
 		}
@@ -134,7 +133,6 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				Class.forName("org.postgresql.Driver");
 
 				String update = "UPDATE gestioneeventidb.\"Utente\" SET \"Cognome\"='"+utente.getCognome()+"', \"Nome\"='"+utente.getNome()+"', \"Datanascita\"='"+utente.getDatanascita()+"', \"Email\"='"+utente.getEmail()+"', \"NumeroTelefono\"='"+utente.getNumerotelefono()+"', \"Citta\"='"+utente.getCitta()+"', \"Provincia\"='"+utente.getProvincia()+"' WHERE \"Username\"='"+utente.getUsername()+"';";
-				System.out.println(update);
 				Statement statement = connection.createStatement();
 
 				statement.executeUpdate(update);
@@ -170,7 +168,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				Class.forName("org.postgresql.Driver");
 	
 				String update = "UPDATE gestioneeventidb.\"Utente\" SET \"Password\"='"+password+"', \"UltimaModPSW\"='"+data+"' WHERE \"Username\"='"+nomeutente+"';";
-				System.out.println(update);
+
 				Statement statement = connection.createStatement();
 
 				statement.executeUpdate(update);

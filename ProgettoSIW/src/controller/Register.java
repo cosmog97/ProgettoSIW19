@@ -26,6 +26,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.*;
 import java.net.*;
+import java.security.NoSuchAlgorithmException;
 
 import utility.EmailManager;
 
@@ -69,7 +70,12 @@ public class Register extends HttpServlet {
 	   	     Utente utente = new Utente();
 	   	     utente.setUsername(request.getParameter("Username"));
 	   	     //utente.setPassword(PasswordManager.getPasswordCrypto(request.getParameter("Password")));
-	   	     utente.setPassword(request.getParameter("Password"));
+	   	     try {
+				utente.setPassword(PasswordManager.getPasswordCrypto(request.getParameter("Password")));
+			} catch (NoSuchAlgorithmException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	   	     utente.setCognome(request.getParameter("Cognome"));
 	   	     utente.setNome(request.getParameter("Nome"));
 	   	     Date dataNascitaStr = java.sql.Date.valueOf(request.getParameter("Datanascita"));
