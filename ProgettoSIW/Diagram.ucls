@@ -13,8 +13,8 @@
   </class>  
   <class id="2" language="java" name="controller.VisualizzaEventiPrenotati" project="ProgettoSIW" 
     file="/ProgettoSIW/src/controller/VisualizzaEventiPrenotati.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="555" y="86"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="145" width="337" x="387" y="15"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -139,7 +139,7 @@
   </class>  
   <class id="16" language="java" name="model.Utente" project="ProgettoSIW" file="/ProgettoSIW/src/model/Utente.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="200" width="224" x="19" y="248"/>    
+    <position height="649" width="224" x="19" y="248"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -148,7 +148,7 @@
   </class>  
   <class id="17" language="java" name="model.Partecipazione" project="ProgettoSIW" 
     file="/ProgettoSIW/src/model/Partecipazione.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="60" width="130" x="252" y="249"/>    
+    <position height="272" width="135" x="254" y="250"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -157,7 +157,7 @@
   </class>  
   <class id="18" language="java" name="model.Evento" project="ProgettoSIW" file="/ProgettoSIW/src/model/Evento.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="308" width="375" x="395" y="248"/>    
+    <position height="755" width="375" x="395" y="248"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -166,8 +166,8 @@
   </class>  
   <class id="19" language="java" name="utility.EmailManager" project="ProgettoSIW" 
     file="/ProgettoSIW/src/utility/EmailManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1038" y="349"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="215" width="479" x="799" y="242"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -175,13 +175,167 @@
   </class>  
   <class id="20" language="java" name="utility.PasswordManager" project="ProgettoSIW" 
     file="/ProgettoSIW/src/utility/PasswordManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1406" y="294"/>    
+    <position height="111" width="219" x="1297" y="241"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="21" language="java" name="persistance.PartecipazioneDAO" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/PartecipazioneDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1616" y="1161"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="22" language="java" name="persistance.DataSource" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/DataSource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2032" y="1119"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
+  <class id="23" language="java" name="persistance.DatabaseManager" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/DatabaseManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2821" y="294"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="persistance.PartecipazioneDAOJDBC" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/PartecipazioneDAOJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1625" y="606"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="25" language="java" name="persistance.UtenteDAO" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/UtenteDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2386" y="587"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="26" language="java" name="persistance.DAOFactory" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/DAOFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2829" y="500"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="persistance.UtenteDAOJDBC" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/UtenteDAOJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2041" y="582"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="28" language="java" name="persistance.EventoDAO" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/EventoDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="270" width="356" x="2659" y="1266"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="29" language="java" name="persistance.EventoDAOJDBC" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/EventoDAOJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2831" y="1011"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="persistance.PostgresDAOFactory" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/PostgresDAOFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2829" y="709"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="31">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="32" name="dataSource"/>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="35" name="dataSource"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="37">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="21"/>  
+  </realization>  
+  <association id="38">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="39" name="dataSource"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="41">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="42" name="dataSource"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="44">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="25"/>  
+  </realization>  
+  <association id="45">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="46" name="daoFactory"/>      
+      <multiplicity id="47" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="48">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="49" name="instance"/>      
+      <multiplicity id="50" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <realization id="52">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
