@@ -58,7 +58,6 @@ public class ModificaProfilo extends HttpServlet {
 		
 		String nome = (String) request.getParameter("Nome");
 		String cognome = (String) request.getParameter("Cognome");
-		System.out.println("nome temp: " + nome);
 		String email = (String) request.getParameter("Email");
 		String datanascitaStr = (String) request.getParameter("Datanascita");
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -73,17 +72,9 @@ public class ModificaProfilo extends HttpServlet {
 		if (date != null) {
 			sqlDate = new Date(date.getTime());
 		}
-		System.out.println("test: " + sqlDate);
-		
-		
-		
-		
-		//System.out.println(request.getParameter("Datanascita"));
-		//Date dataNascitaStr = java.sql.Date.valueOf(request.getParameter("Datanascita"));
+
 		String provincia = (String) request.getParameter("Provincia");
 		String citta = (String) request.getParameter("Citta");
-		
-		System.out.println("nomecorrente: "+nomeCorrente+ "" + cognomeCorrente);
 		
 		UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
 		Utente temp = t.findByPrimaryKey(usernameCorrente);
@@ -91,27 +82,21 @@ public class ModificaProfilo extends HttpServlet {
 		if(temp!=null) {
 			if((nome != null && nome != "") && !nome.equals(nomeCorrente)) {
 				temp.setNome(nome);
-				System.out.println("Modifico nome");
 			}
 			if((cognome !=null && cognome != "") && !cognome.equals(cognomeCorrente)) {
 				temp.setCognome(cognome);
-				System.out.println("Modifico cognome");
 			}
 			if((email != null && !email.equals("")) && !email.equals(emailCorrente) ) {  //aggiungere a tutti
-				temp.setEmail(email);
-				System.out.println("Modifico email");
+				temp.setEmail(email);	
 			}
 			if (sqlDate != null) {
 				temp.setDatanascita(sqlDate);
-				System.out.println("OK datanascita");
 			}
 			if((provincia != null && provincia != "") && !provincia.equals(provinciaCorrente)) {
 				temp.setProvincia(provincia);
-				System.out.println("Ok provincia");
 			}
 			if((citta != null && citta != "") && !citta.equals(cittaCorrente)) {
 				temp.setCitta(citta);
-				System.out.println("Ok citta");
 			}
 			t.update(temp);
 			Utente temp2 = t.findByPrimaryKey(usernameCorrente);

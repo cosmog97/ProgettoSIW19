@@ -50,17 +50,11 @@ public class ModificaPassword extends HttpServlet {
 		String ripetiNuovaPassword = (String) request.getParameter("Ripetinuovapassword");
 		String email = (String) session.getAttribute("Email");
 		Date data = new Date(System.currentTimeMillis());
-		
-		System.out.println("User :" + usernameCorrente);
-		System.out.println("Vecchia psw: " + vecchiaPassword);
-		System.out.println("Nuova psw: " + nuovaPassword);
-		System.out.println("Ripeti psw: "+ripetiNuovaPassword);
-		
+
 		UtenteDAO t = DatabaseManager.getInstance().getDaoFactory().getUtenteDAO();
 		Utente temp = t.findByPrimaryKey(usernameCorrente);
 		String passwordDB = temp.getPassword();
 		if (passwordDB.equals(vecchiaPassword) && nuovaPassword.equals(ripetiNuovaPassword)) {
-			System.out.println("Modifica password ok");
 			t.setPassword(usernameCorrente, nuovaPassword, data);
 			
 			EmailManager em = new EmailManager();

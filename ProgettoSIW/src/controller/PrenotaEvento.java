@@ -40,7 +40,7 @@ public class PrenotaEvento extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request,response);
 	}
 
 	/**
@@ -56,19 +56,8 @@ public class PrenotaEvento extends HttpServlet {
 		String luogo = (String)session.getAttribute("Citta");
 		
 		
-		System.out.println("ID:" + data + "  utente: "+utente);
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		Evento temp = t.findByPrimaryKey(data.toString());
-		Gson gson = new Gson();
-	    String json = gson.toJson(temp);
-	    
-	    
-	  /*  System.out.println("json: "+json);
-	    System.out.println("json creato");
-	    response.setContentType("application/json");
-	    response.setCharacterEncoding("UTF-8");
-	    response.getWriter().write(json);
-	    System.out.println("json inviato");*/
 	    temp.setNumattualeprenotati(temp.getNummaxprenotati()-temp.getNumattualeprenotati());
 	    session.setAttribute("Evento", temp);
 	}

@@ -48,14 +48,11 @@ public class VisualizzaEventiCreati extends HttpServlet {
 		String utente = (String) session.getAttribute("Username");
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		List<Evento> temp = t.findAllByCreator(utente);
-		System.out.println("Size: " + temp.size());
 		Gson gson = new Gson();
 	    String json = gson.toJson(temp);
-	    System.out.println("json eventi creatore creato");
 	    response.setContentType("application/json");
 	    response.setCharacterEncoding("UTF-8");
 	    response.getWriter().write(json);
-	    System.out.println("json inviato");
 	}
 
 }

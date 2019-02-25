@@ -69,12 +69,10 @@ public class InviaStatistiche extends HttpServlet {
 		statistiche.add(numeroUtenti);
 		Gson gson = new Gson();
 	    String json = gson.toJson(statistiche);
-	    System.out.println("json creato");
+
 	    response.setContentType("application/json");
 	    response.setCharacterEncoding("UTF-8");
-	    response.getWriter().write(json);
-	    System.out.println("json inviato");
-		
+	    response.getWriter().write(json);		
 	}
 
 }

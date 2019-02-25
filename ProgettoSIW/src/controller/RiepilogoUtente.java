@@ -42,7 +42,7 @@ public class RiepilogoUtente extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request,response);
 	}
 
 	/**
@@ -77,11 +77,9 @@ public class RiepilogoUtente extends HttpServlet {
 		
 		Gson gson = new Gson();
 	    String json = gson.toJson(test);
-	    System.out.println("json creato");
 	    response.setContentType("application/json");
 	    response.setCharacterEncoding("UTF-8");
 	    response.getWriter().write(json);
-	    System.out.println("json inviato");
 	}
 
 }

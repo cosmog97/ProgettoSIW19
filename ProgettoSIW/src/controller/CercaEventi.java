@@ -63,7 +63,6 @@ public class CercaEventi extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JsonArray data = new Gson().fromJson(request.getReader(), JsonArray.class);
-		System.out.println("campi: "+ data);
 		HttpSession session = request.getSession();
 		String utente = (String) session.getAttribute("Username");
 		
@@ -74,18 +73,12 @@ public class CercaEventi extends HttpServlet {
 		if (!data.get(4).getAsString().equals("")) {
 			postiDisponibiliEvento = data.get(4).getAsInt();
 		}
-		System.out.println("posti: "+postiDisponibiliEvento);
-	/*	if (!data.get(4).getAsString().equals(null) && !data.get(4).getAsString().equals("null")) {
-			postiDisponibiliEvento = Integer.parseInt(data.get(4).getAsString());
-			System.out.println("postiDisponibiliEvento: " + postiDisponibiliEvento);
-		}*/
+
 
 		String provinciaEvento = data.get(5).getAsString();
 		String cittaEvento = data.get(6).getAsString();
 		String dataEvento = data.get(3).getAsString();
-		System.out.println("Data evento: "+dataEvento);
-		
-
+	
 		Timestamp dataAttuale = new Timestamp(System.currentTimeMillis());
 		EventoDAO t = DatabaseManager.getInstance().getDaoFactory().getEventoDAO();
 		PartecipazioneDAO c = DatabaseManager.getInstance().getDaoFactory().getPartecipazioneDAO();
@@ -129,7 +122,6 @@ public class CercaEventi extends HttpServlet {
 			}
 		}
 		if (postiDisponibiliEvento > 0) {
-			System.out.println("postiDisponibili entrato: " + postiDisponibiliEvento);
 			for (Evento i : temp) {
 				if(i.getNummaxprenotati() - i.getNumattualeprenotati() < 0 ||
 				  i.getNummaxprenotati() - i.getNumattualeprenotati() < postiDisponibiliEvento) {
@@ -165,11 +157,9 @@ public class CercaEventi extends HttpServlet {
 		//__________________//
 		Gson gson = new Gson();
 	    String json = gson.toJson(temp);
-	    System.out.println("json creato");
 	    response.setContentType("application/json");
 	    response.setCharacterEncoding("UTF-8");
 	    response.getWriter().write(json);
-	    System.out.println("json inviato");
 	}
 
 }

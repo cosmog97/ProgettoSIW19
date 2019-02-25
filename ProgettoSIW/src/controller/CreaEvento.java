@@ -80,23 +80,14 @@ public class CreaEvento extends HttpServlet {
 		evento.setCreatore(creatore);
 		evento.setProvincia(request.getParameter("Provincia"));
 		evento.setCitta(request.getParameter("Citta"));
-		
-		/*if(evento.getInizio().after(evento.getFine())) {
-			System.out.println("inizio DOPO di fine");
-		}*/
-		
-		
 		t.save(evento);
 		
 		//email
 		EmailManager em = new EmailManager();
 		em.creationValidationEmail(creatore,email);
-		//
-		
+	
 		int IdEvento = t.findIdByElements(evento);
 		c.save(new Partecipazione(creatore,IdEvento,1));
-		//stampa da cancellare
-		System.out.println("EVENTO CREATO"+evento.getCreatore()+" "+evento.getProvincia()+" "+evento.getScadenza()+evento.getNummaxprenotati());
 		
 		RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
 		rd.forward(request, response);
