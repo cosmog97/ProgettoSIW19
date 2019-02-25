@@ -1,6 +1,6 @@
 function controllaform(){
 			var NomeEvento = $.trim($('#NomeEvento').val());
-			var Datainizio = $.trim($('#Datainizio').val());
+			var DataInizio = $.trim($('#Datainizio').val());
 			var DataFine = $.trim($('#DataFine').val());
 			var DataScadenza = $.trim($('#DataScadenza').val());
 			var Categoria = $.trim($('#Categoria').val());
@@ -11,17 +11,18 @@ function controllaform(){
 			
 		    // Check if empty of not
 		    
-		    if (NomeEvento === '' || Datainizio === '' || DataFine === '' || DataScadenza === '' || Categoria === '' || Provincia === '' || Citta === '' || NumeroPosti == '') 
+		    if (NomeEvento === '' || DataInizio === '' || DataFine === '' || DataScadenza === '' || Categoria === '' || Provincia === '' || Citta === '' || NumeroPosti == '') 
 		    {
 		        alert('Tutti i campi sono obbligatori');
 		        return false;
 		    }
 		    else{
-		   		if(Datainizio < Datafine && Datainizio > DataScadenza && DataScadenza < Datafine ){
+		    	var dataAttuale = Date.now();
+		   		if(DataInizio < DataFine && DataInizio > DataScadenza && DataScadenza < DataFine && DataScadenza > dataAttuale){
 		    			return true;
 		    	}
 		   		else{
-		   			alert("Controlla le date. La data della fine dell'evento non può essere precedente a quella dell'inizio. La data di scadenza delle prenotazioni deve essere antecedente rispetto all'inizio.");
+		   			alert("Controlla le date. La data della fine dell'evento non può essere precedente a quella dell'inizio. La data di scadenza delle prenotazioni deve essere antecedente rispetto all'inizio. Le date non possono essere antecedenti all'ora attuale.");
 		   			return false;
 		   		}
 		   		
