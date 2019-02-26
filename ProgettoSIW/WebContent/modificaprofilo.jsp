@@ -32,7 +32,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 	<jsp:include page="navbar.jsp" />
-	
+	 <script src="js/validazionePassword.js"></script>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -124,7 +124,7 @@
                   </div>
                   <div class="col-sm-6">
                   <br>
-                         <button class="btn btn-primary btn-user btn-block" name="ModificaPassword" type=submit>Modifica password</button>
+                         <button class="btn btn-primary btn-user btn-block"  name="ModificaPassword" type="submit" onclick='return validazionepassword()'>Modifica password</button>
                   </div>
                 </div>
 
@@ -153,7 +153,7 @@
   </div>
   <!-- End of Page Wrapper -->
 
-
+</div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -164,7 +164,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
+ 
 
   
 </body>

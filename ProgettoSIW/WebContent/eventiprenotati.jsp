@@ -62,7 +62,7 @@
 
           <!-- Content Row -->
           <div class="">
-            <div class="p-5">
+            <div class="p-4">
    				<div class="" style="overflow-x:auto;">
 		
 		
@@ -84,7 +84,7 @@
   </div>
   <!-- End of Page Wrapper -->
 
-
+</div></div></div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>

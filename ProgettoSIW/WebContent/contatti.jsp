@@ -81,10 +81,10 @@
 	  </div>
 	
 		<br><br>
-		<h1 class="text-center">Lo staff di EBOOKER</h1>
+		<h1 class="text-center">EBOOKER si racconta</h1>
 		<hr>
-		<div class="col-sm-4" id="staff">
-			<h4 class="text-center">Bla bla bla</h4>
+		<div class="" id="staff">
+			<h4 class="text-center">La piattaforma <a href="index.jsp">EBOOKER</a> è stata sviluppata da <a href="https://github.com/antoscal97">Antonio Scalisi</a> e <a href="https://github.com/cosmog97/">Cosmo Greco</a> per il progetto didattico del corso "Web Computing" del CdL "Informatica" presso il <a href="https://www.mat.unical.it/demacs">Dipartimento di Matematica e Informatica</a> dell'<a href="http://www.unical.it/">Università della Calabria</a>. L'idea nasce da una mancata organizzazione di una classica "serata fra colleghi", per poi sfociare in un event booker dove è possibile cercare, creare e organizzare eventi di qualunque genere in tutta Italia.</h4>
 		</div>
 
 	</div>

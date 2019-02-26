@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
@@ -15,6 +16,7 @@ import model.Utente;
 import persistance.DatabaseManager;
 import persistance.UtenteDAO;
 import utility.EmailManager;
+import utility.PasswordManager;
 
 /**
  * Servlet implementation class ModificaPassword
@@ -55,7 +57,14 @@ public class ModificaPassword extends HttpServlet {
 		Utente temp = t.findByPrimaryKey(usernameCorrente);
 		String passwordDB = temp.getPassword();
 		if (passwordDB.equals(vecchiaPassword) && nuovaPassword.equals(ripetiNuovaPassword)) {
-			t.setPassword(usernameCorrente, nuovaPassword, data);
+			String passwordCrypto = "";
+			try {
+				passwordCrypto = PasswordManager.getPasswordCrypto(nuovaPassword);
+			} catch (NoSuchAlgorithmException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			t.setPassword(usernameCorrente, passwordCrypto, data);
 			
 			EmailManager em = new EmailManager();
 			em.passwordChangedEmail(usernameCorrente, email, nuovaPassword);
