@@ -92,7 +92,7 @@
 								        			<option value="Convegni">Convegni</option>
 								        			<option value="Feste">Feste</option>
 								        			<option value="Musica">Musica</option>
-								        			<option value="Teatro">Istruzione</option>
+								        			<option value="Istruzione">Istruzione</option>
 								        			<option value="Sport">Sport</option>
 								          			<option value="Teatro">Teatro</option>
 								          			<option value="Viaggi">Viaggi</option>

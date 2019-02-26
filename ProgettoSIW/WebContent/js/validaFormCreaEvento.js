@@ -19,7 +19,7 @@ function controllaform(){
 		    else{
 		    	var dataAttuale = Date.now();
 		    	
-		   		if(DataInizio > DataScadenza && DataFine > DataScadenza && DataFine > DataInizio){
+		   		if(DataInizio > DataScadenza && DataFine > DataScadenza && DataFine > DataInizio && dataAttuale < DataScadenza){
 		    			return true;
 		    	}
 		   		else{
