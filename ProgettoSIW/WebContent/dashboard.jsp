@@ -32,7 +32,9 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 	<jsp:include page="navbar.jsp" />
-	
+	  <c:if test = "${sessionScope.Nome == null}">
+         <script>window.location.replace("404.html");</script>
+      </c:if>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -186,13 +188,13 @@
       <!-- End of Main Content -->
             
             
-
+</div>
 
 
     </div>
     
     <!-- End of Content Wrapper -->
-
+</div>
   </div>
   <!-- End of Page Wrapper -->
 
