@@ -86,6 +86,7 @@
                   <div class="col-sm-6 mb-3 mb-sm-0">
                  	<div align="center">Provincia</div>
                     <input type="text" class="form-control form-control-user" id="Provincia" name="Provincia" placeholder="Provincia">
+                    <script src="js/loadProvince.js"></script>
                   </div>
                   <div class="col-sm-6">
                   	<div align="center">Città</div>

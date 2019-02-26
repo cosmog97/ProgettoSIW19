@@ -299,7 +299,7 @@ public class EmailManager {
         	String subject = "Evento eliminato";
         	
         	try {
-			 	System.out.println("bomba1"); //eliminareeeeeee
+
 	            Properties props = new Properties();
 	            props.setProperty("mail.smtp.host", "smtp.gmail.com");
 	            props.setProperty("mail.smtp.port", "587");
