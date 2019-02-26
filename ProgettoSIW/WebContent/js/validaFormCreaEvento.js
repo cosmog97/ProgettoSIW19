@@ -20,7 +20,9 @@ function controllaform(){
 		    	var dataAttuale = Date.now();
 		    	var timestamp = dataAttuale.getTime();
 		    	console.log(timestamp);
-		   		if(DataInizio > DataScadenza && DataFine > DataScadenza && DataFine > DataInizio){
+		   		if(/*DataInizio > DataScadenza && DataFine > DataScadenza && DataFine > DataInizio*/
+		   				DataInizio < DataFine && DataScadenza < DataInizio){
+		   				
 		    			return true;
 		    	}
 		   		else{
