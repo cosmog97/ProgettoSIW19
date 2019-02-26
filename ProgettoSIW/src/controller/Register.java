@@ -92,7 +92,7 @@ public class Register extends HttpServlet {
 			 
 
 			 EmailManager em = new EmailManager();
-			 em.registerValidationEmail(utente.getNome(),utente.getEmail());
+			 em.registerValidationEmail(utente,utente.getEmail());
 
 			 RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			 rd.forward(request, response);

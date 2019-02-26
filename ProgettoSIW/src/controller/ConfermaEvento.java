@@ -63,7 +63,7 @@ public class ConfermaEvento extends HttpServlet {
 		k.update(temp);
 		
 		EmailManager em = new EmailManager();
-	    em.partecipazioneEmail(utente,email,temp.getCreatore(),temp.getCitta(),temp.getInizio());
+	    em.partecipazioneEmail(utente,email,temp,postiDaPrenotare);
 		
 		session.removeAttribute("Evento");
 		RequestDispatcher rd = request.getRequestDispatcher("eventoconfermato.html");

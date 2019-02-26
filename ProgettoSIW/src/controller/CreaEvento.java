@@ -93,7 +93,7 @@ public class CreaEvento extends HttpServlet {
 		
 		//email
 		EmailManager em = new EmailManager();
-		em.creationValidationEmail(creatore,email);
+		em.creationValidationEmail(evento,email);
 	
 		int IdEvento = t.findIdByElements(evento);
 		c.save(new Partecipazione(creatore,IdEvento,1));
