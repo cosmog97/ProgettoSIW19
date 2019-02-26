@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="persistance.PartecipazioneDAO" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/PartecipazioneDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="299" x="108" y="447"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="2" language="java" name="persistance.DataSource" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/DataSource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="689" y="552"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="persistance.DatabaseManager" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/DatabaseManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1226" y="-11"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="persistance.PartecipazioneDAOJDBC" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/PartecipazioneDAOJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="268" width="299" x="108" y="121"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="5" language="java" name="persistance.UtenteDAO" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/UtenteDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="577" y="-19"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="6" language="java" name="persistance.DAOFactory" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/DAOFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="195" width="284" x="725" y="-114"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="persistance.UtenteDAOJDBC" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/UtenteDAOJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="577" y="222"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="8" language="java" name="persistance.EventoDAO" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/EventoDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="268" width="356" x="1049" y="447"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="9" language="java" name="persistance.EventoDAOJDBC" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/EventoDAOJDBC.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="286" width="356" x="1049" y="121"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="persistance.PostgresDAOFactory" project="ProgettoSIW" 
+    file="/ProgettoSIW/src/persistance/PostgresDAOFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="284" x="725" y="121"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="11">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="12" name="dataSource">        
+        <position height="0" width="0" x="-129" y="25"/>      
+      </attribute>      
+      <multiplicity id="13" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-129" y="25"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="14">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="15" name="dataSource">        
+        <position height="0" width="0" x="-129" y="25"/>      
+      </attribute>      
+      <multiplicity id="16" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-129" y="25"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="17">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="18" name="dataSource">        
+        <position height="0" width="0" x="-129" y="25"/>      
+      </attribute>      
+      <multiplicity id="19" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-129" y="25"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="20">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="21" name="daoFactory">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="22" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="23">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="24">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="25" name="instance">        
+        <position height="0" width="0" x="396" y="215"/>      
+      </attribute>      
+      <multiplicity id="26" minimum="0" maximum="1">        
+        <position height="0" width="0" x="396" y="215"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="27">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <realization id="28">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <association id="29">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="30" name="dataSource">        
+        <position height="0" width="0" x="-129" y="25"/>      
+      </attribute>      
+      <multiplicity id="31" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-129" y="25"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="32">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
