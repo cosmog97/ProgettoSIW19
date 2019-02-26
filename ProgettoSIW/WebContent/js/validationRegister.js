@@ -23,7 +23,16 @@ function controllaformregister(){
 		        alert('Tutti i campi sono obbligatori');
 		        return false;
 		    }
+		    else {
+		    	if (Password === Ripetipassword){
+		    		return true;
+		    	}
+		    	else {
+		    		alert("I campi Password e Ripeti Password deve essere identici.")
+		    		return false;
+		    	}
+		    }
 		    
-		    return true;
+		    
 		    
 }
